@@ -1,0 +1,413 @@
+[
+    {
+        "flight_number": 61,
+        "mission_name": "Bangabandhu-1",
+        "launch_year": "2018",
+        "launch_date_unix": 1525983120,
+        "launch_date_utc": "2018-05-10T20:12:00Z",
+        "launch_date_local": "2018-05-10T16:12:00-04:00",
+        "rocket": {
+            "rocket_id": "falcon9",
+            "rocket_name": "Falcon 9",
+            "rocket_type": "FT",
+            "first_stage": {
+                "cores": [
+                    {
+                        "core_serial": "B1046",
+                        "flight": 1,
+                        "block": 5,
+                        "reused": false,
+                        "land_success": null,
+                        "landing_type": "ASDS",
+                        "landing_vehicle": "OCISLY"
+                    }
+                ]
+            },
+            "second_stage": {
+                "payloads": [
+                    {
+                        "payload_id": "Bangabandhu-1",
+                        "reused": false,
+                        "customers": ["Bangladesh Gov"],
+                        "payload_type": "Satellite",
+                        "payload_mass_kg": 3500,
+                        "payload_mass_lbs": 7700,
+                        "orbit": "GTO"
+                    }
+                ]
+            }
+        },
+        "telemetry": { "flight_club": null },
+        "reuse": {
+            "core": true,
+            "side_core1": false,
+            "side_core2": false,
+            "fairings": false,
+            "capsule": false
+        },
+        "launch_site": {
+            "site_id": "ksc_lc_39a",
+            "site_name": "KSC LC 39A",
+            "site_name_long": "Kennedy Space Center Historic Launch Complex 39A"
+        },
+        "launch_success": null,
+        "links": {
+            "mission_patch": null,
+            "mission_patch_small": null,
+            "reddit_campaign":
+                "https://www.reddit.com/r/spacex/comments/8624iq/bangabandhu1_launch_campaign_thread/",
+            "reddit_launch": null,
+            "reddit_recovery": null,
+            "reddit_media": null,
+            "presskit": null,
+            "article_link": null,
+            "video_link": null
+        },
+        "details": null
+    },
+    {
+        "flight_number": 62,
+        "mission_name": "Iridium NEXT Mission 6",
+        "launch_year": "2018",
+        "launch_date_unix": 1526760180,
+        "launch_date_utc": "2018-05-19T20:03:00Z",
+        "launch_date_local": "2018-05-19T13:03:00-07:00",
+        "rocket": {
+            "rocket_id": "falcon9",
+            "rocket_name": "Falcon 9",
+            "rocket_type": "FT",
+            "first_stage": {
+                "cores": [
+                    {
+                        "core_serial": "B1043",
+                        "flight": 2,
+                        "block": 4,
+                        "reused": true,
+                        "land_success": null,
+                        "landing_type": null,
+                        "landing_vehicle": null
+                    }
+                ]
+            },
+            "second_stage": {
+                "payloads": [
+                    {
+                        "payload_id": "Iridium NEXT 6",
+                        "reused": false,
+                        "customers": ["Iridium Communications"],
+                        "payload_type": "Satellite",
+                        "payload_mass_kg": 4300,
+                        "payload_mass_lbs": null,
+                        "orbit": "PO"
+                    },
+                    {
+                        "payload_id": "GRACE-FO 1-2",
+                        "reused": false,
+                        "customers": ["NASA", "DLR"],
+                        "payload_type": "Satellite",
+                        "payload_mass_kg": 1160,
+                        "payload_mass_lbs": null,
+                        "orbit": "PO"
+                    }
+                ]
+            }
+        },
+        "telemetry": { "flight_club": null },
+        "reuse": {
+            "core": true,
+            "side_core1": false,
+            "side_core2": false,
+            "fairings": false,
+            "capsule": false
+        },
+        "launch_site": {
+            "site_id": "vafb_slc_4e",
+            "site_name": "VAFB SLC 4E",
+            "site_name_long":
+                "Vandenberg Air Force Base Space Launch Complex 4E"
+        },
+        "launch_success": null,
+        "links": {
+            "mission_patch": null,
+            "mission_patch_small": null,
+            "reddit_campaign":
+                "https://www.reddit.com/r/spacex/comments/8ffsgl/iridium6_gracefo_launch_campaign_thread/",
+            "reddit_launch": null,
+            "reddit_recovery": null,
+            "reddit_media": null,
+            "presskit": null,
+            "article_link": null,
+            "video_link": null
+        },
+        "details": null
+    },
+    {
+        "flight_number": 63,
+        "mission_name": "SES-12",
+        "launch_year": "2018",
+        "launch_date_unix": 1527136140,
+        "launch_date_utc": "2018-05-24T04:29:00Z",
+        "launch_date_local": "2018-05-24T00:29:00-04:00",
+        "rocket": {
+            "rocket_id": "falcon9",
+            "rocket_name": "Falcon 9",
+            "rocket_type": "FT",
+            "first_stage": {
+                "cores": [
+                    {
+                        "core_serial": "B1040",
+                        "flight": 2,
+                        "block": 4,
+                        "reused": true,
+                        "land_success": null,
+                        "landing_type": null,
+                        "landing_vehicle": null
+                    }
+                ]
+            },
+            "second_stage": {
+                "payloads": [
+                    {
+                        "payload_id": "SES-12",
+                        "reused": false,
+                        "customers": ["SES"],
+                        "payload_type": "Satellite",
+                        "payload_mass_kg": 5300,
+                        "payload_mass_lbs": null,
+                        "orbit": "GTO"
+                    }
+                ]
+            }
+        },
+        "telemetry": { "flight_club": null },
+        "reuse": {
+            "core": true,
+            "side_core1": false,
+            "side_core2": false,
+            "fairings": false,
+            "capsule": false
+        },
+        "launch_site": {
+            "site_id": "ccafs_slc_40",
+            "site_name": "CCAFS SLC 40",
+            "site_name_long":
+                "Cape Canaveral Air Force Station Space Launch Complex 40"
+        },
+        "launch_success": null,
+        "links": {
+            "mission_patch": null,
+            "mission_patch_small": null,
+            "reddit_campaign": null,
+            "reddit_launch": null,
+            "reddit_recovery": null,
+            "reddit_media": null,
+            "presskit": null,
+            "article_link": null,
+            "video_link": null
+        },
+        "details": null
+    },
+    {
+        "flight_number": 64,
+        "mission_name": "Telstar 19V",
+        "launch_year": "2018",
+        "launch_date_unix": 1529193600,
+        "launch_date_utc": "2018-06-17T00:00:00Z",
+        "launch_date_local": "2018-06-17T00:00:00-04:00",
+        "rocket": {
+            "rocket_id": "falcon9",
+            "rocket_name": "Falcon 9",
+            "rocket_type": "FT",
+            "first_stage": {
+                "cores": [
+                    {
+                        "core_serial": null,
+                        "flight": null,
+                        "block": null,
+                        "reused": null,
+                        "land_success": null,
+                        "landing_type": null,
+                        "landing_vehicle": null
+                    }
+                ]
+            },
+            "second_stage": {
+                "payloads": [
+                    {
+                        "payload_id": "Telstar 19V",
+                        "reused": false,
+                        "customers": ["Telesat"],
+                        "payload_type": "Satellite",
+                        "payload_mass_kg": null,
+                        "payload_mass_lbs": null,
+                        "orbit": "GTO"
+                    }
+                ]
+            }
+        },
+        "telemetry": { "flight_club": null },
+        "reuse": {
+            "core": false,
+            "side_core1": false,
+            "side_core2": false,
+            "fairings": false,
+            "capsule": false
+        },
+        "launch_site": {
+            "site_id": "ccafs_slc_40",
+            "site_name": "CCAFS SLC 40",
+            "site_name_long":
+                "Cape Canaveral Air Force Station Space Launch Complex 40"
+        },
+        "launch_success": null,
+        "links": {
+            "mission_patch": null,
+            "mission_patch_small": null,
+            "reddit_campaign": null,
+            "reddit_launch": null,
+            "reddit_recovery": null,
+            "reddit_media": null,
+            "presskit": null,
+            "article_link": null,
+            "video_link": null
+        },
+        "details": null
+    },
+    {
+        "flight_number": 65,
+        "mission_name": "Iridium NEXT Mission 7",
+        "launch_year": "2018",
+        "launch_date_unix": 1530316800,
+        "launch_date_utc": "2018-06-30T00:00:00Z",
+        "launch_date_local": "2018-06-30T00:00:00-07:00",
+        "rocket": {
+            "rocket_id": "falcon9",
+            "rocket_name": "Falcon 9",
+            "rocket_type": "FT",
+            "first_stage": {
+                "cores": [
+                    {
+                        "core_serial": null,
+                        "flight": null,
+                        "block": null,
+                        "reused": null,
+                        "land_success": null,
+                        "landing_type": null,
+                        "landing_vehicle": null
+                    }
+                ]
+            },
+            "second_stage": {
+                "payloads": [
+                    {
+                        "payload_id": "Iridium NEXT 7",
+                        "reused": false,
+                        "customers": ["Iridium Communications"],
+                        "payload_type": "Satellite",
+                        "payload_mass_kg": 9600,
+                        "payload_mass_lbs": 21164.38,
+                        "orbit": "PO"
+                    }
+                ]
+            }
+        },
+        "telemetry": { "flight_club": null },
+        "reuse": {
+            "core": false,
+            "side_core1": false,
+            "side_core2": false,
+            "fairings": false,
+            "capsule": false
+        },
+        "launch_site": {
+            "site_id": "vafb_slc_4e",
+            "site_name": "VAFB SLC 4E",
+            "site_name_long":
+                "Vandenberg Air Force Base Space Launch Complex 4E"
+        },
+        "launch_success": null,
+        "links": {
+            "mission_patch": null,
+            "mission_patch_small": null,
+            "reddit_campaign": null,
+            "reddit_launch": null,
+            "reddit_recovery": null,
+            "reddit_media": null,
+            "presskit": null,
+            "article_link": null,
+            "video_link": null
+        },
+        "details": null
+    },
+    {
+        "flight_number": 66,
+        "mission_name": "CRS-15",
+        "launch_year": "2018",
+        "launch_date_unix": 1530489600,
+        "launch_date_utc": "2018-07-02T00:00:00Z",
+        "launch_date_local": "2018-07-02T00:00:00-04:00",
+        "rocket": {
+            "rocket_id": "falcon9",
+            "rocket_name": "Falcon 9",
+            "rocket_type": "FT",
+            "first_stage": {
+                "cores": [
+                    {
+                        "core_serial": "B1045",
+                        "flight": 2,
+                        "block": 4,
+                        "reused": true,
+                        "land_success": null,
+                        "landing_type": null,
+                        "landing_vehicle": null
+                    }
+                ]
+            },
+            "second_stage": {
+                "payloads": [
+                    {
+                        "payload_id": "SpaceX CRS-15",
+                        "cap_serial": null,
+                        "reused": null,
+                        "customers": ["NASA (CRS)"],
+                        "payload_type": "Dragon 1.1",
+                        "payload_mass_kg": 2410,
+                        "payload_mass_lbs": null,
+                        "orbit": "ISS",
+                        "mass_returned_kg": null,
+                        "mass_returned_lbs": null,
+                        "flight_time_sec": null,
+                        "cargo_manifest": null
+                    }
+                ]
+            }
+        },
+        "telemetry": { "flight_club": null },
+        "reuse": {
+            "core": false,
+            "side_core1": false,
+            "side_core2": false,
+            "fairings": false,
+            "capsule": false
+        },
+        "launch_site": {
+            "site_id": "ccafs_slc_40",
+            "site_name": "CCAFS SLC 40",
+            "site_name_long":
+                "Cape Canaveral Air Force Station Space Launch Complex 40"
+        },
+        "launch_success": null,
+        "links": {
+            "mission_patch": null,
+            "mission_patch_small": null,
+            "reddit_campaign": null,
+            "reddit_launch": null,
+            "reddit_recovery": null,
+            "reddit_media": null,
+            "presskit": null,
+            "article_link": null,
+            "video_link": null
+        },
+        "details": null
+    }
+]

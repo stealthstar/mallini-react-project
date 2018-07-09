@@ -1,0 +1,56 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+      "browser": true,
+      "es6": true,
+  },
+  "rules": {
+    "no-console": "error", // airbnb is using warn
+    "linebreak-style": ["warn", "windows"],
+    "no-return-assign": "off", // airbnb use error, handy for react ref assign.
+    "operator-linebreak": ["error", "after"], // aibnb is disabling this rule
+    "react/jsx-filename-extension": ["error", {"extensions": [".js"]}], // airbnb is using .jsx
+    "react/jsx-max-props-per-line": ["error", {"maximum": 3}], // airbnb is disabling this rule
+    "react/no-danger": "error", // airbnb is using warn
+    "react/no-direct-mutation-state": "error", // airbnb is disabling this rule
+    "prefer-destructuring": ["error", {
+      "VariableDeclarator": {
+        "array": false,
+        "object": false
+      },
+      "AssignmentExpression": {
+        "array": true,
+        "object": true
+      }
+    }, {
+      "enforceForRenamedProperties": false
+    }],
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1,
+        "VariableDeclarator": 1,
+        "outerIIFEBody": 1,
+        "MemberExpression": 1,
+        "FunctionDeclaration": {
+          "parameters": 1,
+          "body": 1
+        },
+        "FunctionExpression": {
+          "parameters": 1,
+          "body": 1
+        },
+        "CallExpression": {
+          "arguments": 1
+        },
+        "ArrayExpression": 1,
+        "ObjectExpression": 1,
+        "ImportDeclaration": 1,
+        "flatTernaryExpressions": false,
+        "ignoreComments": false
+      }
+    ],
+  }
+}
