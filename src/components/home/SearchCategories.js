@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { changeCategory } from '../../actions/changeCategory';
 
+
 import "../../styles/home/SearchCategories.sass";
 import FaSearch from 'react-icons/lib/fa/search';
 import data from '../../assets/data.json';

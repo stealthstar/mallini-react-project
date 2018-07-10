@@ -1,21 +1,22 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { changeCurrency } from '../../actions/changeCurrency';
 
+import { changeSearchTerm } from '../../actions/changeSearchTerm';
 import "../../styles/home/Searchbar.sass";
 import FaSearch from 'react-icons/lib/fa/search';
 import SearchCategories from './SearchCategories'
 
 const mapStateToProps = state => ({
-	currencyDropdown: state.dropdownReducer.currencyDropdown
+	currencyDropdown: state.dropdownReducer.currencyDropdown,
+	searchTerm: state.searchReducer.searchTerm
 });
 
-// function mapDispatchToProps(dispatch) {
-// 	return bindActionCreators({
-// 		changeCurrency: changeCurrency
-// 	}, dispatch);
-// }
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({
+		changeSearchTerm: changeSearchTerm
+	}, dispatch);
+}
 
 class Searchbar extends React.Component {
 	// eslint-disable-line react/prefer-stateless-function
@@ -31,6 +32,7 @@ class Searchbar extends React.Component {
 	sumbitHandler(e) {
 		let event = e;
 		event.preventDefault();
+		this.props.changeSearchTerm(this.state.input);
 	}
 
 	changeHandler(e) {
@@ -38,7 +40,7 @@ class Searchbar extends React.Component {
 		this.setState({
 			input: val
 		});
-		//this.props.changeCurrency(val);
+		
 	}
 
 	render() {
@@ -61,4 +63,4 @@ class Searchbar extends React.Component {
 
 }
 
-export default connect(mapStateToProps)(Searchbar)
+export default connect(mapStateToProps, mapDispatchToProps)(Searchbar)
