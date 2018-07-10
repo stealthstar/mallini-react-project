@@ -1,27 +1,28 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { changeCurrency } from '../../actions/changeCurrency';
+import { changeCategory } from '../../actions/changeCategory';
 
 import "../../styles/home/SearchCategories.sass";
 import FaSearch from 'react-icons/lib/fa/search';
+import data from '../../assets/data.json';
 
 const mapStateToProps = state => ({
-	lang: state.dropdownReducer.langDropdown
+	lang: state.dropdownReducer.langDropdown,
+	searchCategory: state.searchReducer.searchCategory,
 });
 
-// function mapDispatchToProps(dispatch) {
-// 	return bindActionCreators({
-// 		changeCurrency: changeCurrency
-// 	}, dispatch);
-// }
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({
+		changeCategory: changeCategory
+	}, dispatch);
+}
 
 class SearchCategories extends React.Component {
 	// eslint-disable-line react/prefer-stateless-function
 	constructor(props) {
 		super(props);
 		this.state = {
-			category: 'All Categories',
 			menuVisible: false
 		}
 		this.clickHandler = this.clickHandler.bind(this);
@@ -35,9 +36,9 @@ class SearchCategories extends React.Component {
 		let val = event.target.innerHTML;
 		console.log(val);
 		this.setState({
-			category: val,
 			menuVisible: false
-		})
+		});
+		this.props.changeCategory(val);
 	}
 
 	menuToggle(e) {
@@ -50,12 +51,15 @@ class SearchCategories extends React.Component {
 
 	render() {
 		return (
-			<div className={"categories-wrapper"} >
+			<div className={"categories__wrapper"} >
 				{!this.state.menuVisible ?
-					<button onClick={(e) => this.menuToggle(e)}>{this.state.category}</button>
+					<button onClick={(e) => this.menuToggle(e)}>{this.props.searchCategory}</button>
 				: 
-					<div className="categories--menu">
-						<p onClick={(e) => this.clickHandler(e)}>Category1</p>
+					<div className="categories__menu">
+						{data.categories[this.props.lang].map((el) => (
+							<p onClick={(e) => this.clickHandler(e)}>{el}</p>
+						))}
+						
 					</div>
 				}
 			</div>
@@ -66,4 +70,4 @@ class SearchCategories extends React.Component {
 
 }
 
-export default connect(mapStateToProps)(SearchCategories)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchCategories)

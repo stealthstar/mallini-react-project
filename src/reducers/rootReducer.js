@@ -1,6 +1,8 @@
 import {combineReducers} from 'redux';
 import {viewReducer} from './viewReducer'
 import {dropdownReducer} from './dropdownReducer'
+import {cartReducer} from './cartReducer'
+import {searchReducer} from './searchReducer'
 
 
 // const rootReducer = (state = {
@@ -28,7 +30,9 @@ import {dropdownReducer} from './dropdownReducer'
 
 const rootReducer = combineReducers({
  	viewReducer,
-	dropdownReducer
+	dropdownReducer,
+	cartReducer,
+	searchReducer
 });
 
 export default rootReducer;

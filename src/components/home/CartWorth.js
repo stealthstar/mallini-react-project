@@ -6,7 +6,9 @@ import { changeCurrency } from '../../actions/changeCurrency';
 import "../../styles/home/CartWorth.sass";
 
 const mapStateToProps = state => ({
-	currencyDropdown: state.dropdownReducer.currencyDropdown
+	cartWorth: state.cartReducer.cartWorth,
+	currency: state.dropdownReducer.currency,
+	currencySymbol: state.dropdownReducer.currencySymbol
 });
 
 // function mapDispatchToProps(dispatch) {
@@ -24,7 +26,14 @@ class CartWorth extends React.Component {
 
 	render() {
 		return (
-			<div>CartWorth</div>
+			<div className={'cart-worth'}>
+				{
+				this.props.cartWorth % 1 === 0 ?
+					this.props.currencySymbol+this.props.cartWorth.toFixed(2)
+				:
+					this.props.cartWorth
+				}
+			</div>
 		)
 	}
 

@@ -1,8 +1,6 @@
 export const viewReducer = (state = {
 	viewName: 'home',
-	activeProductId: 1,
-	langDropdown: 'en',
-	currencyDropdown: 'usd'
+	activeProductId: 1
 }, action) => {
 	switch (action.type) {
 		case 'SHOW_PRODUCT':

@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { changeCurrency } from '../../actions/changeCurrency';
 
 import "../../styles/home/WishlistIcon.sass";
-
+import FaHeartO from 'react-icons/lib/fa/heart-o';
 const mapStateToProps = state => ({
 	currencyDropdown: state.dropdownReducer.currencyDropdown
 });
@@ -24,7 +24,11 @@ class WishlistIcon extends React.Component {
 
 	render() {
 		return (
-			<div>WishlistIcon</div>
+			<div className={"icon icon-wishlist"}>
+				<FaHeartO />
+				<div className={"icon__number icon-wishlist__number"}>
+				</div>
+			</div>
 		)
 	}
 

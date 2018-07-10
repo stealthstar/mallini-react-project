@@ -2,16 +2,19 @@ import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {changeLanguage} from '../../actions/changeLanguage';
+import {resetCategory} from '../../actions/resetCategory';
 
 import "../../styles/home/Dropdowns.sass";
 
 const mapStateToProps = state => ({
 	langDropdown: state.dropdownReducer.langDropdown,
+	searchCategory: state.searchReducer.searchCategory,
 });
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		changeLanguage: changeLanguage
+		changeLanguage: changeLanguage,
+		resetCategory: resetCategory
 	}, dispatch);
 }
 class LangDropdown extends React.Component {
@@ -25,13 +28,25 @@ class LangDropdown extends React.Component {
 	}
 
 	changeHandler(e) {
-		let val = e.target.value;
+		let val = e.target.value, result;
 		this.setState({
 			select: val
 		});
 		console.log(val)
 		this.props.changeLanguage(val);
+		switch(val){
+			case 'en':
+				result = "All Categories"
+				break;
+			case 'pl':
+				result = "Wszystkie"
+				break;
+			default:
+				result = "All Categories";
+		}
 
+
+		this.props.resetCategory(result);
 	}
 
 	render() {

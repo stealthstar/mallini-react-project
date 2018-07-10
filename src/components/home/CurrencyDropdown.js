@@ -6,7 +6,7 @@ import { changeCurrency } from '../../actions/changeCurrency';
 import "../../styles/home/Dropdowns.sass";
 
 const mapStateToProps = state => ({
-	currencyDropdown: state.dropdownReducer.currencyDropdown
+	currency: state.dropdownReducer.currency
 });
 
 function mapDispatchToProps(dispatch) {
@@ -27,11 +27,28 @@ function mapDispatchToProps(dispatch) {
 
 	changeHandler(e) {
 		let val = e.target.value;
+		let symbols = ['\u0024', '\u00A3', '\u20AC', 'PLN '];
+		let symbol = () => {
+			switch(val) {
+				case 'usd':
+					return symbols[0];
+				case 'gbp':
+					return symbols[1];
+				case 'eur':
+					return symbols[2];
+				case 'pln':
+					return symbols[3];
+				default: 
+					return '&dollar;';
+			}
+		}
 		this.setState({
 			select: val
 		});
 		console.log(val)
-		this.props.changeCurrency(val);
+		let result = [val, symbol(val)]
+
+		this.props.changeCurrency(result);
 	}
 
 	render() {

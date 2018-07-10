@@ -1,0 +1,10 @@
+{
+	"categories": {
+		"en":["TVs", "Smartphones", "Audio", "Photography", "Camcorders", "PC", "Consoles"],
+		"pl":["Telewizory", "Smartfony", "Audio", "Fotografia", "Kamery", "PC", "Konsole"]
+	},
+	"all-categories": {
+		"en": "All Categories",
+		"pl": "Wszystkie"
+	}
+}
