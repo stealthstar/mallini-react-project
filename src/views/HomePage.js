@@ -7,25 +7,34 @@ import "../styles/home/HomePage.sass";
 import TopBar from '../components/home/TopBar';
 import TopContainer from '../components/home/TopContainer';
 
-// const mapStateToProps = state => ({
-	
-// })
+const mapStateToProps = state => ({
+	width: state.windowSizeReducer.windowWidth,
+	height: state.windowSizeReducer.windowHeight
+})
 // function mapDispatchToProps(dispatch) {
 // 	return bindActionCreators({
 
 // 	}, dispatch);
 // }
-
-export default class HomePage extends React.Component {
+class HomePage extends React.Component {
 	// eslint-disable-line react/prefer-stateless-function
 
 	render() {
 		return (
-			<div className={"wrapper"}>
-			<TopBar />
+			<div className={
+				(this.props.width > 1200) ?
+				"wrapper"
+					: (this.props.width > 1000) ?
+						"wrapper wrapper--medium"
+						:
+						"wrapper wrapper--mobile"
+				}>
+			{(this.props.width > 1000) && <TopBar />}
 			<TopContainer />
 			</div>
 		)
 	}
 
 }
+
+export default connect(mapStateToProps)(HomePage)

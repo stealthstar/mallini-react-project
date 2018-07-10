@@ -4,6 +4,7 @@ import {dropdownReducer} from './dropdownReducer'
 import {cartReducer} from './cartReducer'
 import {searchReducer} from './searchReducer'
 import {iconReducer} from './iconReducer'
+import {windowSizeReducer} from './windowSizeReducer'
 
 
 // const rootReducer = (state = {
@@ -34,7 +35,8 @@ const rootReducer = combineReducers({
 	dropdownReducer,
 	cartReducer,
 	searchReducer,
-	iconReducer
+	iconReducer,
+	windowSizeReducer
 });
 
 export default rootReducer;
