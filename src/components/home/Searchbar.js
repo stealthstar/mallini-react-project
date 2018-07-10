@@ -8,6 +8,7 @@ import FaSearch from 'react-icons/lib/fa/search';
 import SearchCategories from './SearchCategories'
 
 const mapStateToProps = state => ({
+	lang: state.dropdownReducer.langDropdown,
 	currencyDropdown: state.dropdownReducer.currencyDropdown,
 	searchTerm: state.searchReducer.searchTerm
 });
@@ -48,7 +49,16 @@ class Searchbar extends React.Component {
 
 			<form className={"search-form"}>
 				<div className={"search-form__input-wrapper"}>
-					<input type={"text"} value={this.state.input} onChange = {(e) => this.changeHandler(e) }/>
+					<input 
+						type={"text"} 
+						value={this.state.input} 
+						onChange = {(e) => this.changeHandler(e) }
+						placeholder={
+							this.props.lang === 'en' ? 
+								"Type to search..."
+							:
+								"Wyszukaj..."
+						}/>
 					<SearchCategories />
 				</div>
 				<div className={"search-form__categories"}>

@@ -58,7 +58,7 @@ class SearchCategories extends React.Component {
 				: 
 					<div className="categories__menu">
 						{data.categories[this.props.lang].map((el) => (
-							<p onClick={(e) => this.clickHandler(e)}>{el}</p>
+							<p key={el} onClick={(e) => this.clickHandler(e)}>{el}</p>
 						))}
 						
 					</div>

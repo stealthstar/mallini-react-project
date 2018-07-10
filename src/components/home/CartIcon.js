@@ -24,8 +24,11 @@ class CartIcon extends React.Component {
 
 	render() {
 		return (
-			<div className={"icon"}>
+			<div className={"icon icon-cart"}>
 				<FaShoppingBag />
+				<div className={"icon__number icon-cart__number flex-center"}>
+					0
+				</div>
 			</div>
 		)
 	}
