@@ -1,9 +1,9 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { changeCurrency } from '../actions/changeCurrency';
+import { changeCurrency } from '../../actions/changeCurrency';
 
-import "../styles/Dropdowns.sass";
+import "../../styles/home/Dropdowns.sass";
 
 const mapStateToProps = state => ({
 	currencyDropdown: state.dropdownReducer.currencyDropdown

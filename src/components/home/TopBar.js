@@ -2,7 +2,7 @@ import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import "../styles/TopBar.sass";
+import "../../styles/home/TopBar.sass";
 
 import LangDropdown from './LangDropdown';
 import CurrencyDropdown from './CurrencyDropdown';

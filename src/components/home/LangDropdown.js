@@ -1,9 +1,9 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {changeLanguage} from '../actions/changeLanguage';
+import {changeLanguage} from '../../actions/changeLanguage';
 
-import "../styles/Dropdowns.sass";
+import "../../styles/home/Dropdowns.sass";
 
 const mapStateToProps = state => ({
 	langDropdown: state.dropdownReducer.langDropdown,

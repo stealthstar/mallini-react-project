@@ -2,10 +2,10 @@ import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import "../styles/HomePage.sass";
+import "../styles/home/HomePage.sass";
 
-import TopBar from '../components/TopBar';
-import TopContainer from '../components/TopContainer';
+import TopBar from '../components/home/TopBar';
+import TopContainer from '../components/home/TopContainer';
 
 // const mapStateToProps = state => ({
 	
