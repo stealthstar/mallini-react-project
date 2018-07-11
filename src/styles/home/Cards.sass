@@ -1,0 +1,35 @@
+.cards 
+	width: 100%
+	display: flex
+	padding: 50px 60px
+	justify-content: space-between
+	background-color: #fff
+	.card
+		display: flex
+		justify-content: center
+		flex-direction: column
+		padding-left: 40px
+		height: 320px
+		width: calc(98%/3)
+		font-size: 24px
+		color: white
+		
+		&__title
+			text-transform: uppercase
+			b
+				font-weight: 600
+		&__cta
+			font-size: 16px
+			text-decoration: underline
+			text-transform: uppercase
+			margin-top: 20px
+			cursor: pointer
+			user-select: none
+.wrapper--mobile
+	.cards
+		padding: 50px 20px
+		.card
+			padding-left: 20px
+			font-size: 26px
+			&__cta
+				font-size: 18px

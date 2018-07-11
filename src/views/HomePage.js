@@ -7,6 +7,8 @@ import "../styles/home/HomePage.sass";
 import TopBar from '../components/topSection/TopBar';
 import TopContainer from '../components/topSection/TopContainer';
 import MobileMenu from '../components/mobileMenu/MobileMenu';
+import Slider from '../components/home/Slider';
+import Cards from '../components/home/Cards';
 
 const mapStateToProps = state => ({
 	width: state.windowSizeReducer.windowWidth,
@@ -36,8 +38,14 @@ class HomePage extends React.Component {
 			{
 					((this.props.mobileMenu) && (this.props.width <= 1000))? 
 					<MobileMenu />
-				: null
+					//rest of the homepage is wrapped in condition
+					//which prevents it from displaying when mobile menu is visible
+				: 	<div>
+						<Slider />
+						<Cards />
+					</div>
 			}
+			
 			</div>
 		)
 	}
