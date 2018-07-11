@@ -1,12 +1,17 @@
+// - - - imports - - - 
+//react and redux imports
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+//action imports
 import { changeCategory } from '../../actions/changeCategory';
-
-
-import "../../styles/home/SearchCategories.sass";
+//Font Awesome import
 import FaSearch from 'react-icons/lib/fa/search';
+//json import
 import data from '../../assets/data.json';
+//styles import
+import "../../styles/topSection/SearchCategories.sass";
+//- - - end imports - - -
 
 const mapStateToProps = state => ({
 	lang: state.dropdownReducer.langDropdown,

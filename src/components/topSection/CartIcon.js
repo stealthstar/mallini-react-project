@@ -1,12 +1,16 @@
+// - - - imports - - - 
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { changeCurrency } from '../../actions/changeCurrency';
 
-import "../../styles/home/WishlistIcon.sass";
-import FaHeartO from 'react-icons/lib/fa/heart-o';
+import FaShoppingBag from 'react-icons/lib/fa/shopping-bag';
+
+import "../../styles/topSection/CartIcon.sass";
+// - - - end imports - - - 
+
 const mapStateToProps = state => ({
-	currencyDropdown: state.dropdownReducer.currencyDropdown
+	lang: state.dropdownReducer.langDropdown
 });
 
 // function mapDispatchToProps(dispatch) {
@@ -15,7 +19,7 @@ const mapStateToProps = state => ({
 // 	}, dispatch);
 // }
 
-class WishlistIcon extends React.Component {
+class CartIcon extends React.Component {
 	// eslint-disable-line react/prefer-stateless-function
 	constructor(props) {
 		super(props);
@@ -24,9 +28,10 @@ class WishlistIcon extends React.Component {
 
 	render() {
 		return (
-			<div className={"icon icon-wishlist"}>
-				<FaHeartO />
-				<div className={"icon__number icon-wishlist__number"}>
+			<div className={"icon icon-cart"}>
+				<FaShoppingBag />
+				<div className={"icon__number icon-cart__number flex-center"}>
+					0
 				</div>
 			</div>
 		)
@@ -34,4 +39,4 @@ class WishlistIcon extends React.Component {
 
 }
 
-export default connect(mapStateToProps)(WishlistIcon)
+export default connect(mapStateToProps)(CartIcon)

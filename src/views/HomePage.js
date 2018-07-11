@@ -4,12 +4,14 @@ import { bindActionCreators } from 'redux';
 
 import "../styles/home/HomePage.sass";
 
-import TopBar from '../components/home/TopBar';
-import TopContainer from '../components/home/TopContainer';
+import TopBar from '../components/topSection/TopBar';
+import TopContainer from '../components/topSection/TopContainer';
+import MobileMenu from '../components/mobileMenu/MobileMenu';
 
 const mapStateToProps = state => ({
 	width: state.windowSizeReducer.windowWidth,
-	height: state.windowSizeReducer.windowHeight
+	height: state.windowSizeReducer.windowHeight,
+	mobileMenu: state.menuReducer.mobileMenu
 })
 // function mapDispatchToProps(dispatch) {
 // 	return bindActionCreators({
@@ -31,6 +33,11 @@ class HomePage extends React.Component {
 				}>
 			{(this.props.width > 1000) && <TopBar />}
 			<TopContainer />
+			{
+					((this.props.mobileMenu) && (this.props.width <= 1000))? 
+					<MobileMenu />
+				: null
+			}
 			</div>
 		)
 	}

@@ -1,9 +1,11 @@
+// - - - imports - - - 
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { changeCurrency } from '../../actions/changeCurrency';
 
-import "../../styles/home/CartWorth.sass";
+import "../../styles/topSection/CartWorth.sass";
+// - - - end imports - - - 
 
 const mapStateToProps = state => ({
 	cartWorth: state.cartReducer.cartWorth,

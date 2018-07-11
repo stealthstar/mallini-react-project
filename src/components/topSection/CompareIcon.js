@@ -1,10 +1,15 @@
+// - - - imports - - - 
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import { addCompare } from '../../actions/addCompare';
 import { resetCompare } from '../../actions/resetCompare';
+
 import FaExchange from 'react-icons/lib/fa/exchange';
-import "../../styles/home/CompareIcon.sass";
+
+import "../../styles/topSection/CompareIcon.sass";
+//- - - end imports - - -
 
 const mapStateToProps = state => ({
 	currencyDropdown: state.dropdownReducer.currencyDropdown,
