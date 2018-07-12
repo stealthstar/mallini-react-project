@@ -1,12 +1,18 @@
 //react and redux imports
 import * as React from "react";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Carousel } from 'react-responsive-carousel';
 
 import data from '../../assets/data.json'
 
 import '../../styles/home/Slider.sass'
 
-export default class Slider extends React.Component {
+const mapStateToProps = state => ({
+	lang: state.dropdownReducer.langDropdown
+});
+
+class Slider extends React.Component {
 	constructor(props) {
 		super(props);
 		
@@ -38,6 +44,12 @@ export default class Slider extends React.Component {
 				<div>
 					<img src={img1} />
 					<p className="legend legend-1 ">High-quality working station</p>
+					<div className={"slider-details"}>
+						<p className={"slider-details__category"}>Laptops</p>
+						<p className={"slider-details__title"}>MacBook </p>
+						<p className={"slider-details__subtitle"}>Laptop by Apple Inc.</p>
+						<button className={"slider-details__cta"}>Discover now</button>
+					</div>
 				</div>
 				<div>
 					<img src={img2} />
@@ -51,3 +63,6 @@ export default class Slider extends React.Component {
 		);
 	}
 }
+
+
+export default connect(mapStateToProps)(Slider);

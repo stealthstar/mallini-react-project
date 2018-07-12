@@ -1,57 +1,124 @@
 {
   "categories": {
-    "en": ["TVs", "Smartphones", "Audio", "Photography", "Camcorders", "PC", "Consoles"],
-    "pl": ["Telewizory", "Smartfony", "Audio", "Fotografia", "Kamery", "PC", "Konsole"]
+	"en": ["TVs", "Smartphones", "Audio", "Photography", "Camcorders", "PC", "Consoles"],
+	"pl": ["Telewizory", "Smartfony", "Audio", "Fotografia", "Kamery", "PC", "Konsole"]
   },
   "all-categories": {
-    "en": "All Categories",
-    "pl": "Wszystkie"
+	"en": "All Categories",
+	"pl": "Wszystkie"
   },
   "images": {
-    "carousel": ["1.png", "2.png", "3.png"]
+	"carousel": ["1.png", "2.png", "3.png"]
   },
   "cards": {
-    "1": {
-      "en": {
-        "name": "DJI",
-        "name_2": "Drone",
-        "slogan": "Reality Capture",
-        "button": "Discover Now"
-      },
-      "pl": {
-        "name": "DJI",
-        "name_2": "Dron",
-        "slogan": "Uchwyć rzeczywistość",
-        "button": "Odkryj teraz"
-      }
-    },
-    "2": {
-      "en": {
-        "name": "Osmo",
-        "name_2": "Mobile",
-        "slogan": "Beyond Smart",
-        "button": "Discover Now"
-      },
-      "pl": {
-        "name": "Osmo",
-        "name_2": "Mobile",
-        "slogan": "Więcej niż inteligentny",
-        "button": "Odkryj teraz"
-      }
-    },
-    "3": {
-      "en": {
-        "name": "S3",
-        "name_2": "Flexible",
-        "slogan": "Home Speaker",
-        "button": "Discover Now"
-      },
-      "pl": {
-        "name": "S3",
-        "name_2": "Flexible",
-        "slogan": "Głośnik domowy",
-        "button": "Odkryj teraz"
-      }
-    }
-  }
+	"1": {
+	  "en": {
+		"name": "DJI",
+		"name_2": "Drone",
+		"slogan": "Reality Capture",
+		"button": "Discover Now",
+		"button-mobile": "See more"
+	  },
+	  "pl": {
+		"name": "DJI",
+		"name_2": "Dron",
+		"slogan": "Uchwyć rzeczywistość",
+		"button": "Odkryj teraz",
+		"button-mobile": "Więcej"
+
+	  }
+	},
+	"2": {
+	  "en": {
+		"name": "Osmo",
+		"name_2": "Mobile",
+		"slogan": "Beyond Smart",
+		"button": "Discover Now",
+		"button-mobile": "See more"
+	  },
+	  "pl": {
+		"name": "Osmo",
+		"name_2": "Mobile",
+		"slogan": "Więcej niż inteligentny",
+		"button": "Odkryj teraz",
+		"button-mobile": "Więcej"
+
+	  }
+	},
+	"3": {
+	  "en": {
+		"name": "S3",
+		"name_2": "Flexible",
+		"slogan": "Home Speaker",
+		"button": "Discover Now",
+		"button-mobile": "See more"
+
+	  },
+	  "pl": {
+		"name": "S3",
+		"name_2": "Flexible",
+		"slogan": "Głośnik domowy",
+		"button": "Odkryj teraz",
+		"button-mobile": "Więcej"
+	  }
+	}
+  },
+  "bestselling": [
+	  {
+		  "id": 1,	
+		  "category": {
+			  "en": "Audio",
+			  "pl": "Audio"
+			},
+		  "image": "bestselling-1.png"
+	  },
+	  {
+		  "id": 2,
+		  "category": {
+			  "en": "Premium TV",
+			  "pl": "Telewizory"
+			},
+		  "image": "bestselling-2.png"
+	  },
+	  {
+		  "id": 3,
+		  "category": {
+			  "en": "Gadgets",
+			  "pl": "Gadżety"
+			},
+		  "image": "bestselling-3.png"
+	  },
+	  {
+		  "id": 4,
+		  "category": {
+			  "en": "Tablets",
+			  "pl": "Tablety"
+			},
+		  "image": "bestselling-4.png"
+	  },
+	  {
+		  "id": 5,
+		  "category": {
+			  "en": "Smartphones",
+			  "pl": "Smartfony"
+			},
+		  "image": "bestselling-5.png"
+	  },
+	  {
+		  "id": 6,
+		  "category": {
+			  "en": "Camcorders",
+			  "pl": "Kamery"
+			},
+		  "image": "bestselling-6.png"
+	  },
+		{
+			"id": 7,
+			"category": {
+				"en": "PC",
+				"pl": "PC"
+			},
+			"image": "bestselling-7.png"
+		}
+	]
 }

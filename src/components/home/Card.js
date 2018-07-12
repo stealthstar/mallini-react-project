@@ -7,7 +7,8 @@ import "../../styles/home/Cards.sass";
 // - - - end imports - - - 
 
 const mapStateToProps = state => ({
-	lang: state.dropdownReducer.langDropdown
+	lang: state.dropdownReducer.langDropdown,
+	width: state.windowSizeReducer.windowWidth
 });
 
 // function mapDispatchToProps(dispatch) {
@@ -30,7 +31,13 @@ class Card extends React.Component {
 					<b>{data.cards[this.props.itemNo][this.props.lang].name}</b> {data.cards[this.props.itemNo][this.props.lang]["name_2"]}
 				</p>
 				<p className={"card__slogan"}>{data.cards[this.props.itemNo][this.props.lang].slogan}</p>
-				<p className={"card__cta"}>{data.cards[this.props.itemNo][this.props.lang].button}</p>
+				{
+					(this.props.width > 900) ?
+					<p className={"card__cta"}>{data.cards[this.props.itemNo][this.props.lang].button}</p>
+					:
+					<p className={"card__cta"}>{data.cards[this.props.itemNo][this.props.lang]['button-mobile']}</p>
+
+				}
 			</div>
 
 		)

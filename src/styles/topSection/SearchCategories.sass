@@ -1,27 +1,30 @@
-.categories
-	&__wrapper
-		width: 200px
-		height: 100%
-		display: flex
-		align-items: center
-		justify-content: center
-		button
-			font-size: 18px
-			width: auto
-			background-color: transparent
-			border: none
-			outline: none
-			cursor: pointer
-	&__menu
-		background-color: #fff
-		align-self: flex-start
-		p
-			cursor: pointer
-			font-size: 18px
-			height: 34px
-			line-height: 34px
-			width: 200px
-			padding: 0 15px
-			&:hover
-				color: white
-				background-color: #007aff
+.wrapper	
+	.categories
+		&__wrapper
+			width: 210px
+			height: 100%
+			display: flex
+			align-items: center
+			justify-content: center
+			button
+				font-size: 18px
+				width: auto
+				background-color: transparent
+				border: none
+				outline: none
+				cursor: pointer
+			.categories__menu
+				box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2)
+				background-color: #fff
+				align-self: flex-start
+				z-index: 11
+				p
+					cursor: pointer
+					font-size: 16px
+					height: 34px
+					line-height: 34px
+					width: 210px
+					padding: 0 15px
+					&:hover
+						color: white
+						background-color: #007aff

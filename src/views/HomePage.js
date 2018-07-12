@@ -7,8 +7,10 @@ import "../styles/home/HomePage.sass";
 import TopBar from '../components/topSection/TopBar';
 import TopContainer from '../components/topSection/TopContainer';
 import MobileMenu from '../components/mobileMenu/MobileMenu';
+import MainMenu from '../components/topSection/mainMenu/MainMenu';
 import Slider from '../components/home/Slider';
 import Cards from '../components/home/Cards';
+import BestSelling from '../components/home/BestSelling';
 
 const mapStateToProps = state => ({
 	width: state.windowSizeReducer.windowWidth,
@@ -35,6 +37,7 @@ class HomePage extends React.Component {
 				}>
 			{(this.props.width > 1000) && <TopBar />}
 			<TopContainer />
+			{(this.props.width > 1000) && <MainMenu />}
 			{
 					((this.props.mobileMenu) && (this.props.width <= 1000))? 
 					<MobileMenu />
@@ -43,6 +46,7 @@ class HomePage extends React.Component {
 				: 	<div>
 						<Slider />
 						<Cards />
+						<BestSelling />
 					</div>
 			}
 			

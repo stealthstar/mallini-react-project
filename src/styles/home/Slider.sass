@@ -169,7 +169,7 @@
 		margin: 0
 		position: relative
 		text-align: center
-		background: #000
+		background: none
 		img
 			width: 100%
 			vertical-align: top
@@ -215,6 +215,37 @@
 				left: 20%
 				top: 91%
 				transform: rotate(45deg)
+		.slider-details
+			position: absolute
+			height: 300px
+			width: 50%
+			padding: 20px
+
+			top: 50%
+			transform: translateY(-50%)
+			left: 20px
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: flex-start
+			text-transform: uppercase
+			&__category
+				color: #7a7a7a
+				font-size: 16px
+				margin-bottom: 10px
+			&__title
+				color: #000
+				font-size: 34px
+			&__subtitle
+				font-size: 30px
+				text-transform: none
+				font-weight: 300
+			&__cta
+				border: 2px solid #007aff
+				color: #007aff
+				padding: 10px 15px
+				font-size: 16px
+				margin-top: 20px
 	.control-dots
 		position: absolute
 		right: 0
@@ -222,7 +253,7 @@
 		text-align: center
 		width: 40px
 		height: 100%
-		padding-top: 25%
+		padding-top: 20%
 		bottom: 0
 		.dot
 			-webkit-transition: opacity 0.25s ease-in
