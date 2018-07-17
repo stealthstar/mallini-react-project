@@ -48,8 +48,11 @@ class BestSelling extends React.Component {
 						</button>
 						<button className={"bestselling__button--right flex-center"} onClick={this.next}>
 							<AngleRight />
-						</button>
+						</button>	
 					</div>
+					<a className={"bestselling__link"}>{
+							this.props.lang === 'en' ? "Full catalog >" : "Pełny katalog >"
+						}</a>
 			 	</div>
 				<div className={"bestselling__column bestselling__column--right"}>
 				<Slider ref={c => (this.slider = c)} {...settings}>

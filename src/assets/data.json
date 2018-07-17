@@ -120,5 +120,27 @@
 			},
 			"image": "bestselling-7.png"
 		}
+	],
+	"deals-of-the-month": [
+		{
+			"id": 1,
+			"price": 269.00,
+			"new-price": 169.95,
+			"quantity": 7,
+			"sold": 2,
+			"ends": ,
+			"pl": {
+				"name": "Inteligentny termostat ecobee3 lite"
+			},
+			"en": {
+				"name": "ecobee3 lite Smart Thermostat"
+			}
+		},
+		{
+
+		},
+		{
+
+		}
 	]
 }

@@ -11,6 +11,7 @@ import MainMenu from '../components/topSection/mainMenu/MainMenu';
 import Slider from '../components/home/Slider';
 import Cards from '../components/home/Cards';
 import BestSelling from '../components/home/BestSelling';
+import Showcase from '../components/home/Showcase';
 
 const mapStateToProps = state => ({
 	width: state.windowSizeReducer.windowWidth,
@@ -47,6 +48,7 @@ class HomePage extends React.Component {
 						<Slider />
 						<Cards />
 						<BestSelling />
+						<Showcase />
 					</div>
 			}
 			
