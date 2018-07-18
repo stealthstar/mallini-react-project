@@ -45,13 +45,13 @@ class Showcase extends React.Component {
 				<div className={"showcase__column showcase__column--right"}>
 					<Slider ref={c => (this.slider = c)} {...settings}>
 						
-							<div className={"slide"}>
+							<div className={"showcase__slide"}>
 								1
 							</div>
-							<div className={"slide"}>
+							<div className={"showcase__slide"}>
 								2
 							</div>
-							<div className={"slide"}>
+							<div className={"showcase__slide"}>
 								3
 							</div>
 						

@@ -38,6 +38,7 @@ class DealsOfTheMonth extends React.Component {
 			slidesToShow: 1,
 			slidesToScroll: 1
 		};
+		const dealsData = data["deals-of-the-month"];
 		return (
 				<div className={"deals"}>
 					<div className={"deals__header"}>
@@ -55,10 +56,8 @@ class DealsOfTheMonth extends React.Component {
 					</div>
 					<div className={"deals__content"} >
 						<Slider ref={c => (this.slider = c)} {...settings}>
-						
-							<DealSlide />
-							<DealSlide />
-							<DealSlide />
+							<DealSlide number={"2"} dealData={dealsData[0]}/>
+							<DealSlide number={"3"} dealData={dealsData[1]}/>
 						</Slider>
 					</div>
 				</div>

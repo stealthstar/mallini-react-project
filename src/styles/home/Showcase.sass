@@ -90,9 +90,9 @@
 section.showcase
 	background-color: #fff
 	display: flex
-	align-items: center
-	height: 320px
-	padding: 0 50px
+	align-items: flex-start
+	height: 100vh
+	padding: 0 50px 20px 50px
 
 .showcase
 	&__column
@@ -104,7 +104,7 @@ section.showcase
 			align-items: space-around
 			width: 30%
 			padding: 20px 20px 0 20px
-			justify-content: center
+			
 			p.bold
 				font-weight: 600
 			a.bestselling__link
@@ -114,3 +114,7 @@ section.showcase
 				font-weight: 600
 		&--right
 			width: 70%
+			padding: 20px
+			.showcase__slide
+				height: 700px
+				background-color: #eee

@@ -128,7 +128,7 @@
 			"new-price": 169.95,
 			"quantity": 7,
 			"sold": 2,
-			"ends": ,
+			"ends": [2018, 7, 31, 20, 0],
 			"pl": {
 				"name": "Inteligentny termostat ecobee3 lite"
 			},
@@ -137,9 +137,19 @@
 			}
 		},
 		{
+			"id": 2,
+			"price": 559.00,
+			"new-price": 429.00,
+			"quantity": 7,
+			"sold": 2,
+			"ends": [2018, 8, 20, 20, 0],
+			"pl": {
+				"name": "Telewizor LG 49UJ620V"
+			},
+			"en": {
+				"name": "TV LG 49UJ620V"
 
-		},
-		{
+			}
 
 		}
 	]
