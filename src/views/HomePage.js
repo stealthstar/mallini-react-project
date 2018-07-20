@@ -11,7 +11,7 @@ import MainMenu from '../components/topSection/mainMenu/MainMenu';
 import Slider from '../components/home/Slider';
 import Cards from '../components/home/Cards';
 import BestSelling from '../components/home/BestSelling';
-import Showcase from '../components/home/Showcase';
+import Showcase from '../components/home/showcase/Showcase';
 
 const mapStateToProps = state => ({
 	width: state.windowSizeReducer.windowWidth,

@@ -1,11 +1,33 @@
 {
   "categories": {
-	"en": ["TVs", "Smartphones", "Audio", "Photography", "Camcorders", "PC", "Consoles"],
-	"pl": ["Telewizory", "Smartfony", "Audio", "Fotografia", "Kamery", "PC", "Konsole"]
+	"en": ["TVs", "Smartphones", "Audio", 
+		"Photography", "Camcorders", "PC", 
+		"Consoles", "Smartwatches", "Home", "Drones"],
+	"pl": ["Telewizory", "Smartfony", "Audio", 
+		"Fotografia", "Kamery", "PC", "Konsole", 
+		"Smartwatche", "Dom", "Drony"]
   },
   "all-categories": {
 	"en": "All Categories",
 	"pl": "Wszystkie"
+  },
+  "currency": {
+	"usd": {
+		"multiplier": 1,
+		"symbol": "\u0024"
+	},
+	"gbp": {
+		"multiplier": 0.76,
+		"symbol": "\u00A3"
+	},
+	"eur": {
+		"multiplier": 0.86,
+		"symbol": "\u20AC"
+	},
+	"pln": {
+		"multiplier": 3.68,
+		"symbol": "PLN "
+	}
   },
   "images": {
 	"carousel": ["1.png", "2.png", "3.png"]
@@ -140,8 +162,8 @@
 			"id": 2,
 			"price": 559.00,
 			"new-price": 429.00,
-			"quantity": 7,
-			"sold": 2,
+			"quantity": 12,
+			"sold": 3,
 			"ends": [2018, 8, 20, 20, 0],
 			"pl": {
 				"name": "Telewizor LG 49UJ620V"
@@ -150,7 +172,196 @@
 				"name": "TV LG 49UJ620V"
 
 			}
+			
+		}
+	],
+	"products": [
+		{
+			"id": 1,
+			"price": 269.00,
+			"new-price": 169.95,
+			"quantity": 7,
+			"sold": 2,
+			"month-deal": true,
+			"ends": [
+				2018,
+				7,
+				31,
+				20,
+				0
+			],
+			"pl": {
+				"name": "Inteligentny termostat ecobee3 lite",
+				"category": "Dom"
+			},
+			"en": {
+				"name": "ecobee3 lite Smart Thermostat",
+				"category": "Home"
+			},
+			"tags": {
+				"hot": false,
+				"discount": 0,
+				"new": false,
+				"sale": false
+			},
+			"rating": 4.4
 
+		},
+		{
+			"id": 2,
+			"price": 559.00,
+			"new-price": 429.00,
+			"quantity": 12,
+			"sold": 3,
+			"month-deal": true,
+			"ends": [
+				2018,
+				8,
+				20,
+				20,
+				0
+			],
+			"pl": {
+				"name": "Telewizor LG 49UJ620V",
+				"category": "Telewizory"
+			},
+			"en": {
+				"name": "TV LG 49UJ620V",
+				"category": "TVs"
+			},
+			"tags": {
+				"hot": false,
+				"discount": 0,
+				"new": false,
+				"sale": false
+			},
+			"rating": 4.35
+		},
+		{
+			"id": 3,
+			"price": 299.95,
+			"new-price": 129.95,
+			"quantity": 2,
+			"sold": 4,
+			"month-deal": true,
+			"ends": [
+				2018,
+				7,
+				24,
+				20,
+				0
+			],
+			"pl": {
+				"name": "Beats Solo3 bezprzewodowe słuchawki nauszne",
+				"category": "Audio"
+			},
+			"en": {
+				"name": "Beats Solo3 Wireless On-Ear Headphones",
+				"category": "Audio"
+			},
+			"tags": {
+				"hot": false,
+				"discount": 0,
+				"new": false,
+				"sale": false
+			},
+			"rating": 3.4
+		},
+		{
+			"id": 4,
+			"price": 2989.95,
+			"new-price": null,
+			"quantity": 4,
+			"sold": 1,
+			"month-deal": false,
+			"ends": null,
+			"pl": {
+				"name": "Devialet Gold Phantom głośnik bezprzewodowy",
+				"category": "Audio"
+			},
+			"en": {
+				"name": "Devialet Gold Phantom Wireless Speaker",
+				"category": "Audio"
+			},
+			"tags": {
+				"hot": false,
+				"discount": 0,
+				"new": false,
+				"sale": false
+			},
+			"rating": 4.8
+		},
+		{
+			"id": 5,
+			"price": 369.00,
+			"new-price": null,
+			"quantity": 4,
+			"sold": 1,
+			"month-deal": false,
+			"ends": null,
+			"pl": {
+				"name": "Apple Watch Nike+ z opaską",
+				"category": "Smartwatche"
+			},
+			"en": {
+				"name": "Apple Watch Nike+ With Sport Band",
+				"category": "Smartwatches"
+			},
+			"tags": {
+				"hot": false,
+				"discount": 0,
+				"new": false,
+				"sale": false
+			},
+			"rating": 4.1
+		},
+		{
+			"id": 6,
+			"price": 109.95,
+			"new-price": null,
+			"quantity": 17,
+			"sold": 12,
+			"month-deal": false,
+			"ends": null,
+			"pl": {
+				"name": "Parrot Mambo mini dron",
+				"category": "Drony"
+			},
+			"en": {
+				"name": "Parrot Mambo MiniDrone",
+				"category": "Drones"
+			},
+			"tags": {
+				"hot": false,
+				"discount": 35,
+				"new": false,
+				"sale": false
+			},
+			"rating": 4.97
+		},
+		{
+			"id": 7,
+			"price": 129.95,
+			"new-price": null,
+			"quantity": 11,
+			"sold": 9,
+			"month-deal": false,
+			"ends": null,
+			"pl": {
+				"name": "Bose SoundLink Color głośnik bluetooth",
+				"category": "Audio"
+			},
+			"en": {
+				"name": "Bose SoundLink Color Bluetooth Speaker II",
+				"category": "Audio"
+			},
+			"tags": {
+				"hot": true,
+				"discount": 0,
+				"new": false,
+				"sale": false
+			},
+			"rating": 3.2
 		}
 	]
 }

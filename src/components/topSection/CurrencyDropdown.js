@@ -2,7 +2,7 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
+import data from '../../assets/data.json';
 import { changeCurrency } from '../../actions/changeCurrency';
 
 import "../../styles/topSection/Dropdowns.sass";
@@ -31,25 +31,13 @@ function mapDispatchToProps(dispatch) {
 	changeHandler(e) {
 		let val = e.target.value;
 		let symbols = ['\u0024', '\u00A3', '\u20AC', 'PLN '];
-		let symbol = () => {
-			switch(val) {
-				case 'usd':
-					return symbols[0];
-				case 'gbp':
-					return symbols[1];
-				case 'eur':
-					return symbols[2];
-				case 'pln':
-					return symbols[3];
-				default: 
-					return '&dollar;';
-			}
-		}
+		let symbol = val => data.currency[val].symbol;
+		let multiplier = val => data.currency[val].multiplier;
 		this.setState({
 			select: val
 		});
 		console.log(val)
-		let result = [val, symbol(val)]
+		let result = [val, symbol(val), multiplier(val)]
 
 		this.props.changeCurrency(result);
 	}

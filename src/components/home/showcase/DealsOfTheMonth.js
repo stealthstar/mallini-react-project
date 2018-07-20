@@ -8,9 +8,9 @@ import DealSlide from './DealSlide';
 import AngleLeft from 'react-icons/lib/fa/angle-left';
 import AngleRight from 'react-icons/lib/fa/angle-right';
 
-import data from '../../assets/data.json'
+import data from '../../../assets/data.json'
 
-import '../../styles/home/DealsOfTheMonth.sass'
+import '../../../styles/home/showcase/DealsOfTheMonth.sass'
 
 
 const mapStateToProps = state => ({
@@ -29,6 +29,19 @@ class DealsOfTheMonth extends React.Component {
 	prev() {
 		this.slider.slickPrev();
 	}
+
+	getDeals() {
+		let products = data.products;
+		let deals = [];
+		for (let i = 0; i < products.length; i++){
+			if (products[i]["month-deal"] === true) {
+				deals.push(products[i]);
+			}
+
+		}
+		return deals;
+	}
+
 	render() {
 		const settings = {
 			dots: false,
@@ -38,7 +51,7 @@ class DealsOfTheMonth extends React.Component {
 			slidesToShow: 1,
 			slidesToScroll: 1
 		};
-		const dealsData = data["deals-of-the-month"];
+		const dealsData = this.getDeals();
 		return (
 				<div className={"deals"}>
 					<div className={"deals__header"}>
@@ -56,8 +69,10 @@ class DealsOfTheMonth extends React.Component {
 					</div>
 					<div className={"deals__content"} >
 						<Slider ref={c => (this.slider = c)} {...settings}>
-							<DealSlide number={"2"} dealData={dealsData[0]}/>
-							<DealSlide number={"3"} dealData={dealsData[1]}/>
+								
+							<DealSlide dealData={dealsData[0]}/>
+							<DealSlide dealData={dealsData[1]}/>
+							<DealSlide dealData={dealsData[2]}/>
 						</Slider>
 					</div>
 				</div>

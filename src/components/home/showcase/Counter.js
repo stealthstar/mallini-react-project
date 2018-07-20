@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import dateF from 'date-fns';
-import '../../styles/home/Counter.sass';
+import '../../../styles/home/showcase/Counter.sass';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -69,13 +69,38 @@ class Counter extends React.Component {// eslint-disable-line react/prefer-state
         return (
             <div className={"counter"}>
                 <div className = "timer" > 
-					<p>Hurry up</p>
-					<p>Offer ends in:</p>
+					<p>{
+						this.props.lang === 'en' ? "Hurry up!" : "Pospiesz się!"
+					}</p>
+					<p>{
+						this.props.lang === 'en' ? "Offer ends in:" : "Oferta kończy się za:"
+					}</p>
 					<div className={"result"} >
-						<div className={"result--partial flex-center"}>{this.convertSeconds(this.state.left).d}</div>
-						<div className={"result--partial flex-center"}>{this.convertSeconds(this.state.left).h}</div>
-						<div className={"result--partial flex-center"}>{this.convertSeconds(this.state.left).m}</div>
-						<div className={"result--partial flex-center"}>{this.convertSeconds(this.state.left).s}</div>
+						<div className={"result--partial flex-center"}>
+							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).d}</p>
+							<p className={"flex-center res-desc"}>{
+								this.props.lang === 'en' ? "DAYS" : "DNI"
+							}</p>
+						</div>
+						<div className={"result--partial flex-center"}>
+							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).h}</p>
+							<p className={"flex-center res-desc"}>{
+								this.props.lang === 'en' ? "HOURS" : "GODZIN"
+							}</p>
+						</div>
+						<div className={"result--partial flex-center"}>
+							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).m}</p>
+							<p className={"flex-center res-desc"}>{
+								this.props.lang === 'en' ? "MINUTES" : "MINUT"
+							}</p>
+						</div>
+						<div className={"result--partial flex-center"}>
+							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).s}</p>
+							<p className={"flex-center res-desc"}>{
+								this.props.lang === 'en' ? "SECONDS" : "SEKUND"
+							}</p>
+						</div>
+						
 					</div>
 				</div>
             </div>

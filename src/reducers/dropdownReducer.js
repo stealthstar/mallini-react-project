@@ -1,7 +1,8 @@
 export const dropdownReducer = (state = {
 	langDropdown: 'en',
 	currency: 'usd',
-	currencySymbol: '\u0024'
+	currencySymbol: '\u0024',
+	currencyMultiplier: 1
 }, action) => {
 	switch (action.type) {
 		case 'CHANGE_LANGUAGE':
@@ -13,7 +14,8 @@ export const dropdownReducer = (state = {
 			return {
 				...state,
 				currency: action.payload[0],
-				currencySymbol: action.payload[1]
+				currencySymbol: action.payload[1],
+				currencyMultiplier: action.payload[2]
 			}
 		default:
 			return state;

@@ -40,8 +40,18 @@ class BestSelling extends React.Component {
 		return(
 		 <section className={"bestselling"} >
 				<div className={"bestselling__column bestselling__column--left"}>
-					<p className={"bold"}>2017's </p>
-					<p>Best Selling Products</p>
+					{this.props.lang === 'en' 
+					?  	<div>
+							<p className={"bold"}>2017's </p>
+							<p>Best Selling Products</p>
+						</div>
+					
+					: 	<div>
+							<p >Najpopularniejsze produkty </p>
+							<p className={"bold"}>2017 roku</p>
+						</div>
+					}
+					
 					<div className={"bestselling__buttons"}>
 						<button className={"bestselling__button--left flex-center"} onClick={this.prev}>
 							<AngleLeft />
