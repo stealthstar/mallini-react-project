@@ -1,3 +1,5 @@
+@import '../../../styles/_variables.sass'
+
 .showcase-product
 	&__wrapper
 		height: 50%
@@ -6,6 +8,64 @@
 		display: flex
 		flex-direction: column
 		align-items: center
+		align-content: center
+	&__wrapper:nth-child(3),
+	&__wrapper:nth-child(6)
+		.showcase-product__inner
+			border-right: none
+			&:hover
+				border-right: 2px solid $light-blue
+
 	&__inner
 		height: 90%
-		background-color: #eee
+		width: 100%
+		display: flex
+		align-items: center
+		flex-direction: column
+		border: 2px solid $white
+		border-right: 2px solid #eee
+		padding: 20px 30px
+		&:hover
+			border-radius: 10px
+			cursor: pointer
+			border: 2px solid $light-blue
+	&__photo
+		height: 80%
+		width: 100%
+		min-height: 200px
+		background-color: #ddd
+	&__price
+		color: $blue
+		font:
+			size: 16px
+			weight: 600
+		margin: 10px 0
+	&__prices
+		display: flex
+		align-items: center
+	&__old-price
+		font-size: 16px
+		margin-left: 10px
+		color: #aaaaaa
+		text-decoration: line-through
+	&__name
+		font:
+			size: 16px
+		text-align: center
+		width: 65%
+		min-width: 220px
+		height: 50px
+
+@media screen and (max-width: 1400px)
+	.showcase-product
+		&__wrapper
+			height: 50%
+			background-color: #fff
+			width: 50%
+		&__wrapper:nth-child(2),
+		&__wrapper:nth-child(4)
+			.showcase-product__inner
+				border-right: none
+		&__inner,
+		&__wrapper:nth-child(3)
+			border-right: 2px solid #eee

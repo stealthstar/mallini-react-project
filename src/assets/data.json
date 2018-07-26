@@ -1,9 +1,9 @@
 {
   "categories": {
-	"en": ["TVs", "Smartphones", "Audio", 
+	"en": ["All Categories", "TVs", "Smartphones", "Audio", 
 		"Photography", "Camcorders", "PC", 
 		"Consoles", "Smartwatches", "Home", "Drones"],
-	"pl": ["Telewizory", "Smartfony", "Audio", 
+	"pl": ["Wszystkie", "Telewizory", "Smartfony", "Audio", 
 		"Fotografia", "Kamery", "PC", "Konsole", 
 		"Smartwatche", "Dom", "Drony"]
   },
@@ -202,7 +202,7 @@
 				"hot": false,
 				"discount": 0,
 				"new": false,
-				"sale": false
+				"sale": true
 			},
 			"rating": 4.4
 
@@ -233,7 +233,7 @@
 				"hot": false,
 				"discount": 0,
 				"new": false,
-				"sale": false
+				"sale": true
 			},
 			"rating": 4.35
 		},
@@ -247,7 +247,7 @@
 			"ends": [
 				2018,
 				7,
-				24,
+				27,
 				20,
 				0
 			],
@@ -311,7 +311,7 @@
 				"hot": false,
 				"discount": 0,
 				"new": false,
-				"sale": false
+				"sale": true
 			},
 			"rating": 4.1
 		},
@@ -335,7 +335,7 @@
 				"hot": false,
 				"discount": 35,
 				"new": false,
-				"sale": false
+				"sale": true
 			},
 			"rating": 4.97
 		},
@@ -359,9 +359,33 @@
 				"hot": true,
 				"discount": 0,
 				"new": false,
-				"sale": false
+				"sale": true
 			},
 			"rating": 3.2
+		},
+		{
+			"id": 8,
+			"price": 179.95,
+			"new-price": null,
+			"quantity": 17,
+			"sold": 4,
+			"month-deal": false,
+			"ends": null,
+			"pl": {
+				"name": "Bose SoundLink głośnik Wi-Fi",
+				"category": "Audio"
+			},
+			"en": {
+				"name": "Bose SoundLink Wi-Fi Speaker",
+				"category": "Audio"
+			},
+			"tags": {
+				"hot": true,
+				"discount": 0,
+				"new": false,
+				"sale": true
+			},
+			"rating": 3.7
 		}
 	]
 }

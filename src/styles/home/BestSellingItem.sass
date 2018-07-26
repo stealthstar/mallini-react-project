@@ -1,0 +1,58 @@
+@import '../../styles/_variables.sass'
+
+section.bestselling-products
+	background-color: #fff
+	display: flex
+	flex-direction: column
+	padding: 0 70px 20px 70px
+
+.bestselling-products
+
+	&__item
+		height: 300px
+		
+		display: flex
+		flex-direction: column
+		align-items: center
+		outline: none
+		color: #626262
+		border: 2px solid $white
+		padding: 20px 10px
+		img
+			display: block
+			height: 200px
+			margin: 0 auto
+		p
+			width: 80%
+			text-align: center
+			font-size: 16px
+			font-weight: 600
+		&:hover
+			cursor: pointer
+			border: 2px solid $light-blue
+			border-radius: 10px
+	&__image
+		height: 200px
+		width: 200px
+		background-color: #ddd
+	&__arrow--next,
+	&__arrow--prev
+		width: 20px
+		height: 20px
+		background-color: red
+	&__price
+		color: $blue
+		height: auto
+		margin: 15px 0
+		span
+			color: #cccccc
+			text-decoration: line-through
+	&__name
+		height: 40px
+
+@media screen and (max-width: 1500px)
+	.bestselling-products
+
+	&__item
+		height: 380px
+		width: 260px

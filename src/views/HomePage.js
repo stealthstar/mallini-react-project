@@ -11,6 +11,7 @@ import MainMenu from '../components/topSection/mainMenu/MainMenu';
 import Slider from '../components/home/Slider';
 import Cards from '../components/home/Cards';
 import BestSelling from '../components/home/BestSelling';
+import BestSellingProducts from '../components/home/BestSellingProducts';
 import Showcase from '../components/home/showcase/Showcase';
 
 const mapStateToProps = state => ({
@@ -49,6 +50,7 @@ class HomePage extends React.Component {
 						<Cards />
 						<BestSelling />
 						<Showcase />
+						<BestSellingProducts />
 					</div>
 			}
 			

@@ -1,3 +1,5 @@
+@import '../../styles/_variables.sass'
+
 /* Slider
 
 .slick-slider
@@ -87,27 +89,43 @@
 
 // My Styles 
 
-.deals
-	border: 2px solid #4cd964
-	border-radius: 8px
-	padding: 10px 20px
-	height: 100%
-	min-width: 400px
-	&__header
+section.bestselling-products
+	background-color: #fff
+	display: flex
+	flex-direction: column
+	padding: 0 70px 20px 70px
+
+.bestselling-products
+	&__row
+		height: 80px
+		&--top
+			display: flex
+			justify-content: space-between
+			align-items: center
+			width: 100%
+			padding: 20px 20px 0 20px
+			border-bottom: 2px solid #eee
+			p
+				font-size: 26px
+			p.bold
+				font-weight: 600
+		&--bottom
+			padding-top: 10px
+			width: 100%
+	&__buttons
 		display: flex
 		align-items: center
-		justify-content: space-between
-		border-bottom: 2px solid #eeeeee
-		padding: 14px 0
-		button
-			background: none
-			font-size: 28px
-			color: #7f7f7f
-			&:hover
-				color: #000,
-
-		p
-			font-size: 28px
-			width: 100%
-			text-align: center
-	&__content
+		justify-content: center
+		color: #7a7a7a
+		font-size: 32px
+		outline: none
+		border: none
+		margin-right: 8px
+		background-color: #fff
+		&:hover
+			cursor: pointer
+		.bestselling-products__button--right
+			margin-right: 0px
+			svg
+				// transform: translateY(-2px)
+	

@@ -44,7 +44,6 @@ class MainMenu extends React.Component {
 	menuClickHandler(e) {
 		let event = e;
 		let id = event.target.id;
-		console.log(id)
 		if(event.target.classList.contains('submenu__toggle')) {
 			this.setState({
 				activeMenu: id

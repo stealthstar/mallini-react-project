@@ -55,7 +55,7 @@ class DealsOfTheMonth extends React.Component {
 		return (
 				<div className={"deals"}>
 					<div className={"deals__header"}>
-						<button className={"bestselling__button--left flex-center"} onClick={this.prev}>
+						<button className={"btn bestselling__button--left flex-center"} onClick={this.prev}>
 							<AngleLeft />
 						</button>
 							<p>
@@ -63,7 +63,7 @@ class DealsOfTheMonth extends React.Component {
 									this.props.lang === 'en' ? "Deals of the month" : "Promocje miesiąca"
 								}
 							</p>
-						<button className={"bestselling__button--left flex-center"} onClick={this.prev}>
+						<button className={"btn bestselling__button--left flex-center"} onClick={this.next}>
 							<AngleRight />
 						</button>
 					</div>
