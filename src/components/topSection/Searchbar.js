@@ -21,7 +21,8 @@ import "../../styles/topSection/Searchbar.sass";
 const mapStateToProps = state => ({
 	lang: state.dropdownReducer.langDropdown,
 	currencyDropdown: state.dropdownReducer.currencyDropdown,
-	searchTerm: state.searchReducer.searchTerm
+	searchTerm: state.searchReducer.searchTerm,
+	width: state.windowSizeReducer.windowWidth
 });
 
 function mapDispatchToProps(dispatch) {
@@ -70,7 +71,7 @@ class Searchbar extends React.Component {
 							:
 								"Wyszukaj..."
 						}/>
-					<SearchCategories />
+					{this.props.width > 1000 && <SearchCategories />}
 				</div>
 				<div className={"search-form__categories"}>
 					<div className={"search-form__submit"} onClick={(e) => this.sumbitHandler(e)}>

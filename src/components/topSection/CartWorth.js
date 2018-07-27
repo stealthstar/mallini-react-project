@@ -29,12 +29,7 @@ class CartWorth extends React.Component {
 	render() {
 		return (
 			<div className={'cart-worth'}>
-				{
-				this.props.cartWorth % 1 === 0 ?
-					this.props.currencySymbol+this.props.cartWorth.toFixed(2)
-				:
-					this.props.cartWorth
-				}
+				{this.props.currencySymbol+this.props.cartWorth.toFixed(2)}
 			</div>
 		)
 	}

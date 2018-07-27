@@ -1,6 +1,6 @@
-export function addToCart(object) {
+export function addToCart(id) {
 	return {
 		type: "ADD_TO_CART",
-		payload: object
+		payload: id
 	};
 }

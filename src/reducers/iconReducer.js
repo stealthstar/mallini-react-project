@@ -1,5 +1,5 @@
 export const iconReducer = (state = {
-	compare: 0,
+	compare: [],
 	wishlist: [],
 	cart: []
 }, action) => {
@@ -7,12 +7,17 @@ export const iconReducer = (state = {
 		case 'ADD_COMPARE':
 			return {
 				...state,
-				compare: state.compare + (action.payload)
+				compare: state.compare.concat(action.payload)
+			}
+		case 'ADD_WISH':
+			return {
+				...state,
+				wishlist: state.wishlist.concat(action.payload)
 			}
 		case 'RESET_COMPARE':
 			return {
 				...state,
-				compare: 0
+				compare: []			
 			}
 		default:
 			return state;

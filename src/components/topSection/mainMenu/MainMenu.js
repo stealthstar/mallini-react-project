@@ -5,6 +5,12 @@ import { bindActionCreators } from 'redux';
 import SortDesc from 'react-icons/lib/fa/sort-desc';
 import ChevronDown from 'react-icons/lib/fa/chevron-down';
 import ChevronUp from 'react-icons/lib/fa/chevron-up';
+import EllipsisV from 'react-icons/lib/fa/ellipsis-v';
+
+import { changeView } from '../../../actions/changeView';
+
+import data from '../../../assets/data.json';
+
 import "../../../styles/topSection/mainMenu/MainMenu.sass";
 
 const mapStateToProps = state => ({
@@ -12,11 +18,11 @@ const mapStateToProps = state => ({
 	width: state.windowSizeReducer.windowWidth
 });
 
-// function mapDispatchToProps(dispatch) {
-// 	return bindActionCreators({
-// 		changeCurrency: changeCurrency
-// 	}, dispatch);
-// }
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({
+		changeView: changeView
+	}, dispatch);
+}
 
 class MainMenu extends React.Component {
 	// eslint-disable-line react/prefer-stateless-function
@@ -28,9 +34,8 @@ class MainMenu extends React.Component {
 		}
 
 		this.menuClickHandler = this.menuClickHandler.bind(this);
+		this.clickChangeView = this.clickChangeView.bind(this);
 	}
-
-
 
 	componentDidMount() {
 		let self=this;
@@ -39,12 +44,10 @@ class MainMenu extends React.Component {
 		})
 	}
 
-	
-
 	menuClickHandler(e) {
 		let event = e;
 		let id = event.target.id;
-		if(event.target.classList.contains('submenu__toggle')) {
+		if (event.target.classList.contains('submenu__toggle')) {
 			this.setState({
 				activeMenu: id
 			})
@@ -57,13 +60,16 @@ class MainMenu extends React.Component {
 				activeMenu: ''
 			})
 		}
-
+		id === 'home' ? this.props.changeView(id) : null
 	}
 
-
+	clickChangeView(view) {
+		
+	}
 
 	render() {
 		let styleBlue = {color: 'blue'};
+		const categories = data.categories;
 		return (
 			<div>
 				<div className={"main-menu"} >
@@ -79,8 +85,9 @@ class MainMenu extends React.Component {
 						{
 							this.state.activeMenu === "category" ?
 								<div className={"submenu__content"}>
-									<p className={"submenu__item"}>Item1</p>
-									<p className={"submenu__item"}>Item2</p>
+									{categories[this.props.lang].map((el) => (
+										<p key={el} className={"submenu__item"}>{el}</p>	
+									))}
 								</div>
 							: 
 							 null
@@ -207,28 +214,7 @@ class MainMenu extends React.Component {
 								null
 						}
 					</div>
-					<div className={"submenu__wrapper submenu--small"}>
-						<button
-							id={"products"} className={"submenu__toggle submenu__toggle--small"} onClick={(e) => this.menuClickHandler(e)}>
-							{this.props.lang === "en" ?
-								"Products"
-								:
-								"Produkty"
-							}
 
-						</button>
-					</div>
-					<div className={"submenu__wrapper submenu--small"}>
-						<button
-							id={"brands"} className={"submenu__toggle submenu__toggle--small"} onClick={(e) => this.menuClickHandler(e)}>
-							{this.props.lang === "en" ?
-								"Brands"
-								:
-								"Marki"
-							}
-
-						</button>
-					</div>
 					<div className={"submenu__wrapper submenu--small"}>
 						<button
 							id={"deals"} className={"submenu__toggle submenu__toggle--small"} onClick={(e) => this.menuClickHandler(e)}>
@@ -251,6 +237,32 @@ class MainMenu extends React.Component {
 
 						</button>
 					</div>
+					<div className={"submenu__wrapper submenu--small"}>
+						<button id={"rest"} className={"submenu__toggle submenu__toggle--small"} onClick={(e) => this.menuClickHandler(e)}>
+							<EllipsisV className={"submenu-toggle"}/>
+						</button>
+						{
+							this.state.activeMenu === "rest" ?
+								<div className={"submenu__content"}>
+									<p className={"submenu__item"}>
+										{this.props.lang === "en" ?
+											"Brands"
+											:
+											"Marki"
+										}
+									</p>
+									<p className={"submenu__item"}>
+										{this.props.lang === "en" ?
+											"Products"
+											:
+											"Produkty"
+										}
+									</p>
+								</div>
+								:
+								null
+						}
+					</div>
 				</div>
 
 			</div>
@@ -259,4 +271,4 @@ class MainMenu extends React.Component {
 
 }
 
-export default connect(mapStateToProps)(MainMenu)
+export default connect(mapStateToProps, mapDispatchToProps)(MainMenu)

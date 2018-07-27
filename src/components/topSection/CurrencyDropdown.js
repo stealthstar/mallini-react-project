@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import data from '../../assets/data.json';
 import { changeCurrency } from '../../actions/changeCurrency';
-
+import { recalculateCartWorth } from "../../actions/recalculateCartWorth";
 import "../../styles/topSection/Dropdowns.sass";
 // - - - end imports - - -
 
@@ -14,7 +14,8 @@ const mapStateToProps = state => ({
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		changeCurrency: changeCurrency
+		changeCurrency: changeCurrency,
+		recalculateCart: recalculateCartWorth
 	}, dispatch);
 }
 
@@ -36,10 +37,10 @@ function mapDispatchToProps(dispatch) {
 		this.setState({
 			select: val
 		});
-		console.log(val)
 		let result = [val, symbol(val), multiplier(val)]
 
 		this.props.changeCurrency(result);
+		this.props.recalculateCart(multiplier(val))
 	}
 
 	render() {

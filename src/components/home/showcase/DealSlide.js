@@ -50,6 +50,7 @@ class DealSlide extends React.Component {
 		return (
 			<div className={"slide"}>
 				<div className={"slide__image--wrapper"}>
+					<img src={"http://via.placeholder.com/350x350"} />
 					<div className={"savings"}>
 						<p>{
 							this.props.lang === 'en' ? `Save` : `Taniej o`

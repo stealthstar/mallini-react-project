@@ -386,6 +386,102 @@
 				"sale": true
 			},
 			"rating": 3.7
+		},
+		{
+			"id": 9,
+			"price": 19.99,
+			"new-price": null,
+			"quantity": 25,
+			"sold": 11,
+			"month-deal": false,
+			"ends": null,
+			"pl": {
+				"name": "Behringer HPS3000 słuchawki studyjne",
+				"category": "Audio"
+			},
+			"en": {
+				"name": "Behringer HPS3000 Studio Headphones",
+				"category": "Audio"
+			},
+			"tags": {
+				"hot": false,
+				"discount": 0,
+				"new": false,
+				"sale": false
+			},
+			"rating": 4.25
+		},
+		{
+			"id": 10,
+			"price": 184.95,
+			"new-price": 159.90,
+			"quantity": 16,
+			"sold": 4,
+			"month-deal": false,
+			"ends": null,
+			"pl": {
+				"name": "HP 8300 Elite mały komputer PC",
+				"category": "PC"
+			},
+			"en": {
+				"name": "HP 8300 Elite Small Form Factor Desktop",
+				"category": "PC"
+			},
+			"tags": {
+				"hot": false,
+				"discount": 0,
+				"new": false,
+				"sale": true
+			},
+			"rating": 4.29
+		},
+		{
+			"id": 11,
+			"price": 1628.99,
+			"new-price": null,
+			"quantity": 16,
+			"sold": 4,
+			"month-deal": false,
+			"ends": null,
+			"pl": {
+				"name": "Komputer gamingowy Aurora R7",
+				"category": "PC"
+			},
+			"en": {
+				"name": "Alienware Gaming PC Desktop Aurora R7",
+				"category": "PC"
+			},
+			"tags": {
+				"hot": false,
+				"discount": 0,
+				"new": false,
+				"sale": false
+			},
+			"rating": 4.29
+		},
+		{
+			"id": 12,
+			"price": 699.99,
+			"new-price": 649.99,
+			"quantity": 32,
+			"sold": 22,
+			"month-deal": true,
+			"ends": [2018,8,30,20,0],
+			"pl": {
+				"name": "Parrot Anafi",
+				"category": "Drony"
+			},
+			"en": {
+				"name": "Parrot Anafi",
+				"category": "Drones"
+			},
+			"tags": {
+				"hot": true,
+				"discount": 0,
+				"new": false,
+				"sale": true
+			},
+			"rating": 4.76
 		}
 	]
 }

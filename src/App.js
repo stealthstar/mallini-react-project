@@ -7,6 +7,7 @@ import  {windowResize} from './actions/windowResize';
 
 
 import HomePage from './views/HomePage';
+import ComparePage from './views/ComparePage';
 
 import "./styles/theme.sass";
 
@@ -59,6 +60,12 @@ class App extends React.Component {
 				return (
 					<div className={"wrapper"}>
 						<HomePage />
+					</div>
+				)
+			case 'compare':
+				return (
+					<div className={"wrapper"}>
+						<ComparePage />
 					</div>
 				)
 			case 'product':

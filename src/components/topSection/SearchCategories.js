@@ -40,7 +40,6 @@ class SearchCategories extends React.Component {
 		let event = e;
 		e.preventDefault();
 		let val = event.target.innerHTML;
-		console.log(val);
 		this.setState({
 			menuVisible: false
 		});

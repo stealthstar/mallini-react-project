@@ -51,7 +51,7 @@ class BestsellingProducts extends React.Component {
 						slidesToShow: 4,
 						slidesToScroll: 1,
 						infinite: true,
-						dots: true
+						dots: false
 					}
 				},
 				{
@@ -60,7 +60,7 @@ class BestsellingProducts extends React.Component {
 						slidesToShow: 3,
 						slidesToScroll: 1,
 						infinite: true,
-						dots: true
+						dots: false
 					}
 				},
 				{
@@ -68,14 +68,16 @@ class BestsellingProducts extends React.Component {
 					settings: {
 						slidesToShow: 2,
 						slidesToScroll: 1,
-						initialSlide: 2
+						initialSlide: 2,
+						dots: false
 					}
 				},
 				{
 					breakpoint: 620,
 					settings: {
 						slidesToShow: 1,
-						slidesToScroll: 1
+						slidesToScroll: 1,
+						dots: false
 					}
 				}
 			]
@@ -111,6 +113,7 @@ class BestsellingProducts extends React.Component {
 										newPrice={el["new-price"]}
 										id={el.id}
 										name={el[this.props.lang].name}
+										key={el.id}
 									
 									/>
 

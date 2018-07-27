@@ -4,7 +4,7 @@ import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 //actions import
-import { changeCurrency } from '../../actions/changeCurrency';
+import { changeView } from '../../actions/changeView';
 //Font Awesome import
 import FaHeartO from 'react-icons/lib/fa/heart-o';
 //styles import
@@ -12,14 +12,15 @@ import "../../styles/topSection/WishlistIcon.sass";
 //- - - end imports - - -
 
 const mapStateToProps = state => ({
-	currencyDropdown: state.dropdownReducer.currencyDropdown
+	currencyDropdown: state.dropdownReducer.currencyDropdown,
+	wishlist: state.iconReducer.wishlist
 });
 
-// function mapDispatchToProps(dispatch) {
-// 	return bindActionCreators({
-// 		changeCurrency: changeCurrency
-// 	}, dispatch);
-// }
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({
+		changeView: changeView
+	}, dispatch);
+}
 
 class WishlistIcon extends React.Component {
 	// eslint-disable-line react/prefer-stateless-function
@@ -29,10 +30,16 @@ class WishlistIcon extends React.Component {
 
 
 	render() {
+		const styleNone = { backgroundColor: "#f5f5f5", color: "#0f0f0f" };
+		const styled = { backgroundColor: "red", color: "white" };
 		return (
 			<div className={"icon icon-wishlist"}>
 				<FaHeartO />
-				<div className={"icon__number icon-wishlist__number"}>
+				<div className={"icon__number icon-wishlist__number flex-center"} style={
+					this.props.wishlist.length > 0 ? styled : styleNone
+				}
+				>
+					{this.props.wishlist.length}
 				</div>
 			</div>
 		)
@@ -40,4 +47,4 @@ class WishlistIcon extends React.Component {
 
 }
 
-export default connect(mapStateToProps)(WishlistIcon)
+export default connect(mapStateToProps, mapDispatchToProps)(WishlistIcon)

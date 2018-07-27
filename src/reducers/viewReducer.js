@@ -9,6 +9,11 @@ export const viewReducer = (state = {
 				viewName: 'product',
 				activeProductId: action.payload
 			}
+		case 'CHANGE_VIEW':
+			return {
+				...state,
+				viewName: action.payload
+			}
 		case 'SHOW_HOMEPAGE':
 			return {
 				...state,

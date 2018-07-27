@@ -3,8 +3,7 @@ import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { addCompare } from '../../actions/addCompare';
-import { resetCompare } from '../../actions/resetCompare';
+import { changeView } from '../../actions/changeView';
 
 import FaExchange from 'react-icons/lib/fa/exchange';
 
@@ -14,13 +13,14 @@ import "../../styles/topSection/CompareIcon.sass";
 const mapStateToProps = state => ({
 	currencyDropdown: state.dropdownReducer.currencyDropdown,
 	compare: state.iconReducer.compare,
-	lang: state.dropdownReducer.landDropdown
+	lang: state.dropdownReducer.landDropdown,
+	view: state.viewReducer.viewName,
+
 });
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		addCompare: addCompare,
-		resetCompare: resetCompare
+		changeView: changeView
 	}, dispatch);
 }
 
@@ -33,15 +33,15 @@ class CompareIcon extends React.Component {
 	}
 
 	clickHandler() {
-		if (this.props.compare < 5)	{this.props.addCompare(1);}
-		else {this.props.resetCompare(1)}
+		this.props.changeView('compare');
 	}
 
 	render() {
 		const styleNone =	{ backgroundColor: "#f5f5f5", color: "#0f0f0f"};
 		const styled = 		{ backgroundColor: "red", color: "white"};
 		return (
-			<div className={"icon icon-compare"} onClick={() => this.clickHandler()} 
+			<div className={"icon icon-compare"}
+				onClick={this.clickHandler} 
 				title={
 					this.props.lang ==="en" ? 
 						"max 5 Items"
@@ -52,10 +52,10 @@ class CompareIcon extends React.Component {
 				<div 
 					className={"icon__number icon-compare__number flex-center"}
 					style={
-						this.props.compare > 0 ? styled : styleNone
+						this.props.compare.length > 0 ? styled : styleNone
 					}
 					>
-					{this.props.compare}
+					{this.props.compare.length}
 				</div>
 			</div>
 		)

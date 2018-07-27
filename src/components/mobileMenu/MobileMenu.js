@@ -7,8 +7,8 @@ import { bindActionCreators } from 'redux';
 import {changeActive} from '../../actions/menuActions'
 
 //component imports
-import Searchbar from '../topSection/Searchbar.js'
-
+import Searchbar from '../topSection/Searchbar.js';
+import { changeView } from '../../actions/changeView';
 //font-awesome imports
 import ChevronDown from 'react-icons/lib/fa/chevron-down';
 import ChevronUp from 'react-icons/lib/fa/chevron-up';
@@ -29,7 +29,8 @@ const mapStateToProps = state => ({
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		changeActive: changeActive
+		changeActive: changeActive,
+		changeView: changeView
 	}, dispatch);
 }
 class MobileMenu extends React.Component {
@@ -47,13 +48,18 @@ class MobileMenu extends React.Component {
 		} else {
 			this.props.changeActive(id);
 		}
+		id === 'home' ? this.props.changeView(id) : null
 	}
 
 	render() {
+
 		return (
 			<div className={"mobile-menu"}>
+			
 				<div className={"mobile-menu__section mobile-menu__section--home"} >
-					<div className={"mobile-menu__label"}>
+					<div className={"mobile-menu__label"}
+						id={"home"}
+						onClick={(e) => this.clickHandler(e)}>
 						<p>{this.props.language === "en" ?
 							'Home' : 'Strona Główna'
 						}</p>

@@ -10,7 +10,8 @@ import "../../styles/topSection/CartIcon.sass";
 // - - - end imports - - - 
 
 const mapStateToProps = state => ({
-	lang: state.dropdownReducer.langDropdown
+	lang: state.dropdownReducer.langDropdown,
+	items: state.cartReducer.items
 });
 
 // function mapDispatchToProps(dispatch) {
@@ -27,12 +28,19 @@ class CartIcon extends React.Component {
 
 
 	render() {
+		const styleNone = { backgroundColor: "#f5f5f5", color: "#0f0f0f" };
+		const styled = { backgroundColor: "red", color: "white" };
 		return (
 			<div className={"icon icon-cart"}>
 				<FaShoppingBag />
-				<div className={"icon__number icon-cart__number flex-center"}>
-					0
-				</div>
+				{
+					<div className={"icon__number icon-cart__number flex-center"} 
+					style = { this.props.items.length > 0 ? styled : styleNone }>
+						{this.props.items.length}
+					</div>
+
+				}
+				
 			</div>
 		)
 	}
