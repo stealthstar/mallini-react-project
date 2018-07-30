@@ -7,6 +7,104 @@
 		"Fotografia", "Kamery", "PC", "Konsole", 
 		"Smartwatche", "Dom", "Drony"]
   },
+
+  "footer": {
+	  "en": {
+		"about": [
+			"About Us",
+			"Company Info",
+			"News",
+			"Investors",
+			"Careers",
+			"Government relations",
+			"Policies"
+		],
+		"category": [
+			"Shop by Category",
+			"Today's Deals",
+			"Best Sellers",
+			"New Arrivals",
+			"Top Rated",
+			"Popular",
+			"Featured"
+		],
+		"support": [
+			"Support and Service",
+			"Customer Service",
+			"Protection Plans",
+			"Schedule a Service",
+			"Trade-in Program",
+			"Product Recalls",
+			"FAQ"
+		],
+		"partnerships": [
+			"Partnerships",
+			"Affiliate Program",
+			"Developers",
+			"Mediamarket Ignite",
+			"Mediamarket for Education",
+			"Mediamarket Direct",
+			"Advertise with Us"
+		],
+		"customer": [	
+			"Customer Care",
+			"My Account",
+			"Track Order",
+			"Shop",
+			"Wishlist",
+			"Compare",
+			"Returns/Exchange"
+		]
+	  },
+	  "pl": {
+		"about": [
+			"O nas",
+			"Informacje o firmie",
+			"Wiadomości",
+			"Inwestorzy",
+			"Kariera",
+			"Relacje rządowe",
+			"Polityki"
+		],
+		"category": [
+			"Według Kategorii",
+			"Oferty dnia",
+			"Bestsellery",
+			"Nowości",
+			"Najlepiej oceniane",
+			"Popularne",
+			"Promowane"
+		],
+		"support": [
+			"Wsparcie i obsługa",
+			"Obsługa klienta",
+			"Plany ochronne",
+			"Zamów usługę",
+			"Program trade-in",
+			"Wycofanie produktów",
+			"FAQ"
+		],
+		"partnerships": [
+			"Partnerstwa",
+			"Program przyłączania",
+			"Deweloperzy",
+			"Mediamarket Ignite",
+			"Mediamarket dla Edukacji",
+			"Mediamarket Direct",
+			"Reklamuj się z nami"
+		],
+		"customer": [
+			"Obsługa klienta",
+			"Moje konto",
+			"Śledź zamówienie",
+			"Sklep",
+			"Lista życzeń",
+			"Porównania",
+			"Zwroty i wymiana"
+		]
+	  }
+  },
+
   "all-categories": {
 	"en": "All Categories",
 	"pl": "Wszystkie"

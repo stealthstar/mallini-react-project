@@ -55,7 +55,7 @@ class HomePage extends React.Component {
 						<BestSelling />
 						<Showcase />
 						<BestSellingProducts />
-
+						<Footer />
 					</div>
 			}
 			

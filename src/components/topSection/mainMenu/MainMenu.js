@@ -239,7 +239,7 @@ class MainMenu extends React.Component {
 					</div>
 					<div className={"submenu__wrapper submenu--small"}>
 						<button id={"rest"} className={"submenu__toggle submenu__toggle--small"} onClick={(e) => this.menuClickHandler(e)}>
-							<EllipsisV className={"submenu-toggle"}/>
+							...
 						</button>
 						{
 							this.state.activeMenu === "rest" ?

@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import { changeView } from '../../actions/changeView';
 import FooterIcons from './FooterIcons';
+import FooterColumns from './FooterColumns';
 
 import FaExchange from 'react-icons/lib/fa/exchange';
 
@@ -35,10 +36,13 @@ class Footer extends React.Component {
 		this.props.changeView('compare');
 	}
 
+
 	render() {
+
 		return (
 			<footer className={"footer-main"}>
 				<FooterIcons />
+				<FooterColumns />
 			</footer>
 		)
 	}
