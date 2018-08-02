@@ -28,6 +28,9 @@ const mapStateToProps = state => ({
 // }
 class HomePage extends React.Component {
 	// eslint-disable-line react/prefer-stateless-function
+	constructor(props) {
+		super(props);
+	}
 
 	render() {
 		return (

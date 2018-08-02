@@ -22,7 +22,7 @@ class FooterLinksColumn extends React.Component {
 		let title = data.footer[this.props.lang][this.props.links][0]
 		let links = data.footer[this.props.lang][this.props.links].slice(1);
 		return (
-			<div className={"footer-main__column footer-main__column--links"} >
+			<div className={`footer-main__column footer-main__column--links ${title[0]}`} >
 				<p>{title}</p>
 				
 				{

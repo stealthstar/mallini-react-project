@@ -248,7 +248,7 @@
 			"new-price": 169.95,
 			"quantity": 7,
 			"sold": 2,
-			"ends": [2018, 7, 31, 20, 0],
+			"ends": [2018, 9, 22, 20, 0],
 			"pl": {
 				"name": "Inteligentny termostat ecobee3 lite"
 			},
@@ -283,8 +283,8 @@
 			"month-deal": true,
 			"ends": [
 				2018,
-				7,
-				31,
+				8,
+				21,
 				20,
 				0
 			],
@@ -344,8 +344,8 @@
 			"month-deal": true,
 			"ends": [
 				2018,
-				7,
-				27,
+				9,
+				1,
 				20,
 				0
 			],

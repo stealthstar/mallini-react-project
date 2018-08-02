@@ -15,3 +15,39 @@
 		p:nth-child(1)
 			font-weight: 600
 			font-size: 16px
+
+@media screen and (max-width: 1200px)
+	.footer-main
+		&__icons
+			display: flex
+			width: 100%
+			flex-wrap: wrap
+		&__icon
+			width: 33.333%
+			flex-direction: column
+			height: 200px
+			p
+				text-align: center
+		&__icon:nth-child(1),
+		&__icon:nth-child(2),
+		&__icon:nth-child(3)
+			border-bottom: 2px solid #eee
+@media screen and (max-width: 800px)
+	.footer-main
+		&__icons
+			display: flex
+			width: 100%
+			flex-wrap: wrap
+		&__icon
+			width: 50%
+			img
+				height: 80px
+		&__icon:nth-child(1),
+		&__icon:nth-child(2),
+		&__icon:nth-child(3),
+		&__icon:nth-child(4)
+			border-bottom: 2px solid #eee
+		&__icon:nth-child(2),
+		&__icon:nth-child(4),
+		&__icon:nth-child(6),
+			border-right: none

@@ -8,11 +8,7 @@ import TopBar from '../components/topSection/TopBar';
 import TopContainer from '../components/topSection/TopContainer';
 import MobileMenu from '../components/mobileMenu/MobileMenu';
 import MainMenu from '../components/topSection/mainMenu/MainMenu';
-import Slider from '../components/home/Slider';
-import Cards from '../components/home/Cards';
-import BestSelling from '../components/home/BestSelling';
-import BestSellingProducts from '../components/home/BestSellingProducts';
-import Showcase from '../components/home/showcase/Showcase';
+import Footer from '../components/footer/Footer';
 import MobileShopByCat from "../components/mobileMenu/MobileShopByCat";
 
 const mapStateToProps = state => ({
@@ -49,6 +45,7 @@ class ComparePage extends React.Component {
 					//which prevents it from displaying when mobile menu is visible
 				: 	<div>
 						Compare
+						<Footer />
 					</div>
 			}
 			
