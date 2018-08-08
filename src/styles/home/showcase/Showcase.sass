@@ -92,8 +92,8 @@ section.showcase
 	background-color: #fff
 	display: flex
 	align-items: flex-start
-	height: 100vh
-	padding: 0 50px 20px 50px
+	padding: 10px 50px 10px 50px
+	
 
 .showcase
 	&__column
@@ -117,6 +117,9 @@ section.showcase
 		&--right
 			width: 70%
 			padding: 20px
+			.slick-slider
+				.slick-slide
+					min-height: 800px
 			.showcase__slide
 				height: calc(100vh - 120px)
 				outline: none
@@ -126,6 +129,7 @@ section.showcase
 					flex-wrap: wrap
 					height: 100%
 					width: 100%
+					min-height: 800px
 						
 	.showcase__menu
 		height: 80px
@@ -146,19 +150,20 @@ section.showcase
 					color: #000000
 					cursor: pointer
 		.spacer
-			width: 100%
+			width: auto
 		.buttons
 			width: 100%
 			display: flex
-			flex-grow: 1	
+			flex-wrap: wrap
 			.slider-button
+				flex-grow: 1	
 				background-color: #fff
 				color: #7f7f7f
 				font-weight: 600
-				height: 24px
+				height: 1.2rem
 				width: auto
-				padding: 0 20px
-				font-size: 20px
+				padding: 0
+				font-size: 1.2rem
 				&:hover,
 				&.active
 					color: $red

@@ -29,15 +29,16 @@ class Slider extends React.Component {
 		const img1 = require("../../assets/img/" + data.images.carousel[0])
 		const img2 = require("../../assets/img/" + data.images.carousel[1])
 		const img3 = require("../../assets/img/" + data.images.carousel[2])
+
 		return (
 			<Carousel
-				infiniteLoop={true}
-				verticalSwipe={'natural'}
+				infinite={true}
 				dynamicHeight
 				showThumbs={false}
-				autoplay={true}
+				autoPlay={true}
 				interval={4000}
 				emulateTouch
+				infiniteLoop={true}
 				showStatus={false}
 				showArrows={false}
 			>

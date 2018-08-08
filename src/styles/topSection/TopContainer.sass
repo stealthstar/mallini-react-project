@@ -12,14 +12,20 @@
 			height: 100%
 			align-items: center
 			padding: 0 0 0 50px
+			&--left
+				min-width: 300px
 			&--right
 				justify-content: space-between
-				padding: 0 50px
+				padding: 0 50px 0 20px
+				min-width: 370px
 		&__search-column
 			display: flex
-			width: 50%
+			width: auto
 		p 
 			font-size: 26px
+		&__logo
+			&:hover
+				cursor: pointer
 		.icon
 			height: 50px
 			width: 50px

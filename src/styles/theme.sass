@@ -1,7 +1,7 @@
 @import "variables"
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&subset=latin-ext')
 html
-  font-size: 10px
+  font-size: 16px
 
 body
   margin: 0
@@ -20,7 +20,6 @@ body
   background-color: $white
 
 .wrapper
-	background-color: #aaa
 	width: 100%
 
 
@@ -34,3 +33,11 @@ body
 	border: none
 	&:hover
 		cursor: pointer
+
+@media screen and (max-width: 1200px)
+	html
+  		font-size: 14px
+
+@media screen and (max-width: 540px)
+	html
+  		font-size: 16px

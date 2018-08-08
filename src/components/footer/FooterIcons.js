@@ -33,7 +33,7 @@ class FooterIcons extends React.Component {
 				<section className={"footer-main__icons"}>
 					<div className={"footer-main__icon footer-main__icon-1"}>
 						<img src={require("../../assets/img/icons/icon-1.png")} />
-						<div classname={"footer-main__text"}>
+						<div className={"footer-main__text"}>
 							<p>
 								{
 									this.props.lang === "en" ?
@@ -52,7 +52,7 @@ class FooterIcons extends React.Component {
 					</div>
 					<div className={"footer-main__icon footer-main__icon-2"}>
 						<img src={require("../../assets/img/icons/icon-2.png")} />
-						<div classname={"footer-main__text"}>
+						<div className={"footer-main__text"}>
 							<p>
 								{
 									this.props.lang === "en" ?
@@ -71,7 +71,7 @@ class FooterIcons extends React.Component {
 					</div>
 					<div className={"footer-main__icon footer-main__icon-3"}>
 						<img src={require("../../assets/img/icons/icon-3.png")} />	
-						<div classname={"footer-main__text"}>
+						<div className={"footer-main__text"}>
 							<p>
 								{
 									this.props.lang === "en" ?
@@ -90,7 +90,7 @@ class FooterIcons extends React.Component {
 					</div>
 					<div className={"footer-main__icon footer-main__icon-4"}>
 						<img src={require("../../assets/img/icons/icon-4.png")} />
-						<div classname={"footer-main__text"}>
+						<div className={"footer-main__text"}>
 							<p>
 								{
 									this.props.lang === "en" ?
@@ -109,7 +109,7 @@ class FooterIcons extends React.Component {
 					</div>
 					<div className={"footer-main__icon footer-main__icon-5"}>
 						<img src={require("../../assets/img/icons/icon-5.png")} />	
-						<div classname={"footer-main__text"}>
+						<div className={"footer-main__text"}>
 							<p>Cashback</p>
 							<p>
 								{
@@ -123,7 +123,7 @@ class FooterIcons extends React.Component {
 					</div>
 					<div className={"footer-main__icon footer-main__icon-6"}>
 						<img src={require("../../assets/img/icons/icon-6.png")} />	
-						<div classname={"footer-main__text"}>
+						<div className={"footer-main__text"}>
 							<p>
 								{
 									this.props.lang === "en" ?

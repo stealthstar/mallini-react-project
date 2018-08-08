@@ -13,7 +13,7 @@ import "../../styles/topSection/CompareIcon.sass";
 const mapStateToProps = state => ({
 	currencyDropdown: state.dropdownReducer.currencyDropdown,
 	compare: state.iconReducer.compare,
-	lang: state.dropdownReducer.landDropdown,
+	lang: state.dropdownReducer.langDropdown,
 	view: state.viewReducer.viewName,
 
 });

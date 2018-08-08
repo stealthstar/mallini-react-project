@@ -77,25 +77,25 @@ class Counter extends React.Component {// eslint-disable-line react/prefer-state
 					}</p>
 					<div className={"result"} >
 						<div className={"result--partial flex-center"}>
-							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).d}</p>
+							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).d || 0}</p>
 							<p className={"flex-center res-desc"}>{
 								this.props.lang === 'en' ? "DAYS" : "DNI"
 							}</p>
 						</div>
 						<div className={"result--partial flex-center"}>
-							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).h}</p>
+							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).h || 0}</p>
 							<p className={"flex-center res-desc"}>{
 								this.props.lang === 'en' ? "HOURS" : "GODZIN"
 							}</p>
 						</div>
 						<div className={"result--partial flex-center"}>
-							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).m}</p>
+							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).m || 0}</p>
 							<p className={"flex-center res-desc"}>{
 								this.props.lang === 'en' ? "MINUTES" : "MINUT"
 							}</p>
 						</div>
 						<div className={"result--partial flex-center"}>
-							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).s}</p>
+							<p className={"flex-center res-circle"}>{this.convertSeconds(this.state.left).s || 0}</p>
 							<p className={"flex-center res-desc"}>{
 								this.props.lang === 'en' ? "SECONDS" : "SEKUND"
 							}</p>

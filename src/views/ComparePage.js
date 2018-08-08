@@ -2,7 +2,6 @@ import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import "../styles/comparePage/ComparePage.sass";
 
 import TopBar from '../components/topSection/TopBar';
 import TopContainer from '../components/topSection/TopContainer';
@@ -10,11 +9,16 @@ import MobileMenu from '../components/mobileMenu/MobileMenu';
 import MainMenu from '../components/topSection/mainMenu/MainMenu';
 import Footer from '../components/footer/Footer';
 import MobileShopByCat from "../components/mobileMenu/MobileShopByCat";
+import CompareItem from "../components/comparePage/CompareItem";
+
+import "../styles/comparePage/ComparePage.sass";
 
 const mapStateToProps = state => ({
 	width: state.windowSizeReducer.windowWidth,
 	height: state.windowSizeReducer.windowHeight,
-	mobileMenu: state.menuReducer.mobileMenu
+	mobileMenu: state.menuReducer.mobileMenu,
+	lang: state.dropdownReducer.langDropdown,
+	compare: state.iconReducer.compare
 })
 // function mapDispatchToProps(dispatch) {
 // 	return bindActionCreators({
@@ -23,6 +27,9 @@ const mapStateToProps = state => ({
 // }
 class ComparePage extends React.Component {
 	// eslint-disable-line react/prefer-stateless-function
+	constructor(props) {
+		super(props);
+	}
 
 	render() {
 		return (
@@ -44,7 +51,26 @@ class ComparePage extends React.Component {
 					//rest of the homepage is wrapped in condition
 					//which prevents it from displaying when mobile menu is visible
 				: 	<div>
-						Compare
+						<section className={"compare"} >
+							<h2>{
+								this.props.lang === 'en' ? "Comparison" : "Porównanie"
+							}</h2>
+							<p>
+							{	this.props.compare.length > 0 ? 
+										this.props.compare.map(el => <CompareItem number={el} />)
+											
+										
+										
+								
+								:
+									this.props.lang === 'en' ? 
+										"This is a page which will display the products you chose for comparison." 
+										: "Na tej stronie wyświetlone zostaną przedmioty, które wybierzesz do porównania."
+							}</p>
+							<div className={"compare__items"}>
+
+							</div>
+						</section>
 						<Footer />
 					</div>
 			}

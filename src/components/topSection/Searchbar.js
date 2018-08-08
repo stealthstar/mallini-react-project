@@ -67,9 +67,9 @@ class Searchbar extends React.Component {
 						onChange = {(e) => this.changeHandler(e) }
 						placeholder={
 							this.props.lang === 'en' ? 
-								"Type to search..."
+								"Search..."
 							:
-								"Wyszukaj..."
+								"Szukaj..."
 						}/>
 					{this.props.width > 1000 && <SearchCategories />}
 				</div>

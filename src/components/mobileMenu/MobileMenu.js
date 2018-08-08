@@ -16,7 +16,8 @@ import Facebook from 'react-icons/lib/fa/facebook';
 import Twitter from 'react-icons/lib/fa/twitter';
 import Pinterest from 'react-icons/lib/fa/pinterest';
 import YouTube from 'react-icons/lib/fa/youtube-play';
-
+//
+import { showMenu, hideMenu } from '../../actions/menuActions'
 //style import
 import "../../styles/mobileMenu/MobileMenu.sass";
 
@@ -24,13 +25,15 @@ import "../../styles/mobileMenu/MobileMenu.sass";
 
 const mapStateToProps = state => ({
 	language: state.dropdownReducer.langDropdown,
-	active: state.menuReducer.active
+	active: state.menuReducer.active,
+	mobileMenu: state.menuReducer.mobileMenu
 });
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		changeActive: changeActive,
-		changeView: changeView
+		changeView: changeView,
+		hideMenu: hideMenu
 	}, dispatch);
 }
 class MobileMenu extends React.Component {
@@ -48,7 +51,11 @@ class MobileMenu extends React.Component {
 		} else {
 			this.props.changeActive(id);
 		}
-		id === 'home' ? this.props.changeView(id) : null
+		if(id === 'home'){
+			this.props.changeView(id);
+			this.props.hideMenu();
+
+		} 
 	}
 
 	render() {

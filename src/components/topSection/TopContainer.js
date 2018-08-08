@@ -11,6 +11,7 @@ import CartIcon from './CartIcon';
 import CartWorth from './CartWorth';
 //actions imports
 import {showMenu, hideMenu} from '../../actions/menuActions'
+import { changeView } from '../../actions/changeView';
 //Font Awesome imports
 import Menu from 'react-icons/lib/md/menu';
 import Close from 'react-icons/lib/md/close';
@@ -28,7 +29,8 @@ const mapStateToProps = state => ({
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		showMenu: showMenu,
-		hideMenu: hideMenu
+		hideMenu: hideMenu,
+		changeView: changeView
 	}, dispatch);
 }
 
@@ -39,6 +41,7 @@ class TopContainer extends React.Component {
 		super(props);
 
 		this.handleClick = this.handleClick.bind(this);
+		this.goHome = this.goHome.bind(this);
 	}
 	
 	handleClick() {
@@ -47,14 +50,18 @@ class TopContainer extends React.Component {
 			this.props.showMenu()
 	}
 
+	goHome() {
+		this.props.changeView('home');
+	}
+
 	render() {
 		return (
 			<section className={"top-container"}>
-				<div className={"top-container__column"} >
+				<div className={"top-container__column top-container__column--left"} >
 					
 						{
 							(this.props.width > 1000) ?
-						 		<p className={"top-container__logo"}><span><b>Media</b>market</span> </p>
+						 		<p className={"top-container__logo"} onClick={() => this.goHome()}><span><b>Media</b>market</span> </p>
 						 		:
 									this.props.mobileMenu ?
 									<div className={"menu-toggle menu-toggle--yellow flex-center"} onClick={this.handleClick}>
