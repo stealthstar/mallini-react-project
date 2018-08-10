@@ -44,6 +44,7 @@ class App extends React.Component {
 		this.props.resize([width, height]);
 	}
 
+	//lifecycle methods
 	componentWillMount() {
 		this.updateDimensions();
 	}
@@ -53,20 +54,16 @@ class App extends React.Component {
 	componentWillUnmount() {
 		window.removeEventListener("resize", this.updateDimensions);
 	}
-
+	// - - render - -
     render() {
 		switch(this.props.viewName) {
 			case 'home':
 				return (
-					<div className={"wrapper"}>
-						<HomePage />
-					</div>
+					<HomePage />
 				)
 			case 'compare':
 				return (
-					<div className={"wrapper"}>
 						<ComparePage />
-					</div>
 				)
 			case 'product':
 				return (

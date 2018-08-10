@@ -7,29 +7,8 @@ import {iconReducer} from './iconReducer'
 import {windowSizeReducer} from './windowSizeReducer'
 import {menuReducer} from './menuReducer'
 
-
-// const rootReducer = (state = {
-// 	viewName: 'home',
-// 	activeProductId: 1,
-// 	langDropdown: 'en',
-// 	currencyDropdown: 'usd' 
-// }, action) => {
-// 	switch(action.type) {
-// 		case 'SHOW_PRODUCT':
-// 			return {
-// 				...state,
-// 				viewName: 'product',
-// 				activeProductId: action.payload
-// 			}
-// 		case 'SHOW_HOMEPAGE':
-// 			return {
-// 				...state,
-// 				viewName: 'home'
-// 			}
-// 		default: 
-// 			return state;
-// 	}
-// }
+import thunk from "redux-thunk";
+import { routerReducer } from "react-router-redux";
 
 const rootReducer = combineReducers({
  	viewReducer,
@@ -38,7 +17,8 @@ const rootReducer = combineReducers({
 	searchReducer,
 	iconReducer,
 	windowSizeReducer,
-	menuReducer
+	menuReducer,
+	routing: routerReducer
 });
 
 export default rootReducer;

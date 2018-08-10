@@ -10,7 +10,8 @@ import MainMenu from '../components/topSection/mainMenu/MainMenu';
 import Footer from '../components/footer/Footer';
 import MobileShopByCat from "../components/mobileMenu/MobileShopByCat";
 import CompareItem from "../components/comparePage/CompareItem";
-
+//Font Awesome imports
+import FaBarChart from 'react-icons/lib/fa/bar-chart';
 import "../styles/comparePage/ComparePage.sass";
 
 const mapStateToProps = state => ({
@@ -50,25 +51,27 @@ class ComparePage extends React.Component {
 					
 					//rest of the homepage is wrapped in condition
 					//which prevents it from displaying when mobile menu is visible
-				: 	<div>
+				: 	<div className={"wrapper"}>
 						<section className={"compare"} >
 							<h2>{
 								this.props.lang === 'en' ? "Comparison" : "Porównanie"
 							}</h2>
 							<p>
-							{	this.props.compare.length > 0 ? 
-										this.props.compare.map(el => <CompareItem number={el} />)
-											
-										
-										
-								
+							</p>
+							<div className={"compare__items"}>
+								{	this.props.compare.length > 0 ? 
+										this.props.compare.map(el => <CompareItem number={el} />)								
 								:
 									this.props.lang === 'en' ? 
-										"This is a page which will display the products you chose for comparison." 
-										: "Na tej stronie wyświetlone zostaną przedmioty, które wybierzesz do porównania."
-							}</p>
-							<div className={"compare__items"}>
-
+											<div className={"no-compare"}>
+												<span>"This is a page which will display the products you chose for comparison."</span>
+												<FaBarChart />
+											</div> 
+											: <div className={"no-compare"}>
+												<span>"Na tej stronie wyświetlone zostaną przedmioty, które wybierzesz do porównania."</span>
+												<FaBarChart />
+											</div>
+							}
 							</div>
 						</section>
 						<Footer />

@@ -1,0 +1,40 @@
+@import '../variables.sass'
+.compare__item
+	display: flex
+	flex-direction: column
+	width: 33.333%
+	border: 1px solid #ddd
+
+	padding: 5px 10px
+	min-height: 500px
+	header
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 100%
+		h3
+			font-size: 1.2rem
+			font-weight: 600
+			padding: 10px 0
+			width: calc(100% - 30px)
+		.remove-compare
+			height: 30px
+			width: 30px
+			border-radius: 25%
+			display: flex
+			align-items: center
+			align-self: flex-start
+			justify-content: center
+			&:hover
+				cursor: pointer
+				background-color: $red
+
+@media screen and(max-width: 1000px)
+	.compare__item
+		width: 33.333%
+@media screen and(max-width: 800px)
+	.compare__item
+		width: 50%
+@media screen and(max-width: 540px)
+	.compare__item
+		width: 100%

@@ -9,6 +9,11 @@ export const iconReducer = (state = {
 				...state,
 				compare: state.compare.concat(action.payload)
 			}
+		case 'REMOVE_COMPARE':
+			return {
+				...state,
+				compare: state.compare.filter(item => item !== action.payload)
+			}
 		case 'ADD_WISH':
 			return {
 				...state,
