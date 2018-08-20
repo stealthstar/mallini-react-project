@@ -9,24 +9,25 @@ import MobileMenu from '../components/mobileMenu/MobileMenu';
 import MainMenu from '../components/topSection/mainMenu/MainMenu';
 import Footer from '../components/footer/Footer';
 import MobileShopByCat from "../components/mobileMenu/MobileShopByCat";
-import CompareItem from "../components/comparePage/CompareItem";
+import CartItem from "../components/cartPage/CartItem";
 //Font Awesome imports
-import FaBarChart from 'react-icons/lib/fa/bar-chart';
-import "../styles/comparePage/ComparePage.sass";
+import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
+import "../styles/cartPage/CartPage.sass";
 
 const mapStateToProps = state => ({
 	width: state.windowSizeReducer.windowWidth,
 	height: state.windowSizeReducer.windowHeight,
 	mobileMenu: state.menuReducer.mobileMenu,
 	lang: state.dropdownReducer.langDropdown,
-	compare: state.iconReducer.compare
+	cartItems: state.cartReducer.items,
+	cartSize: state.cartReducer.itemsAmount
 })
 // function mapDispatchToProps(dispatch) {
 // 	return bindActionCreators({
 
 // 	}, dispatch);
 // }
-class ComparePage extends React.Component {
+class CartPage extends React.Component {
 	// eslint-disable-line react/prefer-stateless-function
 	constructor(props) {
 		super(props);
@@ -52,24 +53,28 @@ class ComparePage extends React.Component {
 					//rest of the page is wrapped in condition
 					//which prevents it from displaying when mobile menu is visible
 				: 	<div className={"wrapper"}>
-						<section className={"compare"} >
+						<section className={"cart"} >
 							<h2>{
-								this.props.lang === 'en' ? "Comparison" : "Porównanie"
+								this.props.lang === 'en' ? "Your Cart" : "Twój koszyk"
 							}</h2>
 							<p>
 							</p>
-							<div className={"compare__items"}>
-								{	this.props.compare.length > 0 ? 
-										this.props.compare.map(el => <CompareItem number={el} />)								
+							<div className={"cart__items"}>
+									{this.props.cartSize > 0 ? 
+										Object.keys(this.props.cartItems).map((key) => {
+											if (this.props.cartItems[key] > 0) {
+												return <CartItem number={Number(key)} key={key} amount={this.props.cartItems[key]}/>
+											}
+									})								
 								:
 									this.props.lang === 'en' ? 
-											<div className={"no-compare"}>
-												<span>"This is a page which will display the products you chose for comparison."</span>
-												<FaBarChart />
+											<div className={"no-cart"}>
+												<span>"Your cart is empty."</span>
+												<FaShoppingCart />
 											</div> 
-											: <div className={"no-compare"}>
-												<span>"Na tej stronie wyświetlone zostaną przedmioty, które wybierzesz do porównania."</span>
-												<FaBarChart />
+											: <div className={"no-cart"}>
+												<span>"Twój koszyk jest pusty."</span>
+												<FaShoppingCart />
 											</div>
 							}
 							</div>
@@ -84,4 +89,4 @@ class ComparePage extends React.Component {
 
 }
 
-export default connect(mapStateToProps)(ComparePage)
+export default connect(mapStateToProps)(CartPage)

@@ -44,7 +44,7 @@ class CompareIcon extends React.Component {
 				onClick={this.clickHandler} 
 				title={
 					this.props.lang ==="en" ? 
-						"max 5 Items"
+						"max 5 items"
 					:
 						"maksymalnie 5"
 					}>

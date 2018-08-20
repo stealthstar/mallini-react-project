@@ -63,7 +63,7 @@ class BestSellingItem extends React.Component {
 
 	// dispatch methods
 	dispatchAddToCart() {
-		let price = this.props.newPrice || this.props.price;
+		let price = this.props.newPrice ? this.props.newPrice : this.props.price;
 		let id = this.props.id;
 		let arr = [id, price];
 		this.props.addToCart(arr);

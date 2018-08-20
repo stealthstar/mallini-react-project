@@ -3,15 +3,18 @@
 	display: flex
 	flex-direction: column
 	width: 33.333%
-	border: 1px solid #ddd
-
 	padding: 5px 10px
 	min-height: 500px
+	border-right: 2px solid #eee
+	&:last-of-type
+		border-right: none
 	header
 		display: flex
 		align-items: center
 		justify-content: space-between
 		width: 100%
+		height: 60px
+		padding-bottom: 10px
 		h3
 			font-size: 1.2rem
 			font-weight: 600
@@ -28,6 +31,80 @@
 			&:hover
 				cursor: pointer
 				background-color: $red
+	&-picture
+		height: 280px
+		width: 100%
+		max-width: 280px
+		align-self: center
+		background-color: #eee
+		margin-bottom: 10px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding: 10px
+		&:hover
+			cursor: pointer
+			opacity: 0.8
+			div
+				display: flex				
+		div:nth-child(1)
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			border: 2px solid #fefefe
+			margin: 5px 0 0 5px
+			color: #000000
+			font-size: 22px
+			align-items: center
+			justify-content: center
+				
+		&__add-to-cart
+			border: 2px solid $blue
+			color: $blue
+			font-weight: 600
+			text-transform: uppercase
+			border-radius: 10px
+			padding: 5px 10px
+			align-items: center
+			justify-content: center
+			
+		div
+			display: none
+			transition: all .10s ease-in-out
+			user-select: none
+			&:hover
+				color: $white
+				background-color: $blue
+				border: 2px solid $blue
+			&:active
+				background-color: $red
+				border: 2px solid $red
+				color: $white
+
+.compare-table
+	width: 100%
+	min-height: 100px
+	&__column
+		display: flex
+		flex-direction: column
+		width: 50%
+		height: 100%
+		&--left
+			justify-content: flex-start
+			.compare-table__item
+				text-align: left
+				border-right: 2px dotted #eee
+				font-weight: 600
+		&--right
+			justify-content: flex-end
+			.compare-table__item
+				text-align: right
+	&__item
+		padding: 10px
+		flex-grow: 1
+		border-bottom: 2px dotted #eee
+		
+
 
 @media screen and(max-width: 1000px)
 	.compare__item

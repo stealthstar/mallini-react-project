@@ -1,0 +1,115 @@
+@import '../variables.sass'
+.cart__item
+	display: flex
+	flex-direction: row
+	align-items: center
+	width: 100%
+	padding: 15px 10px
+	border-bottom: 2px solid #eee
+	&:last-of-type
+		border-bottom: none
+
+	h3
+		font-size: 1.2rem
+		font-weight: 600
+		width: 80%
+		padding: 10px 0
+		display: flex
+		align-self: flex-start
+	.remove-cart
+		height: 30px
+		width: 30px
+		border-radius: 25%
+		display: flex
+		align-items: center
+		justify-content: center
+		&:hover
+			cursor: pointer
+			background-color: $red
+	&-picture
+		height: 120px
+		width: 10%
+		max-width: 120px
+		align-self: center
+		background-color: #eee
+		margin-right: 10px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding: 10px
+		&:hover
+			cursor: pointer
+			opacity: 0.8
+			div
+				display: flex				
+		div:nth-child(1)
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			border: 2px solid #fefefe
+			margin: 5px 0 0 5px
+			color: #000000
+			font-size: 22px
+			align-items: center
+			justify-content: center
+				
+		&__add-to-cart
+			border: 2px solid $blue
+			color: $blue
+			font-weight: 600
+			text-transform: uppercase
+			border-radius: 10px
+			padding: 5px 10px
+			align-items: center
+			justify-content: center
+			
+		div
+			display: none
+			transition: all .10s ease-in-out
+			user-select: none
+			&:hover
+				color: $white
+				background-color: $blue
+				border: 2px solid $blue
+			&:active
+				background-color: $red
+				border: 2px solid $red
+				color: $white
+	&__input-wrapper
+		width: 10%
+		display: flex
+		flex-direction: column
+		align-items: center
+		.buttons
+			display: flex
+			align-items: center
+			justify-content: center
+			button
+				outline: none
+				width: 30px
+				height: 30px
+				border: 1px solid $white
+				border-radius: 50%
+				font-size: 16px
+				&:hover
+					cursor: pointer
+				&:nth-child(1)
+					margin-right: 10px
+					&:hover
+						background-color: $green
+				&:nth-child(2)
+					&:hover
+						background-color: $red
+	&__amount
+		height: 40px
+		width: 40px
+		margin: 10px 0
+		border: 2px solid #ddd
+		border-radius: 5px
+	&__item
+		padding: 10px
+		flex-grow: 1
+		border-bottom: 2px dotted #eee
+.remove-cart
+	align-self: flex-start
+	background-color: #eee

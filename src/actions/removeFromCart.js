@@ -1,6 +1,6 @@
-export function removeFromCart(object) {
+export function removeFromCart(arr) {
 	return {
 		type: "REMOVE_FROM_CART",
-		payload: object
+		payload: arr
 	};
 }
