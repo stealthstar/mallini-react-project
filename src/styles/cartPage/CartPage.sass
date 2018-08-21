@@ -6,12 +6,25 @@
 	width: 100%
 	h2
 		margin-bottom: 20px
+	.inner-wrapper
+		display: flex
+
 	&__items
 		display: flex
-		width: 100%
+		width: 80%
 		justify-content: flex-start
 		align-items: center
 		flex-direction: column
+		&__top-row
+			display: flex
+			justify-content: flex-end
+			padding-right: 40px
+			p
+				width: 8rem
+				text-align: center
+				font-weight: 600
+				font-size: 1.2rem
+
 	.no-cart
 		display: flex
 		flex-direction: column
@@ -25,5 +38,27 @@
 			font-size: 1.2rem
 			color: #000
 			margin-bottom: 100px
+
+@media screen and (max-width: 1200px)
+	.cart
+		padding: 20px 70px
+		flex-wrap: wrap
+		h2
+			margin-bottom: 20px
+		&__items
+			display: flex
+			width: 100%
+		
+@media screen and (max-width: 1000px)
+	.cart
+		padding: 20px 10px
+		flex-wrap: wrap
+		h2
+			margin-bottom: 20px
+		&__items
+			display: flex
+			width: 100%
+		.inner-wrapper
+			flex-direction: column
 		
 

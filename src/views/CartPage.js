@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 
+//component imports
 import TopBar from '../components/topSection/TopBar';
 import TopContainer from '../components/topSection/TopContainer';
 import MobileMenu from '../components/mobileMenu/MobileMenu';
@@ -10,6 +11,7 @@ import MainMenu from '../components/topSection/mainMenu/MainMenu';
 import Footer from '../components/footer/Footer';
 import MobileShopByCat from "../components/mobileMenu/MobileShopByCat";
 import CartItem from "../components/cartPage/CartItem";
+import CartSummary from "../components/cartPage/CartSummary";
 //Font Awesome imports
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import "../styles/cartPage/CartPage.sass";
@@ -59,25 +61,40 @@ class CartPage extends React.Component {
 							}</h2>
 							<p>
 							</p>
-							<div className={"cart__items"}>
-									{this.props.cartSize > 0 ? 
-										Object.keys(this.props.cartItems).map((key) => {
-											if (this.props.cartItems[key] > 0) {
-												return <CartItem number={Number(key)} key={key} amount={this.props.cartItems[key]}/>
-											}
-									})								
+							
+									{this.props.cartSize > 0 ?
+									<div className={"inner-wrapper"}> 
+										<div className={"cart__items"}>
+											<div style={{"width":"100%"}}>
+												<div className={"cart__items__top-row"}>
+													<p>{this.props.lang === "en" ? "Qty:" : "Ilość:"}</p>
+													<p>{this.props.lang === "en" ? "Price:" : "Cena:"}</p>
+													<p>{this.props.lang === "en" ? "Total:" : "Wartość:"}</p>
+												</div>
+												{
+													Object.keys(this.props.cartItems).map((key) => {
+													if (this.props.cartItems[key] > 0) {
+														return <CartItem number={Number(key)} key={key} amount={this.props.cartItems[key]}/>
+													}
+												}	
+											)}
+											</div>	
+										</div>
+										<CartSummary />							
+									</div>
 								:
 									this.props.lang === 'en' ? 
 											<div className={"no-cart"}>
-												<span>"Your cart is empty."</span>
+												<span>Your cart is empty.</span>
 												<FaShoppingCart />
 											</div> 
 											: <div className={"no-cart"}>
-												<span>"Twój koszyk jest pusty."</span>
+												<span>Twój koszyk jest pusty.</span>
 												<FaShoppingCart />
 											</div>
+								
 							}
-							</div>
+							
 						</section>
 						<Footer />
 					</div>

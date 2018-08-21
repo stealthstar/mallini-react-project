@@ -41,7 +41,13 @@ class MainMenu extends React.Component {
 		let self=this;
 		document.addEventListener('click', (e) => {
 			self.menuClickHandler(e);
-		})
+		});
+	}
+	componentWillUnmount() {
+		let self=this;
+		document.removeEventListener('click', (e) => {
+			self.menuClickHandler(e);
+		});
 	}
 
 	menuClickHandler(e) {

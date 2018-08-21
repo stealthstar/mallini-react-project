@@ -26,7 +26,7 @@ class LangDropdown extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			select: 'en'
+			select: this.props.langDropdown
 		}
 		this.changeHandler = this.changeHandler.bind(this);
 	}

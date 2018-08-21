@@ -3,8 +3,8 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-//action imports
 
+//action imports
 import { addToCart } from "../../actions/addToCart";
 import { removeFromCart } from "../../actions/removeFromCart";
 import { addWish } from "../../actions/addWish";
@@ -17,7 +17,6 @@ import FaMinus from 'react-icons/lib/fa/minus';
 import data from '../../assets/data.json';
 
 import "../../styles/cartPage/CartItem.sass";
-import { normalize } from "path";
 //- - - end imports - - -
 
 const mapStateToProps = state => ({
@@ -92,7 +91,6 @@ class CartItem extends React.Component {
 				<div className={"cart__item-picture"}/>
 				<h3>{product[this.props.lang].name}</h3>
 				<div className={"cart__item__input-wrapper"}>
-					<p>Qty:</p>
 					<p className={"cart__item__amount flex-center"}>{this.props.amount}</p>
 					<div className={"buttons"}>
 						<button className={"cart__item__btn cart__item__btn--add"} onClick={this.dispatchAddToCart}>
@@ -102,6 +100,12 @@ class CartItem extends React.Component {
 							<FaMinus />
 						</button>
 					</div>
+				</div>
+				<div className={"cart__item__price"}>
+					<p>{this.props.currencySymbol + (price*this.props.currencyMultiplier).toFixed(2)}</p>
+				</div>
+				<div className={"cart__item__value"}>
+					<p>{this.props.currencySymbol + (price*this.props.currencyMultiplier*this.props.amount).toFixed(2)}</p>
 				</div>
 				<div className={"remove-cart"} onClick={this.clickHandler}>
 					<FaClose />

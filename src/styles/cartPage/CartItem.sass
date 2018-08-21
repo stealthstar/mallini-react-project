@@ -1,4 +1,6 @@
 @import '../variables.sass'
+$item-height: 100px
+$cell-width: 8rem
 .cart__item
 	display: flex
 	flex-direction: row
@@ -12,13 +14,15 @@
 	h3
 		font-size: 1.2rem
 		font-weight: 600
-		width: 80%
+		width: 60%
+		flex-grow: 1
 		padding: 10px 0
 		display: flex
 		align-self: flex-start
 	.remove-cart
 		height: 30px
 		width: 30px
+		flex-shrink: 0
 		border-radius: 25%
 		display: flex
 		align-items: center
@@ -27,9 +31,9 @@
 			cursor: pointer
 			background-color: $red
 	&-picture
-		height: 120px
+		height: $item-height
 		width: 10%
-		max-width: 120px
+		max-width: $item-height
 		align-self: center
 		background-color: #eee
 		margin-right: 10px
@@ -37,6 +41,7 @@
 		flex-direction: column
 		justify-content: space-between
 		padding: 10px
+		flex-shrink: 0
 		&:hover
 			cursor: pointer
 			opacity: 0.8
@@ -76,10 +81,15 @@
 				border: 2px solid $red
 				color: $white
 	&__input-wrapper
-		width: 10%
+		width: $cell-width
 		display: flex
 		flex-direction: column
 		align-items: center
+		height: $item-height
+		border-right: 2px solid #eee
+		p:nth-child(1)
+			font-size: 1.1rem
+			font-weight: 600
 		.buttons
 			display: flex
 			align-items: center
@@ -91,8 +101,14 @@
 				border: 1px solid $white
 				border-radius: 50%
 				font-size: 16px
+				transition: all 0.1s ease-in
 				&:hover
 					cursor: pointer
+					box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.3)
+					transform: scale(1.03)
+				&:active
+					box-shadow: none
+					transform: scale(1)
 				&:nth-child(1)
 					margin-right: 10px
 					&:hover
@@ -106,10 +122,36 @@
 		margin: 10px 0
 		border: 2px solid #ddd
 		border-radius: 5px
+		
 	&__item
 		padding: 10px
+		min-width: $cell-width
 		flex-grow: 1
 		border-bottom: 2px dotted #eee
+	&__price,
+	&__value
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		width: 8%
+		min-width: $cell-width
+		height: $item-height
+		flex: 1
+		border-right: 2px solid #eee
+		p
+			font-size: 1.1rem
+	&__value
+		border-right: none
+		p
+			font-size: 1.2rem
+			color: $blue
+			font-weight: 600
 .remove-cart
 	align-self: flex-start
 	background-color: #eee
+
+@media screen and (max-width: 1000px)
+	.cart__item
+		&-picture
+			display: none
