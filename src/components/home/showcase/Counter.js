@@ -29,9 +29,7 @@ class Counter extends React.Component {// eslint-disable-line react/prefer-state
         }
     }
     componentWillUnmount() {
-        if (this.state.isTicking) {
-            this.timer = clearInterval(() => this.tick());
-        }
+		clearInterval(this.timer);
     }
 
     onSuccess() {
