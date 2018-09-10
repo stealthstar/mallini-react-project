@@ -9,6 +9,7 @@ import  {windowResize} from './actions/windowResize';
 import HomePage from './views/HomePage';
 import ComparePage from './views/ComparePage';
 import CartPage from './views/CartPage';
+import WishlistPage from './views/WishlistPage';
 
 import "./styles/theme.sass";
 
@@ -69,6 +70,10 @@ class App extends React.Component {
 			case 'cart':
 				return (
 						<CartPage />
+				)
+			case 'wishlist':
+				return (
+						<WishlistPage />
 				)
 			case 'product':
 				return (

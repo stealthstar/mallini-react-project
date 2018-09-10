@@ -77,6 +77,7 @@ class ShowcaseSlide extends React.Component {
 						products.map(el => (
 							<ShowcaseProduct
 								key={el.id}
+								number={el.id}
 								name={el[this.props.lang].name}
 								price={el.price}
 								newPrice={el["new-price"]} />
@@ -84,6 +85,7 @@ class ShowcaseSlide extends React.Component {
 						productsShort.map(el => (
 							<ShowcaseProduct
 								key={el.id}
+								number={el.id}
 								name={el[this.props.lang].name}
 								price={el.price}
 								newPrice={el["new-price"]} />

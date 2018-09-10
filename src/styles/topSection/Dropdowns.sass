@@ -1,17 +1,23 @@
+@import '../../styles/_variables.sass'
 .dropdown
 	min-width: 50px
 	border: none
-	background-color: transparentize
+	background-color: rgba(255,255,255,0.3)
 	outline: none
 	background-color: #f3f3f3
 	margin-right: 20px
 	font-size: 18px
 	color: #484848
 	font-weight: 600
-	&:hover,
-	&:focus
+	background: #ffffff
+	width: 80px
+	padding: 3px 5px
+	border-radius: 4px 0 0 4px
+	&:hover
 		cursor: pointer
 
-option:hover,
-option:focus
-	cursor: pointer
+	&:focus
+		background-color: #fff
+
+option
+	font-size: 18px

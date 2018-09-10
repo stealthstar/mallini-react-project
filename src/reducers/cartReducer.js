@@ -23,7 +23,7 @@ export const cartReducer = (state = {
 					[action.payload[0]]: state.items[action.payload[0]] - 1
 				},
 				itemsAmount: state.itemsAmount - 1,
-				cartWorth: state.cartWorth - action.payload[1]
+				cartWorth: state.cartWorth - action.payload[1] === -0 ? 0.00 : state.cartWorth - action.payload[1]
 			}
 		case "RECALCULATE_CART":
 			return {

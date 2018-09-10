@@ -56,8 +56,12 @@ class LangDropdown extends React.Component {
 
 	render() {
 		return (
-			<select name={"language"} className={"dropdown language-dropdown"} onChange={(e)=>this.changeHandler(e)}>
-				<option value={'en'} default>EN</option>
+			<select name={"language"} 
+				className={"dropdown language-dropdown"} 
+				onChange={(e)=>this.changeHandler(e)}
+				value={this.props.langDropdown}
+			>
+				<option value={'en'}>EN</option>
 				<option value={'pl'}>PL</option>
 			</select>
 		)

@@ -51,15 +51,18 @@ class CartSummary extends React.Component {
                         {this.props.lang === "en" ? "Subtotal:" : "Wartość zakupów"}
 					</div>
                     <div className={"cart__summary__column"}>
-                        {this.props.currencySymbol + this.props.cartWorth.toFixed(2)}
+                        {this.props.currencySymbol + (this.props.cartWorth*this.props.currencyMultiplier).toFixed(2)}
 					</div>
 				</div>
                 <div className={"cart__summary__row cart__summary__row--total"}>
-                    <div className={"cart__summary__column cart__summary__column--total"}>
-                        {this.props.lang === "en" ? "Estimated Total:" : "Koszt całkowity:"}
-					</div>
-                    <div className={"cart__summary__column cart__summary__column--total"}>
-                        {this.props.currencySymbol + this.props.cartWorth.toFixed(2)}
+					<div className={"cart__summary__row cart__summary__row--total-wrapper"}>
+
+						<div className={"cart__summary__column cart__summary__column--total"}>
+							{this.props.lang === "en" ? "Estimated Total:" : "Koszt całkowity:"}
+						</div>
+						<div className={"cart__summary__column cart__summary__column--total"}>
+							{this.props.currencySymbol + (this.props.cartWorth*this.props.currencyMultiplier).toFixed(2)}
+						</div>
 					</div>
 				</div>
 			</div>

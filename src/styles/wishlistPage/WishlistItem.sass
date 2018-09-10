@@ -1,0 +1,130 @@
+@import '../variables.sass'
+.wishlist__item
+	display: flex
+	flex-direction: column
+	width: 33.333%
+	padding: 5px 10px
+	min-height: 500px
+	border-right: 2px solid #eee
+	flex: 1 0
+	&:last-of-type
+		border-right: none
+	header
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 100%
+		height: 60px
+		padding-bottom: 10px
+		h3
+			font-size: 1.2rem
+			font-weight: 600
+			padding: 10px 0
+			width: calc(100% - 30px)
+		.remove-wishlist
+			height: 30px
+			width: 30px
+			border-radius: 25%
+			display: flex
+			align-items: center
+			align-self: flex-start
+			justify-content: center
+			&:hover
+				cursor: pointer
+				background-color: $red
+	&-picture
+		height: 280px
+		width: 100%
+		max-width: 280px
+		align-self: center
+		background-color: #eee
+		margin-bottom: 10px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding: 10px
+		&:hover
+			cursor: pointer
+			opacity: 0.8
+			div
+				display: flex				
+		div:nth-child(1)
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			border: 2px solid #fefefe
+			margin: 5px 0 0 5px
+			color: #000000
+			font-size: 22px
+			align-items: center
+			justify-content: center
+				
+		&__add-to-cart
+			width: 50%
+			min-width: 160px
+			margin: 20px auto
+			border: 2px solid $blue
+			color: $blue
+			font-weight: 600
+			text-transform: uppercase
+			border-radius: 10px
+			padding: 5px 10px
+			align-items: center
+			justify-content: center
+			text-align: center
+			&:hover
+				background-color: $blue
+				color: #fff
+				cursor: pointer
+			&:active
+				background-color: $green
+				color: #fff
+				border: 2px solid $green
+		div
+			display: none
+			transition: all .10s ease-in-out
+			user-select: none
+			&:hover
+				cursor: pointer
+				color: $white
+				background-color: $blue
+				border: 2px solid $blue
+			&:active
+				background-color: $red
+				border: 2px solid $red
+				color: $white
+
+.wishlist-table
+	width: 100%
+	min-height: 100px
+	&__column
+		display: flex
+		flex-direction: column
+		width: 50%
+		height: 100%
+		&--left
+			justify-content: flex-start
+			.wishlist-table__item
+				text-align: left
+				border-right: 2px dotted #eee
+				font-weight: 600
+		&--right
+			justify-content: flex-end
+			.wishlist-table__item
+				text-align: right
+	&__item
+		padding: 10px
+		flex-grow: 1
+		border-bottom: 2px dotted #eee
+		
+
+
+@media screen and(max-width: 1000px)
+	.wishlist__item
+		width: 33.333%
+@media screen and(max-width: 800px)
+	.wishlist__item
+		width: 50%
+@media screen and(max-width: 540px)
+	.wishlist__item
+		width: 100%

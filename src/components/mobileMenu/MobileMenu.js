@@ -4,8 +4,8 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {changeActive} from '../../actions/menuActions'
-
+import {changeActive} from '../../actions/menuActions';
+import Transition from 'react-spring';
 //component imports
 import Searchbar from '../topSection/Searchbar.js';
 import { changeView } from '../../actions/changeView';
@@ -204,6 +204,7 @@ class MobileMenu extends React.Component {
 					</div>
 				</div>
 			</div>
+
 		)
 	}
 

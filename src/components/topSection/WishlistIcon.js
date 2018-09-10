@@ -26,6 +26,12 @@ class WishlistIcon extends React.Component {
 	// eslint-disable-line react/prefer-stateless-function
 	constructor(props) {
 		super(props);
+
+		this.clickHandler = this.clickHandler.bind(this)
+	}
+
+	clickHandler() {
+		this.props.changeView('wishlist');
 	}
 
 
@@ -33,7 +39,7 @@ class WishlistIcon extends React.Component {
 		const styleNone = { backgroundColor: "#f5f5f5", color: "#0f0f0f" };
 		const styled = { backgroundColor: "red", color: "white" };
 		return (
-			<div className={"icon icon-wishlist"}>
+			<div className={"icon icon-wishlist"} onClick={this.clickHandler}>
 				<FaHeartO />
 				<div className={"icon__number icon-wishlist__number flex-center"} style={
 					this.props.wishlist.length > 0 ? styled : styleNone

@@ -10,7 +10,8 @@ import "../../styles/topSection/CartWorth.sass";
 const mapStateToProps = state => ({
 	cartWorth: state.cartReducer.cartWorth,
 	currency: state.dropdownReducer.currency,
-	currencySymbol: state.dropdownReducer.currencySymbol
+	currencySymbol: state.dropdownReducer.currencySymbol,
+	currencyMultiplier: state.dropdownReducer.currencyMultiplier,
 });
 
 // function mapDispatchToProps(dispatch) {
@@ -29,7 +30,7 @@ class CartWorth extends React.Component {
 	render() {
 		return (
 			<div className={'cart-worth'}>
-				{this.props.currencySymbol+this.props.cartWorth.toFixed(2)}
+				{this.props.currencySymbol + (this.props.currencyMultiplier*this.props.cartWorth).toFixed(2)}
 			</div>
 		)
 	}

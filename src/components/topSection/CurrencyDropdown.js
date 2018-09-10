@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import data from '../../assets/data.json';
 import { changeCurrency } from '../../actions/changeCurrency';
-import { recalculateCartWorth } from "../../actions/recalculateCartWorth";
 import "../../styles/topSection/Dropdowns.sass";
 // - - - end imports - - -
 
@@ -14,8 +13,7 @@ const mapStateToProps = state => ({
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		changeCurrency: changeCurrency,
-		recalculateCart: recalculateCartWorth
+		changeCurrency: changeCurrency
 	}, dispatch);
 }
 
@@ -24,7 +22,7 @@ function mapDispatchToProps(dispatch) {
 	constructor(props) {
 		super(props);
 		this.state = {
-			select: 'usd'
+			select: this.props.currency
 		}
 		this.changeHandler = this.changeHandler.bind(this);
 	}
@@ -40,17 +38,21 @@ function mapDispatchToProps(dispatch) {
 		let result = [val, symbol(val), multiplier(val)]
 
 		this.props.changeCurrency(result);
-		this.props.recalculateCart(multiplier(val))
+
 	}
 
 	render() {
 		return (
 			<form>
-				<select name={"language"} className={"dropdown currency-dropdown"} onChange={(e) => this.changeHandler(e)}>
-					<option value={'usd'} default >USD</option>
-					<option value={'gbp'}>GBP</option>
-					<option value={'eur'}>EUR</option>
-					<option value={'pln'}>PLN</option>
+				<select name={"language"} 
+					className={"dropdown currency-dropdown"} 
+					onChange={(e) => this.changeHandler(e)}
+					value={this.props.currency}
+					>
+					<option value={'usd'} >USD</option>
+					<option value={'gbp'} >GBP</option>
+					<option value={'eur'} >EUR</option>
+					<option value={'pln'} >PLN</option>
 				</select>
 			</form>
 		)

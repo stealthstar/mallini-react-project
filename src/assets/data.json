@@ -283,8 +283,8 @@
 			"month-deal": true,
 			"ends": [
 				2018,
-				8,
-				21,
+				9,
+				15,
 				20,
 				0
 			],
@@ -314,7 +314,7 @@
 			"month-deal": true,
 			"ends": [
 				2018,
-				8,
+				10,
 				20,
 				20,
 				0
@@ -345,7 +345,7 @@
 			"ends": [
 				2018,
 				9,
-				1,
+				28,
 				20,
 				0
 			],
@@ -564,7 +564,7 @@
 			"quantity": 32,
 			"sold": 22,
 			"month-deal": true,
-			"ends": [2018,8,30,20,0],
+			"ends": [2018,9,30,20,0],
 			"pl": {
 				"name": "Parrot Anafi",
 				"category": "Drony"
