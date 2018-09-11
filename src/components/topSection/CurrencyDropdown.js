@@ -1,5 +1,6 @@
 // - - - imports - - - 
 import * as React from "react";
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import data from '../../assets/data.json';
@@ -28,6 +29,8 @@ function mapDispatchToProps(dispatch) {
 	}
 
 	changeHandler(e) {
+		//-- prepare an array of currency, currency symbol and its multiplier
+		//-- and fire an action that updates it in store
 		let val = e.target.value;
 		let symbols = ['\u0024', '\u00A3', '\u20AC', 'PLN '];
 		let symbol = val => data.currency[val].symbol;
@@ -35,9 +38,9 @@ function mapDispatchToProps(dispatch) {
 		this.setState({
 			select: val
 		});
-		let result = [val, symbol(val), multiplier(val)]
+		let result = [val, symbol(val), multiplier(val)] //array created
 
-		this.props.changeCurrency(result);
+		this.props.changeCurrency(result); //action fired
 
 	}
 
@@ -61,3 +64,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrencyDropdown)
+
+CurrencyDropdown.propTypes = {
+	currency: PropTypes.string.isRequired
+}

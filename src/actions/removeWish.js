@@ -1,4 +1,4 @@
-export function removeCompare(wish) {
+export function removeWish(wish) {
 	return {
 		type: "REMOVE_WISH",
 		payload: wish

@@ -375,11 +375,13 @@
 			"ends": null,
 			"pl": {
 				"name": "Devialet Gold Phantom głośnik bezprzewodowy",
-				"category": "Audio"
+				"category": "Audio",
+				"desc": "Fantastyczny bezprzewodowy głośnik z najwyższej półki."
 			},
 			"en": {
 				"name": "Devialet Gold Phantom Wireless Speaker",
-				"category": "Audio"
+				"category": "Audio",
+				"desc": "A superb wireless speaker from the top of our range."
 			},
 			"tags": {
 				"hot": false,

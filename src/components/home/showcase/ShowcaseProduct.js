@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Slider from 'react-slick/lib/slider';
 import DealsOfTheMonth from './DealsOfTheMonth';
+import { showProduct } from "../../../actions/showProduct";
 import { addToCart } from "../../../actions/addToCart";
 import { addCompare } from "../../../actions/addCompare";
 import { addWish } from "../../../actions/addWish";
@@ -22,6 +23,7 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		addToCart: addToCart,
 		addCompare: addCompare,
+		showProduct: showProduct,
 		addWish: addWish
 	}, dispatch);
 }
@@ -30,32 +32,21 @@ class ShowcaseProduct extends React.Component {
 		super(props);
 
 		// method bindings
-		this.handleHover = this.handleHover.bind(this);
-		this.handleMouseOut = this.handleMouseOut.bind(this);
+		this.clickHandler = this.clickHandler.bind(this);
 		this.dispatchAddToCart = this.dispatchAddToCart.bind(this);
 		this.dispatchAddCompare = this.dispatchAddCompare.bind(this);
 		this.dispatchAddWish = this.dispatchAddWish.bind(this);
 
-		this.state = {
-			hover: false
-		}
 	}
-
-
-	// helper hover tracker methods
-	handleHover() {
-		this.setState({
-			hover: true
-		});
-	}
-	handleMouseOut() {
-		this.setState({
-			hover: false
-		});
+	//click Handler
+	clickHandler(productId, e) {
+		e.stopPropagation();
+		this.props.showProduct(productId);
 	}
 
 	// dispatch methods
-	dispatchAddToCart() {
+	dispatchAddToCart(e) {
+		e.stopPropagation();
 		let price = this.props.newPrice ? this.props.newPrice : this.props.price;
 		let id = this.props.number;
 		let arr = [id, price];
@@ -73,16 +64,16 @@ class ShowcaseProduct extends React.Component {
 		}
 	}
 
+
+
 	render() {
 		return (
-			<div className={"showcase-product__wrapper"} onMouseOver={this.handleHover} onMouseOut={this.handleMouseOut}>
-				<div className={"showcase-product__inner"}>
+			<div className={"showcase-product__wrapper"}>
+				<div className={"showcase-product__inner"} onClick={(e) => this.clickHandler(this.props.number, e)}>
 					<div className={"showcase-product__photo"}></div>
-					{this.state.hover ?
-						<p className={"showcase-product__price showcase-product__price--hovered"} onClick={this.dispatchAddToCart}>
-							{this.props.lang === 'en' ? 'ADD TO CART' : 'Dodaj do koszyka'}
-						</p> :
-						 this.props.newPrice ? 
+						
+					<p className={"showcase-product__name"} >{this.props.name}</p>
+						 {this.props.newPrice ? 
 						<div className={"showcase-product__prices"}> 
 							<p className={"showcase-product__price"} >
 								{this.props.currencySymbol + (this.props.newPrice*this.props.currencyMultiplier).toFixed(2)}
@@ -95,7 +86,9 @@ class ShowcaseProduct extends React.Component {
 							{this.props.currencySymbol + (this.props.price * this.props.currencyMultiplier).toFixed(2)}
 							</p>
 						}
-					<p className={"showcase-product__name"} >{this.props.name}</p>
+					<p className={"showcase-product__add-to-cart"} onClick={(e) => this.dispatchAddToCart(e)}>
+						{this.props.lang === 'en' ? 'ADD TO CART' : 'Dodaj do koszyka'}
+					</p> 
 				</div>
 			</div>
 		);

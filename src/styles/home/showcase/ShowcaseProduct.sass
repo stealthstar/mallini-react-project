@@ -9,25 +9,28 @@
 		flex-direction: column
 		align-items: center
 		align-content: center
-	&__wrapper:nth-child(3),
-	&__wrapper:nth-child(6)
+	&__wrapper:nth-child(2),
+	&__wrapper:nth-child(5)
 		.showcase-product__inner
-			border-right: none
+			border-left: 2px solid #eee
+			border-right: 2px solid #eee
 			&:hover
+				border-left: 2px solid $light-blue
 				border-right: 2px solid $light-blue
 
 	&__inner
-		height: 90%
+		height: 98%
 		width: 100%
 		display: flex
 		align-items: center
 		flex-direction: column
 		border: 2px solid $white
-		border-right: 2px solid #eee
 		padding: 20px 30px
 		&:hover
 			border-radius: 10px
 			cursor: pointer
+			border-left: 2px solid $light-blue
+			border-right: 2px solid $light-blue
 			border: 2px solid $light-blue
 	&__photo
 		height: 80%
@@ -39,15 +42,24 @@
 		font:
 			size: 16px
 			weight: 600
-		margin: 10px 0
 		padding: 5px 10px
 		border-radius: 10px
-		&--hovered:hover
+	&__add-to-cart
+		color: $blue
+		text-align: center
+		padding: 5px 15px
+		width: 60%
+		min-width: 140px
+		margin-top: 10px
+		border-radius: 10px
+		font-weight: 600
+		&:hover
 			background-color: $blue
-			color: #fff
-		&--hovered:active
+			color: $white
+		&:active
 			background-color: $green
 			color: $white
+
 	&__prices
 		display: flex
 		align-items: center

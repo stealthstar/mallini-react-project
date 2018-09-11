@@ -7,6 +7,8 @@ import Slider from 'react-slick/lib/slider';
 import {addToCart} from "../../actions/addToCart";
 import {addCompare} from "../../actions/addCompare";
 import {addWish} from "../../actions/addWish";
+import {changeView} from "../../actions/changeView";
+import {showProduct} from "../../actions/showProduct";
 
 import AngleLeft from 'react-icons/lib/fa/angle-left';
 import AngleRight from 'react-icons/lib/fa/angle-right';
@@ -27,6 +29,7 @@ const mapStateToProps = state => ({
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
+		showProduct: showProduct,
 		addToCart: addToCart,
 		addCompare: addCompare,
 		addWish: addWish
@@ -38,46 +41,38 @@ class BestSellingItem extends React.Component {
 		super(props);
 
 		// method bindings
-		this.handleHover = this.handleHover.bind(this);
-		this.handleMouseOut = this.handleMouseOut.bind(this);
 		this.dispatchAddToCart = this.dispatchAddToCart.bind(this);
 		this.dispatchAddCompare = this.dispatchAddCompare.bind(this);
 		this.dispatchAddWish = this.dispatchAddWish.bind(this);
+		this.clickHandler = this.clickHandler.bind(this);
 		
-		this.state = {
-			hover: false
-		}
+
 	}
 
-	// helper hover tracker methods
-	handleHover() {
-		this.setState({
-			hover: true
-		});
+	//click Handler
+	clickHandler(id) {
+		this.props.showProduct(id)
 	}
-	handleMouseOut() {
-		this.setState({
-			hover: false
-		});
-	}
+
 
 	// dispatch methods
-	dispatchAddToCart() {
+	dispatchAddToCart(e) {
+		e.stopPropagation();
 		let price = this.props.newPrice ? this.props.newPrice : this.props.price;
 		let id = this.props.id;
 		let arr = [id, price];
 		this.props.addToCart(arr);
 	}
 
-	dispatchAddCompare() {
+	dispatchAddCompare(e) {
+		e.stopPropagation();
 		if (!this.props.compare.includes(this.props.id) && this.props.compare.length < 5) {
 			this.props.addCompare(this.props.id);
 		}
 	}
-	dispatchAddWish() {
-		if (!this.props.wishlist.includes(this.props.id)){
-			this.props.addWish(this.props.id);
-		}
+	dispatchAddWish(e) {
+		e.stopPropagation();
+		!this.props.wishlist.includes(this.props.id) ? this.props.addWish(this.props.id) : null;
 	}
 
 
@@ -86,31 +81,32 @@ class BestSellingItem extends React.Component {
 		return (
 			// const path = require("../../assets/img/bestselling-products-" + [el.id] + ".png");
 			
-			<div className={"bestselling-products__item-wrapper"} onMouseOver={this.handleHover} onMouseOut={this.handleMouseOut}>
+			<div className={"bestselling-products__item-wrapper"} onClick={() => this.clickHandler(this.props.id)}>
 				<div key={this.props.id} className={"bestselling-products__item"}>
 					{/* <img src={path} /> */}
 					<div className={"bestselling-products__image"}>
-						<div onClick={this.dispatchAddCompare}>
+						<div onClick={(e) => this.dispatchAddCompare(e)}>
 							<FaExchange />
 						</div>
-						<div onClick={this.dispatchAddWish}>
+						<div onClick={(e) => this.dispatchAddWish(e)}>
 							<FaHeartO />
 						</div>	
 					</div>
-					{this.state.hover ? 
-						<p className={"bestselling-products__price"} onClick={this.dispatchAddToCart}>
-							{this.props.lang === 'en'?'ADD TO CART': 'Dodaj do koszyka'}
-						</p> :
-						this.props.newPrice ?
+						<p className={"bestselling-products__name"}>{this.props.name}</p>
+						{this.props.newPrice ?
 							<p className={"bestselling-products__price"}>
 								{this.props.currencySymbol + (this.props.newPrice * this.props.currencyMultiplier).toFixed(2)}&nbsp;&nbsp;
 								<span>
 									{this.props.currencySymbol + (this.props.price * this.props.currencyMultiplier).toFixed(2)}
 								</span>
 							</p>
-							: <p className={"bestselling-products__price"}>{this.props.currencySymbol + (this.props.price * this.props.currencyMultiplier).toFixed(2)}</p>
-					}
-					<p className={"bestselling-products__name"}>{this.props.name}</p>
+							:
+							<p className={"bestselling-products__price"}>{this.props.currencySymbol + (this.props.price * this.props.currencyMultiplier).toFixed(2)}</p>
+						}
+					
+					<p className={"bestselling-products__add-to-cart"} onClick={(e) => this.dispatchAddToCart(e)}>
+						{this.props.lang === 'en'?'ADD TO CART': 'Dodaj do koszyka'}
+					</p> 
 				</div>
 			</div>
 		);

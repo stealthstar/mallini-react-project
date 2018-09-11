@@ -1,10 +1,11 @@
 // - - - imports - - - 
 //react imports
 import * as React from "react";
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 //action imports
-import {removeWish} from '../../actions/removeWish';
+import { removeWish } from '../../actions/removeWish';
 import { addToCart } from "../../actions/addToCart";
 import { addWish } from "../../actions/addWish";
 //font awesome imports

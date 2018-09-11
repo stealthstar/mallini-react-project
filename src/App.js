@@ -9,6 +9,7 @@ import  {windowResize} from './actions/windowResize';
 import HomePage from './views/HomePage';
 import ComparePage from './views/ComparePage';
 import CartPage from './views/CartPage';
+import ProductPage from './views/ProductPage';
 import WishlistPage from './views/WishlistPage';
 
 import "./styles/theme.sass";
@@ -60,27 +61,16 @@ class App extends React.Component {
     render() {
 		switch(this.props.viewName) {
 			case 'home':
-				return (
-					<HomePage />
-				)
+				return <HomePage />
+
 			case 'compare':
-				return (
-						<ComparePage />
-				)
+				return <ComparePage />
 			case 'cart':
-				return (
-						<CartPage />
-				)
+				return <CartPage />
 			case 'wishlist':
-				return (
-						<WishlistPage />
-				)
+				return <WishlistPage />
 			case 'product':
-				return (
-					<div className={"wrapper"}>
-						<Product />
-					</div>
-				)
+				return <ProductPage />
 			default:
 				return null;
 		}
