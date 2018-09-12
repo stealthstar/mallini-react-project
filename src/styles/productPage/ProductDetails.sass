@@ -1,2 +1,76 @@
+@import '../../styles/_variables.sass'
+
 .product-main__details
 	width: 53%
+	display: flex
+	flex-direction: column
+	&--top
+		display: flex
+		align-items: center
+		width: 100%
+		height: 50px
+		justify-content: space-between
+		p
+			margin: 0
+			width: auto
+			text-align: left
+			align-self: flex-start
+			text-transform: uppercase
+			color: $light-blue
+			font-weight: 600
+			letter-spacing: 1.7px
+	&__name
+		width: 100%
+		padding: 15px 0
+		font-size: 1.8rem
+		font-weight: 600
+	&__essentials
+		display: flex
+		align-items: center
+		justify-content: space-between
+		p
+			width: auto
+			margin: 0 20px 0 0
+			font:
+				size: 1.8rem
+				weight: 600
+			color: $blue
+			&.old-price
+				color: #bbb
+				font-weight: 500
+				&:after
+					content: ""
+					display: block
+					width: 100%
+					background-color: #bbb
+					height: 2px
+					position: relative
+					top: -17px
+			
+	&__price
+		display: flex
+.product-main__tag-wrapper
+	height: 100%
+	display: flex
+	flex-direction: row
+	align-items: center
+	
+.product-main__tag
+	padding: 5px 15px
+	margin-top: 4px
+	font-size: 1rem
+	text-transform: uppercase
+	margin-right: 10px
+	font-weight: 600
+	letter-spacing: 1.3px
+	color: #fff
+	&--hot
+		background-color: $red
+	&--discount
+		background-color: $yellow
+		color: #111
+	&--sale
+		background-color: $green
+	&--new
+		background-color: $light-blue
+

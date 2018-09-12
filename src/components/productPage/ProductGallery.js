@@ -6,13 +6,113 @@ import "../../styles/productPage/ProductGallery.sass";
 
 const mapStateToProps = state => ({
 	lang: state.dropdownReducer.langDropdown,
+	productId: state.viewReducer.activeProductId
 })
 
 class ProductGallery extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state= {
+			images: [],
+			activeImage: 0
+		}
+
+		this.mouseMoveHandler = this.mouseMoveHandler.bind(this);
+		this.mouseOutHandler = this.mouseOutHandler.bind(this);
+		this.mouseEnterHandler = this.mouseEnterHandler.bind(this);
+	}
+
+	componentDidMount() {
+		let arr = [];
+		if(this.props.images !== null) {
+			for (let i = 0; i < this.props.images.length; i++) {
+				arr.push(require(`../../assets/img/products/${this.props.images[i]}`)); 
+			}
+		} else {
+			arr = [require("../../assets/img/products/no-image.png")];
+		}
+		this.setState({
+			images: arr
+		});
+	}
+	
+	changeSlide(e) {
+		const event = e;
+		const slideNumber = event.target.id.slice(-1);
+		this.setState({
+			activeImage: slideNumber
+		});
+	}
+
+	mouseMoveHandler(e) {
+		//logic that manipulates bg position on mouse move
+		const event = e;
+		let x = ((event.pageX - event.target.offsetLeft) / event.target.offsetWidth * 100);
+		let y = ((event.pageY - event.target.offsetTop) / event.target.offsetHeight * 100); 
+		console.log(x, y);
+		
+		this.setState({
+			position: x+"% "+y+"%"
+		});
+	}
+	mouseOutHandler() {
+		this.setState({ 
+			position: "center center",
+			bgSize: 100
+		});
+	}
+	mouseEnterHandler() {
+		// here set the scale of magnification in %
+		this.setState({ 
+			bgSize: 300
+		});
+	}
+
 	render() {
+		const images = this.state.images;
+		const handlers = this.props.images ? {
+			onMouseMove: (e) => this.mouseMoveHandler(e),
+			onMouseOut: this.mouseOutHandler, 
+			onMouseEnter: this.mouseEnterHandler
+		} : null;
 		return (
 			<div className={"product-main__gallery"}>
-				gallery
+				<div className={"product-main__thumbnails"}>
+					{images.map(image => (
+						<div className={"thumbnail-wrapper flex-center"} >
+							<img id={`img-toggle${images.indexOf(image)}`} 
+								key={images.indexOf(image)} 
+								src={image} 
+								onClick={(e)=>this.changeSlide(e)}
+								/>
+						</div>
+					))					
+					}
+				
+				</div>
+				<div 
+					className={"product-main__big-image"} 
+					style={{ 
+						"backgroundImage": `url(${images[this.state.activeImage]})`,
+						"backgroundPosition": this.state.position,
+						"backgroundSize": this.state.bgSize+"%"
+					}}
+					{...handlers}
+				>
+					{/* <img src={images[this.state.activeImage]} /> */}
+				</div>
+				{
+					this.props.images ? 
+						<p>
+							{
+								this.props.lang === "en" ? 
+									"Roll over image to zoom in" 
+									: "Najedź na obrazek, by powiększyć"
+							}
+						</p>
+						: null
+				}
+				
 			</div>
 		)
 	}

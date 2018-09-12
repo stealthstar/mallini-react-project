@@ -277,7 +277,6 @@
 		{
 			"id": 1,
 			"price": 269.00,
-			"new-price": 169.95,
 			"quantity": 7,
 			"sold": 2,
 			"month-deal": true,
@@ -308,7 +307,6 @@
 		{
 			"id": 2,
 			"price": 559.00,
-			"new-price": 429.00,
 			"quantity": 12,
 			"sold": 3,
 			"month-deal": true,
@@ -329,7 +327,7 @@
 			},
 			"tags": {
 				"hot": false,
-				"discount": 0,
+				"discount": 20,
 				"new": false,
 				"sale": true
 			},
@@ -338,7 +336,6 @@
 		{
 			"id": 3,
 			"price": 299.95,
-			"new-price": 129.95,
 			"quantity": 2,
 			"sold": 4,
 			"month-deal": true,
@@ -358,7 +355,7 @@
 				"category": "Audio"
 			},
 			"tags": {
-				"hot": false,
+				"hot": true,
 				"discount": 0,
 				"new": false,
 				"sale": false
@@ -368,7 +365,6 @@
 		{
 			"id": 4,
 			"price": 2989.95,
-			"new-price": null,
 			"quantity": 4,
 			"sold": 1,
 			"month-deal": false,
@@ -383,10 +379,15 @@
 				"category": "Audio",
 				"desc": "A superb wireless speaker from the top of our range."
 			},
+			"images": [
+				"dummy_image-1.png",
+				"dummy_image-2.png",
+				"dummy_image-3.png"
+			],
 			"tags": {
-				"hot": false,
-				"discount": 0,
-				"new": false,
+				"hot": true,
+				"discount": 10,
+				"new": true,
 				"sale": false
 			},
 			"rating": 4.8
@@ -394,7 +395,6 @@
 		{
 			"id": 5,
 			"price": 369.00,
-			"new-price": null,
 			"quantity": 4,
 			"sold": 1,
 			"month-deal": false,
@@ -411,14 +411,13 @@
 				"hot": false,
 				"discount": 0,
 				"new": false,
-				"sale": true
+				"sale": false
 			},
 			"rating": 4.1
 		},
 		{
 			"id": 6,
 			"price": 109.95,
-			"new-price": null,
 			"quantity": 17,
 			"sold": 12,
 			"month-deal": false,
@@ -433,7 +432,7 @@
 			},
 			"tags": {
 				"hot": false,
-				"discount": 35,
+				"discount": 22,
 				"new": false,
 				"sale": true
 			},
@@ -442,7 +441,6 @@
 		{
 			"id": 7,
 			"price": 129.95,
-			"new-price": null,
 			"quantity": 11,
 			"sold": 9,
 			"month-deal": false,
@@ -457,7 +455,7 @@
 			},
 			"tags": {
 				"hot": true,
-				"discount": 0,
+				"discount": 20,
 				"new": false,
 				"sale": true
 			},
@@ -466,7 +464,6 @@
 		{
 			"id": 8,
 			"price": 179.95,
-			"new-price": null,
 			"quantity": 17,
 			"sold": 4,
 			"month-deal": false,
@@ -483,14 +480,13 @@
 				"hot": true,
 				"discount": 0,
 				"new": false,
-				"sale": true
+				"sale": false
 			},
 			"rating": 3.7
 		},
 		{
 			"id": 9,
 			"price": 19.99,
-			"new-price": null,
 			"quantity": 25,
 			"sold": 11,
 			"month-deal": false,
@@ -514,7 +510,6 @@
 		{
 			"id": 10,
 			"price": 184.95,
-			"new-price": 159.90,
 			"quantity": 16,
 			"sold": 4,
 			"month-deal": false,
@@ -529,7 +524,7 @@
 			},
 			"tags": {
 				"hot": false,
-				"discount": 0,
+				"discount": 10,
 				"new": false,
 				"sale": true
 			},
@@ -538,7 +533,6 @@
 		{
 			"id": 11,
 			"price": 1628.99,
-			"new-price": null,
 			"quantity": 16,
 			"sold": 4,
 			"month-deal": false,
@@ -553,7 +547,7 @@
 			},
 			"tags": {
 				"hot": false,
-				"discount": 0,
+				"discount": 15,
 				"new": false,
 				"sale": false
 			},
@@ -562,7 +556,6 @@
 		{
 			"id": 12,
 			"price": 699.99,
-			"new-price": 649.99,
 			"quantity": 32,
 			"sold": 22,
 			"month-deal": true,
@@ -577,7 +570,7 @@
 			},
 			"tags": {
 				"hot": true,
-				"discount": 0,
+				"discount": 5,
 				"new": false,
 				"sale": true
 			},

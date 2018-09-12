@@ -16,6 +16,9 @@ import FaMinus from 'react-icons/lib/fa/minus';
 //json import
 import data from '../../assets/data.json';
 
+//module import
+import { findId } from"../../assets/js-modules/findId";
+
 import "../../styles/cartPage/CartItem.sass";
 //- - - end imports - - -
 
@@ -54,8 +57,12 @@ class CartItem extends React.Component {
 
 	componentWillMount() {
 		//set up an array which will be used to add or remove this exact item
+		const discount = this.getProduct().tags.discount;
+		const price = discount > 0 ?
+			this.state.product.price - (this.state.product.price*discount/100).toFixed(2)
+			: this.state.product.price;
 		this.setState({
-			productArray: [this.state.product.id, this.state.product["new-price"] || this.state.product.price]
+			productArray: [this.state.product.id, price]
 		});
 	}
 
@@ -79,12 +86,17 @@ class CartItem extends React.Component {
 		}
 		
 	 }
-
+	getProduct() {
+		// external function filtering to get product in object
+		return findId(this.props.number, data);
+	}
 
 	render() {
-		const product = this.state.product;
-		const price = product["new-price"] || product.price;
-		const color = product["new-price"] ? "#007aff" : "#000000";
+		const product = this.getProduct();
+		const price = product.tags.discount ?
+			product.price - (product.price * product.tags.discount / 100)
+			: product.price;
+		const color = product.tags.discount ? "#007aff" : "#000000";
 	 	const availabilityColor = product.quantity ? "#4cd964" : "#ff3b30";
 		return (
 			<div className={"cart__item"}>

@@ -104,22 +104,7 @@ class BestsellingProducts extends React.Component {
 				</div>
 				<div className={"bestselling-products__row bestselling-products__row--bottom"}>
 					<Slider ref={c => (this.slider = c)} {...settings}>
-						{
-							products.map((el) => {
-								// const path = require("../../assets/img/bestselling-products-" + [el.id] + ".png");
-								return (
-									<BestSellingItem 
-										price={el.price}
-										newPrice={el["new-price"]}
-										id={el.id}
-										name={el[this.props.lang].name}
-										key={el.id}
-									
-									/>
-
-								);
-							})
-						}
+						{ products.map((el) => <BestSellingItem id={el.id} key={el.id} discount={el.tags.discount} /> ) }
 					</Slider>
 				</div>
 			</section>

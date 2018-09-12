@@ -74,22 +74,8 @@ class ShowcaseSlide extends React.Component {
 			<div className={"showcase__slide"}>
 				<div className={"showcase__slide__inner-wrapper"}>
 					{this.props.width > 1400 ?
-						products.map(el => (
-							<ShowcaseProduct
-								key={el.id}
-								number={el.id}
-								name={el[this.props.lang].name}
-								price={el.price}
-								newPrice={el["new-price"]} />
-						)) :
-						productsShort.map(el => (
-							<ShowcaseProduct
-								key={el.id}
-								number={el.id}
-								name={el[this.props.lang].name}
-								price={el.price}
-								newPrice={el["new-price"]} />
-						))
+						products.map(el => <ShowcaseProduct key={el.id} number={el.id} discount={el.tags.discount}/>) 
+						: productsShort.map(el => <ShowcaseProduct key={el.id} number={el.id} discount={el.tags.discount}/>)
 					}
 				</div>
 			</div>

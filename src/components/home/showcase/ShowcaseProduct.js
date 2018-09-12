@@ -12,6 +12,8 @@ import data from '../../../assets/data.json'
 
 import '../../../styles/home/showcase/ShowcaseProduct.sass'
 
+//module import
+import { findId } from "../../../assets/js-modules/findId";
 
 const mapStateToProps = state => ({
 	lang: state.dropdownReducer.langDropdown,
@@ -47,7 +49,9 @@ class ShowcaseProduct extends React.Component {
 	// dispatch methods
 	dispatchAddToCart(e) {
 		e.stopPropagation();
-		let price = this.props.newPrice ? this.props.newPrice : this.props.price;
+		let price = this.props.discount ? 
+			this.getProduct().price - (this.getProduct().price * this.getProduct().tags.discount / 100).toFixed(2)
+			: this.getProduct().price;
 		let id = this.props.number;
 		let arr = [id, price];
 		this.props.addToCart(arr);
@@ -64,26 +68,30 @@ class ShowcaseProduct extends React.Component {
 		}
 	}
 
-
+	getProduct() {
+		return findId(this.props.number, data);
+	}
 
 	render() {
+		const product = this.getProduct();
+		product.newPrice = product.price - (product.price * product.tags.discount / 100);
 		return (
 			<div className={"showcase-product__wrapper"}>
 				<div className={"showcase-product__inner"} onClick={(e) => this.clickHandler(this.props.number, e)}>
 					<div className={"showcase-product__photo"}></div>
 						
-					<p className={"showcase-product__name"} >{this.props.name}</p>
-						 {this.props.newPrice ? 
+					<p className={"showcase-product__name"} >{product.name}</p>
+						 {product.tags.discount ? 
 						<div className={"showcase-product__prices"}> 
 							<p className={"showcase-product__price"} >
-								{this.props.currencySymbol + (this.props.newPrice*this.props.currencyMultiplier).toFixed(2)}
+								{this.props.currencySymbol + (product.newPrice*this.props.currencyMultiplier).toFixed(2)}
 							</p>
 							<p className={"showcase-product__old-price"} >
-									{this.props.currencySymbol + (this.props.price * this.props.currencyMultiplier).toFixed(2)}
+									{this.props.currencySymbol + (product.price * this.props.currencyMultiplier).toFixed(2)}
 							</p>
 						</div>
 						: <p className={"showcase-product__price"} >
-							{this.props.currencySymbol + (this.props.price * this.props.currencyMultiplier).toFixed(2)}
+							{this.props.currencySymbol + (product.price * this.props.currencyMultiplier).toFixed(2)}
 							</p>
 						}
 					<p className={"showcase-product__add-to-cart"} onClick={(e) => this.dispatchAddToCart(e)}>

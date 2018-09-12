@@ -14,7 +14,7 @@ class ProductMain extends React.Component {
   render() {
 	return (
 	  <div className={"product-main wrapper"}>
-		<ProductGallery />
+		<ProductGallery images={this.props.images}/>
 		<div className={"spacer"} ></div>
 		<ProductDetails />
 	  </div>

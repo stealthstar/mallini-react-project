@@ -50,7 +50,19 @@ class Product extends React.Component {
 			<div className={"product"}>
 				{ this.props.width > 1000 && <Breadcrumbs /> }
 				<div className={"product__wrapper"}>
-					<ProductMain />
+					<ProductMain 
+						images={product.images || null} 
+						category={product[this.props.lang].category}
+						name={product[this.props.lang].name}
+						desc={product[this.props.lang].desc}
+						hotTag={product.tags.hot}
+						discountTag={product.tags.discount}
+						saleTag={product.tags.sale}
+						newTag={product.tags.new}
+						price={product.price}
+						newPrice={product["new-price"]}
+						quantity={product.quantity}
+						/>
 					<ProductBundle />
 					<ProductDescriptionBig />
 					<RelatedProducts />

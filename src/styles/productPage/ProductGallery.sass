@@ -1,2 +1,42 @@
-.product-main__gallery
-	width: 42%
+@import '../../styles/_variables.sass'
+
+.product-main
+	&__gallery
+		width: 42%
+		height: calc(100vw * 0.30)
+		display: flex
+		flex-wrap: wrap
+	p
+		width: 58%
+		margin: 0 0 0 26%
+		padding: 0
+		text-align: center
+	&__thumbnails
+		display: flex
+		height: 100%
+		width: 20%
+		margin-right: 2%
+		flex-direction: column
+		align-items: flex-start
+		flex: 0 0
+		.thumbnail-wrapper
+			height: 17%
+			margin-bottom: 4%
+			max-height: 80px
+			border: 1px solid #fff
+			transition: all .1s ease-in-out
+			&:hover
+				border: 1px solid $light-blue
+				cursor: pointer
+			img
+				height: 100%
+	&__big-image
+		width: 80%
+		height: 100%
+		display: flex
+		background:
+			repeat: no-repeat
+			size: cover
+			position: center
+		&:hover
+			cursor: zoom-in

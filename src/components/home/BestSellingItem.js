@@ -16,7 +16,10 @@ import FaExchange from 'react-icons/lib/fa/exchange';
 import FaHeartO from 'react-icons/lib/fa/heart-o';
 
 import '../../styles/home/BestsellingItem.sass'
-
+//module import
+import { findId } from "../../assets/js-modules/findId";
+//data import
+import data from "../../assets/data.json";
 
 const mapStateToProps = state => ({
 	lang: state.dropdownReducer.langDropdown,
@@ -58,7 +61,11 @@ class BestSellingItem extends React.Component {
 	// dispatch methods
 	dispatchAddToCart(e) {
 		e.stopPropagation();
-		let price = this.props.newPrice ? this.props.newPrice : this.props.price;
+		// if discount applied calculate new price
+		// else get price with getProduct method
+		let price = this.props.discount ? 
+			this.getProduct().price - (this.getProduct().price * this.getProduct().tags.discount / 100) 
+			: this.getProduct().price;
 		let id = this.props.id;
 		let arr = [id, price];
 		this.props.addToCart(arr);
@@ -76,13 +83,18 @@ class BestSellingItem extends React.Component {
 	}
 
 
-	render() {
+	getProduct() {
+		return findId(this.props.id, data);
+	}
 
+	render() {
+		const product = this.getProduct();
+		product.newPrice = product.price - (product.price*product.tags.discount/100);
 		return (
 			// const path = require("../../assets/img/bestselling-products-" + [el.id] + ".png");
 			
-			<div className={"bestselling-products__item-wrapper"} onClick={() => this.clickHandler(this.props.id)}>
-				<div key={this.props.id} className={"bestselling-products__item"}>
+			<div className={"bestselling-products__item-wrapper"} onClick={() => this.clickHandler(product.id)}>
+				<div key={product.id} className={"bestselling-products__item"}>
 					{/* <img src={path} /> */}
 					<div className={"bestselling-products__image"}>
 						<div onClick={(e) => this.dispatchAddCompare(e)}>
@@ -92,16 +104,16 @@ class BestSellingItem extends React.Component {
 							<FaHeartO />
 						</div>	
 					</div>
-						<p className={"bestselling-products__name"}>{this.props.name}</p>
-						{this.props.newPrice ?
+						<p className={"bestselling-products__name"}>{product[this.props.lang].name}</p>
+						{product.tags.discount > 0 ?
 							<p className={"bestselling-products__price"}>
-								{this.props.currencySymbol + (this.props.newPrice * this.props.currencyMultiplier).toFixed(2)}&nbsp;&nbsp;
+							{this.props.currencySymbol + (product.newPrice * this.props.currencyMultiplier).toFixed(2)}&nbsp;&nbsp;
 								<span>
-									{this.props.currencySymbol + (this.props.price * this.props.currencyMultiplier).toFixed(2)}
+								{this.props.currencySymbol + (product.price * this.props.currencyMultiplier).toFixed(2)}
 								</span>
 							</p>
 							:
-							<p className={"bestselling-products__price"}>{this.props.currencySymbol + (this.props.price * this.props.currencyMultiplier).toFixed(2)}</p>
+						<p className={"bestselling-products__price"}>{this.props.currencySymbol + (product.price * this.props.currencyMultiplier).toFixed(2)}</p>
 						}
 					
 					<p className={"bestselling-products__add-to-cart"} onClick={(e) => this.dispatchAddToCart(e)}>
