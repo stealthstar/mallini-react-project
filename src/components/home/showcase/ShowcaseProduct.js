@@ -80,7 +80,7 @@ class ShowcaseProduct extends React.Component {
 				<div className={"showcase-product__inner"} onClick={(e) => this.clickHandler(this.props.number, e)}>
 					<div className={"showcase-product__photo"}></div>
 						
-					<p className={"showcase-product__name"} >{product.name}</p>
+					<p className={"showcase-product__name"} >{product[this.props.lang].name}</p>
 						 {product.tags.discount ? 
 						<div className={"showcase-product__prices"}> 
 							<p className={"showcase-product__price"} >
