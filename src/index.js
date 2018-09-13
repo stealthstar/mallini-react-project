@@ -1,13 +1,12 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import App from "./App"
+import Root from "./Root"
 import { Provider } from "react-redux"
-import "./assets/favicon.ico"
+import PropTypes from 'prop-types'
 import store from "./store/store"
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
+        <Root store={store} />,
     document.getElementById("root")
 )
+

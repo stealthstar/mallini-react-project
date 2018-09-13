@@ -4,7 +4,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './actions/actions';
 import  {windowResize} from './actions/windowResize';
-
+import {
+	BrowserRouter as Router,
+	Route,
+	Link,
+	Switch,
+	Redirect } from 'react-router-dom'
 
 import HomePage from './views/HomePage';
 import ComparePage from './views/ComparePage';
@@ -59,21 +64,18 @@ class App extends React.Component {
 	}
 	// - - render - -
     render() {
-		switch(this.props.viewName) {
-			case 'home':
-				return <HomePage />
 
-			case 'compare':
-				return <ComparePage />
-			case 'cart':
-				return <CartPage />
-			case 'wishlist':
-				return <WishlistPage />
-			case 'product':
-				return <ProductPage />
-			default:
-				return null;
-		}
+	return (
+		<Router>
+			<Switch>
+				<Route path="/" exact component={HomePage} />
+				<Route path="/product" component={ProductPage} />
+				<Route path="/compare" component={ComparePage} />
+				<Route path="/wishlist" component={WishlistPage} />
+				<Route path="/cart" component={CartPage} />
+			</Switch>
+		</Router>
+		)
 	}
 
 }

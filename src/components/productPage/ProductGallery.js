@@ -6,7 +6,8 @@ import "../../styles/productPage/ProductGallery.sass";
 
 const mapStateToProps = state => ({
 	lang: state.dropdownReducer.langDropdown,
-	productId: state.viewReducer.activeProductId
+	productId: state.viewReducer.activeProductId,
+	width: state.windowSizeReducer.windowWidth
 })
 
 class ProductGallery extends React.Component {
@@ -101,16 +102,16 @@ class ProductGallery extends React.Component {
 				>
 					{/* <img src={images[this.state.activeImage]} /> */}
 				</div>
-				{
-					this.props.images ? 
-						<p>
-							{
-								this.props.lang === "en" ? 
-									"Roll over image to zoom in" 
-									: "Najedź na obrazek, by powiększyć"
-							}
-						</p>
-						: null
+				{	 
+						this.props.images && this.props.width > 680? 
+							<p>
+								{
+									this.props.lang === "en" ? 
+										"Roll over image to zoom in" 
+										: "Najedź na obrazek, by powiększyć"
+								}
+							</p>
+							: null
 				}
 				
 			</div>

@@ -8,7 +8,6 @@ import {windowSizeReducer} from './windowSizeReducer'
 import {menuReducer} from './menuReducer'
 
 import thunk from "redux-thunk";
-import { routerReducer } from "react-router-redux";
 
 const rootReducer = combineReducers({
  	viewReducer,
@@ -17,8 +16,7 @@ const rootReducer = combineReducers({
 	searchReducer,
 	iconReducer,
 	windowSizeReducer,
-	menuReducer,
-	routing: routerReducer
+	menuReducer
 });
 
 export default rootReducer;

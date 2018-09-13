@@ -1,7 +1,15 @@
 .product-main
-	display: flex
-	flex: 1 0
-	padding-bottom: 40px
+	&__wrapper
+		display: flex
+		flex: 1 0
+		padding-bottom: 40px
+		flex-direction: row
+		justify-content: space-between
 	.spacer
 		width: 5%
 		height: 100%
+
+@media screen and (max-width: 680px)
+	.product-main
+		&__wrapper
+			flex-direction: column

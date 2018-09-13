@@ -1,17 +1,20 @@
-//react and redux imports
+// React imports
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link, NavLink } from 'react-router-dom'
+// component imports
 import Slider from 'react-slick/lib/slider';
 import DealsOfTheMonth from './DealsOfTheMonth';
-import { showProduct } from "../../../actions/showProduct";
+// actions imports
+import { changeProduct } from "../../../actions/changeProduct";
 import { addToCart } from "../../../actions/addToCart";
 import { addCompare } from "../../../actions/addCompare";
 import { addWish } from "../../../actions/addWish";
+// data import
 import data from '../../../assets/data.json'
-
+// style import
 import '../../../styles/home/showcase/ShowcaseProduct.sass'
-
 //module import
 import { findId } from "../../../assets/js-modules/findId";
 
@@ -25,7 +28,7 @@ function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		addToCart: addToCart,
 		addCompare: addCompare,
-		showProduct: showProduct,
+		changeProduct: changeProduct,
 		addWish: addWish
 	}, dispatch);
 }
@@ -42,13 +45,14 @@ class ShowcaseProduct extends React.Component {
 	}
 	//click Handler
 	clickHandler(productId, e) {
-		e.stopPropagation();
-		this.props.showProduct(productId);
+		this.props.changeProduct(productId);
 	}
 
 	// dispatch methods
 	dispatchAddToCart(e) {
-		e.stopPropagation();
+		let event = e;
+		event.stopPropagation();
+		event.preventDefault();
 		let price = this.props.discount ? 
 			this.getProduct().price - (this.getProduct().price * this.getProduct().tags.discount / 100).toFixed(2)
 			: this.getProduct().price;
@@ -77,6 +81,13 @@ class ShowcaseProduct extends React.Component {
 		product.newPrice = product.price - (product.price * product.tags.discount / 100);
 		return (
 			<div className={"showcase-product__wrapper"}>
+			<NavLink
+				style={{
+					textDecoration: 'none',
+					color: 'black'
+				}}
+				to={"/product"}
+				onClick={(e) => this.clickHandler(product.id, e)}>
 				<div className={"showcase-product__inner"} onClick={(e) => this.clickHandler(this.props.number, e)}>
 					<div className={"showcase-product__photo"}></div>
 						
@@ -98,6 +109,7 @@ class ShowcaseProduct extends React.Component {
 						{this.props.lang === 'en' ? 'ADD TO CART' : 'Dodaj do koszyka'}
 					</p> 
 				</div>
+			</NavLink>
 			</div>
 		);
 

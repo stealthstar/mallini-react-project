@@ -8,7 +8,8 @@ import Counter from './Counter';
 import AngleLeft from 'react-icons/lib/fa/angle-left';
 import AngleRight from 'react-icons/lib/fa/angle-right';
 
-
+//module import
+import { findId } from "../../../assets/js-modules/findId";
 import '../../../styles/home/showcase/DealSlide.sass'
 
 
@@ -42,8 +43,11 @@ class DealSlide extends React.Component {
 				return { width: '100%' };
 		}
 	}
+
 	render() {
-		const data = this.props.dealData;
+		let data = this.props.dealData;
+		data.newPrice = data.price - (data.price * data.tags.discount / 100);
+		console.log(data)
 		const y = data.ends[0], m = data.ends[1] - 1, d = data.ends[2], h = data.ends[3], min = data.ends[4];
 		const expiry = Date.UTC(y,m,d,h,min,0)/1000;
 
@@ -55,12 +59,12 @@ class DealSlide extends React.Component {
 						<p>{
 							this.props.lang === 'en' ? `Save` : `Taniej o`
 						}</p>
-						<p>{this.props.currencySymbol + (data.price * this.props.currencyMultiplier - data['new-price'] * this.props.currencyMultiplier).toFixed(2)}</p>
+						<p>{this.props.currencySymbol + (data.price - data.newPrice * this.props.currencyMultiplier).toFixed(2)}</p>
 					</div>
 				</div>
 				<div className={"slide__price--wrapper"}>
 					<div className={"slide__price--wrapper__row--top"}>
-						<p>{this.props.currencySymbol + (data['new-price'] * this.props.currencyMultiplier).toFixed(2)}</p>
+						<p>{this.props.currencySymbol + (data.newPrice * this.props.currencyMultiplier).toFixed(2)}</p>
 						<p>{this.props.currencySymbol + (data['price'] * this.props.currencyMultiplier).toFixed(2)}</p>
 					</div>
 					<p className={"slide__item-name"}>{data[this.props.lang].name}</p>

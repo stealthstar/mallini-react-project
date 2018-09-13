@@ -38,7 +38,7 @@ class ProductDetails extends React.Component {
 					<p>{product[this.props.lang].category}</p>
 					<div className={"product-main__tag-wrapper"}>
 						{product.tags.sale && <div className={"product-main__tag--sale product-main__tag"}>sale</div>}
-						{ product.tags.discount > 0 && <div className={"product-main__tag--discount product-main__tag"}>{`-${product.tags.discount}%`}</div> }
+						{ product.tags.discount > 0 && <div className={"product-main__tag--discount product-main__tag"}>{`-${Math.round(product.tags.discount)}%`}</div> }
 						{ product.tags.new && <div className={"product-main__tag--new product-main__tag"}>new</div>}
 						{ product.tags.hot && <div className={"product-main__tag--hot product-main__tag"}>hot!</div> }
 						

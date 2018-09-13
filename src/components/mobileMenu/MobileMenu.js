@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {changeActive} from '../../actions/menuActions';
 import Transition from 'react-spring';
+import { BrowserRouter as Link, NavLink } from 'react-router-dom'
 //component imports
 import Searchbar from '../topSection/Searchbar.js';
-import { changeView } from '../../actions/changeView';
 //font-awesome imports
 import ChevronDown from 'react-icons/lib/fa/chevron-down';
 import ChevronUp from 'react-icons/lib/fa/chevron-up';
@@ -32,7 +32,6 @@ const mapStateToProps = state => ({
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		changeActive: changeActive,
-		changeView: changeView,
 		hideMenu: hideMenu
 	}, dispatch);
 }
@@ -51,11 +50,7 @@ class MobileMenu extends React.Component {
 		} else {
 			this.props.changeActive(id);
 		}
-		if(id === 'home'){
-			this.props.changeView(id);
-			this.props.hideMenu();
 
-		} 
 	}
 
 	render() {
@@ -63,17 +58,18 @@ class MobileMenu extends React.Component {
 		return (
 			<div className={"mobile-menu"}>
 			
-				<div className={"mobile-menu__section mobile-menu__section--home"} >
+				<NavLink to="/" className={"mobile-menu__section mobile-menu__section--home"} >
 					<div className={"mobile-menu__label"}
 						id={"home"}
-						onClick={(e) => this.clickHandler(e)}>
+						onClick={(e) => this.clickHandler(e)}
+						>
 						<p>{this.props.language === "en" ?
 							'Home' : 'Strona Główna'
 						}</p>
 
 					</div>
 
-				</div>
+				</NavLink>
 				<div className={"mobile-menu__section mobile-menu__section--shop"} >
 					<div className={"mobile-menu__label"} 
 						id={"shop"} 

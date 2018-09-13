@@ -18,6 +18,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
 
+
   output: {
     path: path.resolve('.tmp'),
     filename: '[name].js',
@@ -35,9 +36,10 @@ module.exports = {
     contentBase: '.tmp',
     hot: true,
     port: 3000,
+    historyApiFallback: true
   },
 
-  module: {   
+  module: {
     rules: [
       // {
       //   test: /\.json$/,
@@ -56,8 +58,9 @@ module.exports = {
       },
       {
         test: /\.(scss|sass)$/,
-        use: [
-          { loader: 'style-loader' },
+        use: [{
+            loader: 'style-loader'
+          },
           {
             loader: 'css-loader',
             options: {
@@ -90,15 +93,13 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|svg|png|gif|ico)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'assets/',
-            },
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/',
           },
-        ],
+        }, ],
       },
     ],
   },

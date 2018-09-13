@@ -31,26 +31,26 @@ class CartSummary extends React.Component {
 					{this.props.lang === "en" ? "Order Summary" : "Podsumowanie zamówienia"}
 				</header>
                 <div className={"cart__summary__row"}>
-                    <div className={"cart__summary__column"}>
+					<div className={"cart__summary__column cart__summary__column--left"}>
                         {this.props.lang === "en" ? "Items in cart:" : "Produkty w koszyku:"}
 					</div>
-                    <div className={"cart__summary__column"}>
+					<div className={"cart__summary__column cart__summary__column--right"}>
 					{this.props.cartItemsAmount}
 					</div>
 				</div>
                 <div className={"cart__summary__row"}>
-                    <div className={"cart__summary__column"}>
+					<div className={"cart__summary__column cart__summary__column--left"}>
                         {this.props.lang === "en" ? "Shipping:" : "Koszty przesyłki:"}
 					</div>
-                    <div className={"cart__summary__column"}>
+					<div className={"cart__summary__column cart__summary__column--right"}>
                         {this.props.lang === "en" ? "FREE!" : "DARMOWA!"}
 					</div>
 				</div>
                 <div className={"cart__summary__row"}>
-                    <div className={"cart__summary__column"}>
+					<div className={"cart__summary__column cart__summary__column--left"}>
                         {this.props.lang === "en" ? "Subtotal:" : "Wartość zakupów"}
 					</div>
-                    <div className={"cart__summary__column"}>
+					<div className={"cart__summary__column cart__summary__column--right"}>
                         {this.props.currencySymbol + (this.props.cartWorth*this.props.currencyMultiplier).toFixed(2)}
 					</div>
 				</div>

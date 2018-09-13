@@ -297,7 +297,7 @@
 			},
 			"tags": {
 				"hot": false,
-				"discount": 0,
+				"discount": 10.038,
 				"new": false,
 				"sale": true
 			},
@@ -327,7 +327,7 @@
 			},
 			"tags": {
 				"hot": false,
-				"discount": 20,
+				"discount": 21.11,
 				"new": false,
 				"sale": true
 			},
@@ -338,7 +338,7 @@
 			"price": 299.95,
 			"quantity": 2,
 			"sold": 4,
-			"month-deal": true,
+			"month-deal": false,
 			"ends": [
 				2018,
 				9,
@@ -367,8 +367,14 @@
 			"price": 2989.95,
 			"quantity": 4,
 			"sold": 1,
-			"month-deal": false,
-			"ends": null,
+			"month-deal": true,
+			"ends": [
+				2018,
+				9,
+				28,
+				20,
+				0
+			],
 			"pl": {
 				"name": "Devialet Gold Phantom głośnik bezprzewodowy",
 				"category": "Audio",
@@ -386,7 +392,7 @@
 			],
 			"tags": {
 				"hot": true,
-				"discount": 10,
+				"discount": 10.0337,
 				"new": true,
 				"sale": false
 			},

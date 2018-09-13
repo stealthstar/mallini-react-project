@@ -6,8 +6,7 @@ import SortDesc from 'react-icons/lib/fa/sort-desc';
 import ChevronDown from 'react-icons/lib/fa/chevron-down';
 import ChevronUp from 'react-icons/lib/fa/chevron-up';
 import EllipsisV from 'react-icons/lib/fa/ellipsis-v';
-
-import { changeView } from '../../../actions/changeView';
+import { BrowserRouter as Link, NavLink } from 'react-router-dom'
 
 import data from '../../../assets/data.json';
 
@@ -18,11 +17,7 @@ const mapStateToProps = state => ({
 	width: state.windowSizeReducer.windowWidth
 });
 
-function mapDispatchToProps(dispatch) {
-	return bindActionCreators({
-		changeView: changeView
-	}, dispatch);
-}
+
 
 class MainMenu extends React.Component {
 	// eslint-disable-line react/prefer-stateless-function
@@ -34,7 +29,6 @@ class MainMenu extends React.Component {
 		}
 
 		this.menuClickHandler = this.menuClickHandler.bind(this);
-		this.clickChangeView = this.clickChangeView.bind(this);
 	}
 
 	componentDidMount() {
@@ -66,12 +60,8 @@ class MainMenu extends React.Component {
 				activeMenu: ''
 			})
 		}
-		id === 'home' ? this.props.changeView(id) : null
 	}
 
-	clickChangeView(view) {
-		
-	}
 
 	render() {
 		let styleBlue = {color: 'blue'};
@@ -100,15 +90,18 @@ class MainMenu extends React.Component {
 						}
 					</div>
 					<div className={"submenu__wrapper submenu--small"}>
-						<button 
-							id={"home"} className={"submenu__toggle submenu__toggle--small"} onClick={(e) => this.menuClickHandler(e)}>
-							{this.props.lang === "en"?
-								"Home"
-								:
-								"Home"
-							}
+						<NavLink to={"/"} >
+							<button 
+								id={"home"} className={"submenu__toggle submenu__toggle--small"} 
+								onClick={(e) => this.menuClickHandler(e)}>
+								{this.props.lang === "en"?
+									"Home"
+									:
+									"Home"
+								}
 
-						</button>
+							</button>
+						</NavLink>
 					</div>
 					<div className={"submenu__wrapper submenu--small"}>
 						<button id={"shop"} className={"submenu__toggle submenu__toggle--small"} onClick={(e) => this.menuClickHandler(e)}>
@@ -277,4 +270,4 @@ class MainMenu extends React.Component {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainMenu)
+export default connect(mapStateToProps)(MainMenu)

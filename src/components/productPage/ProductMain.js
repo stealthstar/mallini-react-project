@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
 class ProductMain extends React.Component {
   render() {
 	return (
-	  <div className={"product-main wrapper"}>
+	  <div className={"product-main__wrapper"}>
 		<ProductGallery images={this.props.images}/>
 		<div className={"spacer"} ></div>
 		<ProductDetails />

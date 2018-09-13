@@ -3,12 +3,11 @@ import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Slider from 'react-slick/lib/slider';
-
+import { BrowserRouter as Link, NavLink } from 'react-router-dom'
 import {addToCart} from "../../actions/addToCart";
 import {addCompare} from "../../actions/addCompare";
 import {addWish} from "../../actions/addWish";
-import {changeView} from "../../actions/changeView";
-import {showProduct} from "../../actions/showProduct";
+import { changeProduct } from "../../actions/changeProduct";
 
 import AngleLeft from 'react-icons/lib/fa/angle-left';
 import AngleRight from 'react-icons/lib/fa/angle-right';
@@ -32,7 +31,7 @@ const mapStateToProps = state => ({
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		showProduct: showProduct,
+		changeProduct: changeProduct,
 		addToCart: addToCart,
 		addCompare: addCompare,
 		addWish: addWish
@@ -53,14 +52,17 @@ class BestSellingItem extends React.Component {
 	}
 
 	//click Handler
-	clickHandler(id) {
-		this.props.showProduct(id)
+	clickHandler(id, e) {
+		// e.preventDefault();
+		this.props.changeProduct(id)
 	}
 
 
 	// dispatch methods
 	dispatchAddToCart(e) {
-		e.stopPropagation();
+		let event = e;
+		event.stopPropagation();
+		event.preventDefault();
 		// if discount applied calculate new price
 		// else get price with getProduct method
 		let price = this.props.discount ? 
@@ -72,13 +74,17 @@ class BestSellingItem extends React.Component {
 	}
 
 	dispatchAddCompare(e) {
-		e.stopPropagation();
+		let event = e;
+		event.stopPropagation();
+		event.preventDefault();
 		if (!this.props.compare.includes(this.props.id) && this.props.compare.length < 5) {
 			this.props.addCompare(this.props.id);
 		}
 	}
 	dispatchAddWish(e) {
-		e.stopPropagation();
+		let event = e;
+		event.stopPropagation();
+		event.preventDefault();
 		!this.props.wishlist.includes(this.props.id) ? this.props.addWish(this.props.id) : null;
 	}
 
@@ -93,7 +99,10 @@ class BestSellingItem extends React.Component {
 		return (
 			// const path = require("../../assets/img/bestselling-products-" + [el.id] + ".png");
 			
-			<div className={"bestselling-products__item-wrapper"} onClick={() => this.clickHandler(product.id)}>
+			<NavLink
+				to={"/product"}
+				className={"bestselling-products__item-wrapper"} 
+				onClick={(e) => this.clickHandler(product.id, e)}>
 				<div key={product.id} className={"bestselling-products__item"}>
 					{/* <img src={path} /> */}
 					<div className={"bestselling-products__image"}>
@@ -104,7 +113,7 @@ class BestSellingItem extends React.Component {
 							<FaHeartO />
 						</div>	
 					</div>
-						<p className={"bestselling-products__name"}>{product[this.props.lang].name}</p>
+					<p className={"bestselling-products__name"}>{product[this.props.lang].name}</p>
 						{product.tags.discount > 0 ?
 							<p className={"bestselling-products__price"}>
 							{this.props.currencySymbol + (product.newPrice * this.props.currencyMultiplier).toFixed(2)}&nbsp;&nbsp;
@@ -120,7 +129,7 @@ class BestSellingItem extends React.Component {
 						{this.props.lang === 'en'?'ADD TO CART': 'Dodaj do koszyka'}
 					</p> 
 				</div>
-			</div>
+			</NavLink>
 		);
 	}
 }
