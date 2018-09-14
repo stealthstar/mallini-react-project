@@ -61,4 +61,26 @@
 		.inner-wrapper
 			flex-direction: column
 		
+@media screen and (max-width: 600px)
+	.cart
+		padding: 10px 5px
+		flex-wrap: wrap
+		h2
+			margin-bottom: 20px
+		&__items
+			display: flex
+			width: 100%
+		.inner-wrapper
+			flex-direction: column
+		&__items
+			&__top-row
+				display: flex
+				justify-content: flex-end
+				padding-right: 25px
+				p
+					width: 80px
+					text-align: center
+					font-weight: 600
+					font-size: 1.1rem
+		
 

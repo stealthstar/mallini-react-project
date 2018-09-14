@@ -155,3 +155,34 @@ $cell-width: 8rem
 	.cart__item
 		&-picture
 			display: none
+
+@media screen and (max-width: 600px)
+	$item-height: 80px
+	$cell-width: 5rem
+	.cart__item
+		flex-shrink: 1
+	
+		width: 100%
+		padding: 5px
+		h3
+			font-size: 1rem 
+		.remove-cart
+			height: 20px
+			width: 20px
+			border-radius: 10%
+			&:hover, &:active
+				cursor: pointer
+				background-color: $red
+		&__price,
+		&__value
+			min-width: 80px
+			padding: 3px
+			p
+				font-size: 1rem
+		&__input-wrapper
+			.buttons
+				button
+					width: 24px
+					height: 24px
+					font-size: 14px
+					border-radius: 10%
