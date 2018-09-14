@@ -47,7 +47,6 @@ class DealSlide extends React.Component {
 	render() {
 		let data = this.props.dealData;
 		data.newPrice = data.price - (data.price * data.tags.discount / 100);
-		console.log(data)
 		const y = data.ends[0], m = data.ends[1] - 1, d = data.ends[2], h = data.ends[3], min = data.ends[4];
 		const expiry = Date.UTC(y,m,d,h,min,0)/1000;
 

@@ -61,7 +61,7 @@
 		display: flex
 		width: 100%
 		min-width: 400px
-		height: 200px
+		height: 90px
 		align-items: center
 		justify-content: space-between
 		&__column
@@ -80,20 +80,27 @@
 		&__search-column
 			display: none
 		.icon
-			height: 10%
-			width: 10%
-			margin-right: 40px
+			height: 90px
+			width: 90px
+			margin-right: 0px
+			padding-left: 20px
 			text-align: center
-			line-height: 10%
-			font-size: 64px
+			// line-height: 80px
+			font-size: 44px
 			color: #fff
+			display: flex
+			align-items: center
+			justify-content: center
 			&:hover
 				color: #cdcdcd
 				cursor: pointer
+			&:active
+				background-color: rgba(255,255,255,0.4)	
+
 
 		.menu-toggle
-			width: 100px
-			height: 100px
+			width: 80px
+			height: 80px
 			border-radius: 50%
 			font-size: 64px
 			color: #fff
@@ -102,6 +109,7 @@
 				cursor: pointer
 			&:active
 				font-size: 46px
+				background-color: #fde401
 			&--yellow
 				background-color: #fde401
 				color: #111
@@ -112,8 +120,10 @@
 	.icon__number.icon-cart__number
 		user-select: none
 		font-weight: 600
-		font-size: 24px
-		height: 34px
-		width: 34px
+		font-size: 18px
+		height: 30px
+		width: 30px
 		position: relative
-		left: 280%
+		top: 20%
+		left: -18%
+		

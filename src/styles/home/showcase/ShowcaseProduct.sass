@@ -12,14 +12,7 @@
 		a
 			text-decoration: none
 			width: 100%
-	&__wrapper:nth-child(2),
-	&__wrapper:nth-child(5)
-		.showcase-product__inner
-			border-left: 2px solid #eee
-			border-right: 2px solid #eee
-			&:hover
-				border-left: 2px solid $light-blue
-				border-right: 2px solid $light-blue
+
 
 	&__inner
 		height: 98%
@@ -91,11 +84,19 @@
 		&__wrapper:nth-child(2),
 		&__wrapper:nth-child(4)
 			.showcase-product__inner
-				border-right: none
 				&:hover
 					border-radius: 10px
 					cursor: pointer
 					border: 2px solid $light-blue
-		&__inner,
-		&__wrapper:nth-child(3)
-			border-right: 2px solid #eee
+
+@media screen and (max-width: 600px)
+	.showcase__slide
+		.showcase__slide__inner-wrapper
+			height: 340px
+	.showcase-product
+		&__wrapper
+			height: 340px
+			width: 100%
+		&__add-to-cart
+			color: #fff
+			background-color: $blue

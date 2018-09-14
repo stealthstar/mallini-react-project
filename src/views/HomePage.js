@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
+import { withRouter } from 'react-router-dom'
 import "../styles/home/HomePage.sass";
 
 import TopBar from '../components/topSection/TopBar';
@@ -74,4 +74,4 @@ class HomePage extends React.Component {
 
 }
 
-export default connect(mapStateToProps)(HomePage)
+export default withRouter(connect(mapStateToProps)(HomePage))

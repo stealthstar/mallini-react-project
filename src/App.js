@@ -1,6 +1,7 @@
 import { hot } from "react-hot-loader";
 import * as React from "react";
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 import { bindActionCreators } from 'redux';
 import * as actions from './actions/actions';
 import  {windowResize} from './actions/windowResize';
@@ -19,9 +20,7 @@ import WishlistPage from './views/WishlistPage';
 
 import "./styles/theme.sass";
 
-const mapStateToProps = state => ({
-	viewName: state.viewReducer.viewName
-})
+
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		resize: windowResize
@@ -53,10 +52,10 @@ class App extends React.Component {
 	}
 
 	//lifecycle methods
-	componentWillMount() {
-		this.updateDimensions();
-	}
+	
 	componentDidMount() {
+		this.updateDimensions();
+		console.log("/storefront")
 		window.addEventListener("resize", this.updateDimensions);
 	}
 	componentWillUnmount() {
@@ -64,20 +63,21 @@ class App extends React.Component {
 	}
 	// - - render - -
     render() {
-
-	return (
-		<Router>
-			<Switch>
-				<Route path="/" exact component={HomePage} />
-				<Route path="/product" component={ProductPage} />
-				<Route path="/compare" component={ComparePage} />
-				<Route path="/wishlist" component={WishlistPage} />
-				<Route path="/cart" component={CartPage} />
-			</Switch>
-		</Router>
-		)
+		return (
+			<Router basename={"/storefront"} > 
+			{/* change the string in basename to "/" for development */}
+				<Switch>
+					<Route path={"/product"} component={ProductPage} />
+					<Route path={"/compare"} component={ComparePage} />
+					<Route path={"/wishlist"} component={WishlistPage} />
+					<Route path={"/cart"} component={CartPage} />
+					<Route path={"/"} exact component={HomePage} />
+					<Redirect from={"*"} to={"/"} />
+				</Switch>
+			</Router>
+			)
 	}
 
 }
 
-export default hot(module)(connect(mapStateToProps, mapDispatchToProps)(App))
+export default withRouter(hot(module)(connect(null, mapDispatchToProps)(App)))

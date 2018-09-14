@@ -36,7 +36,7 @@ class Slider extends React.Component {
 				dynamicHeight
 				showThumbs={false}
 				autoPlay={true}
-				interval={4000}
+				interval={6000}
 				emulateTouch
 				infiniteLoop={true}
 				showStatus={false}

@@ -1,6 +1,8 @@
+@import '../_variables.sass'
 *
 	box-sizing: border-box
 .mobile-menu
+	max-height: calc(100vh - 200px)
 	height: calc(100vh - 200px)
 	width: calc(100vw - 19px)
 	background-color: #fff
@@ -16,12 +18,14 @@
 	&__label
 		color: #000
 		text-transform: uppercase
-		padding: 30px 10px
+		padding: 10px 10px
 		display: flex
 		justify-content: space-between
 		align-items: center
 		border-bottom: 1px solid #d9d9d9
-		font-size: 32px
+		font-size: 20px
+		&.last
+			border-bottom: none
 		&:hover
 			cursor: pointer
 		&:active
@@ -31,9 +35,9 @@
 		padding: 0 20px
 	&__item
 		width: 100%
-		padding: 30px 20px
+		padding: 10px 10px
 		color: #626262
-		font-size: 26px
+		font-size: 22px
 		font-weight: 500
 		border-bottom: 1px solid #d0d0d0
 .mobile-menu__section--footer
@@ -42,12 +46,12 @@
 	justify-content: center
 	flex-wrap: wrap
 	.mobile-menu__label--social
-		padding: 40px 0
+		padding: 20px 0
 		width: 100%
 		border: none
 		justify-content: center
 		color: #dadada
-		font-size: 42px
+		font-size: 32px
 		cursor: default
 		svg
 			cursor: pointer
@@ -59,5 +63,17 @@
 		justify-content: center
 		text-transform: none
 		p 
-			font-size: 20px
-			font-weight: 500
+			font-size: 12px
+			font-weight: 300
+.mobile-menu
+	.search-form__input-wrapper
+		flex: 1 0
+		height: 40px
+		input
+			font-size: 16px
+	.search-form__submit
+		height: 40px
+		width: 40px
+		font-size: 18px
+		&:active
+			background-color: $blue

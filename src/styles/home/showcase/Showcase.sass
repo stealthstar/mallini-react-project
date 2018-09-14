@@ -174,18 +174,28 @@ section.showcase
 
 @media screen and (max-width: 1000px)
 	section.showcase
-		padding: 0 20px 20px 20px
+		padding: 0 10px 20px 10px
 		height: auto
 	.showcase
 		flex-direction: column-reverse
 		align-items: center
 		justify-content: flex-start
+		flex: 1 0
 		&__column
 			height: auto
 			width: 100%
+			flex: 1 0
 			&--left
 				width: 100%
+				padding: 0
 			&--right
 				width: 100%
 				max-width: 100%
 				padding: 0px
+@media screen and (max-width: 600px)
+	.showcase
+		&__column
+			&--left
+				width: 100%
+			&--right
+				height: 950px

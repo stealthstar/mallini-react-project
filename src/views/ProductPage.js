@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
+import { withRouter } from 'react-router-dom';
 
 import TopBar from '../components/topSection/TopBar';
 import TopContainer from '../components/topSection/TopContainer';
@@ -75,4 +75,4 @@ class ProductPage extends React.Component {
 
 }
 
-export default connect(mapStateToProps)(ProductPage)
+export default withRouter(connect(mapStateToProps)(ProductPage))

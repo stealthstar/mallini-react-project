@@ -166,3 +166,17 @@ section.bestselling
 		width: 20px
 		height: 20px
 		background-color: red
+
+@media screen and (max-width: 600px)
+	section.bestselling
+		height: auto
+	.bestselling
+		flex-wrap: wrap
+		&__column
+			width: 100%
+			&--left
+				padding: 0
+				justify-content: center
+				p
+					font-size: 16px
+					max-width: 100%

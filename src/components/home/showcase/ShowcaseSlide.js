@@ -69,13 +69,18 @@ class ShowcaseSlide extends React.Component {
 	}
 	// - - -
 	render() {
-		let products = this.getProducts(this.props.slideName), productsShort = products.slice(0, 4);
+		let products = this.getProducts(this.props.slideName), 
+			productsShort = products.slice(0, 4),
+			productsVeryShort = products.slice(0, 2);
 		return (
 			<div className={"showcase__slide"}>
 				<div className={"showcase__slide__inner-wrapper"}>
 					{this.props.width > 1400 ?
-						products.map(el => <ShowcaseProduct key={el.id} number={el.id} discount={el.tags.discount}/>) 
-						: productsShort.map(el => <ShowcaseProduct key={el.id} number={el.id} discount={el.tags.discount}/>)
+							products.map(el => <ShowcaseProduct key={el.id} number={el.id} discount={el.tags.discount}/>) 
+							:
+							this.props.width > 600 ?
+								productsShort.map(el => <ShowcaseProduct key={el.id} number={el.id} discount={el.tags.discount}/>)
+								: productsVeryShort.map(el => <ShowcaseProduct key={"vs"+el.id} number={el.id} discount={el.tags.discount}/>)
 					}
 				</div>
 			</div>

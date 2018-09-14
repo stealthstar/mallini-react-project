@@ -44,13 +44,19 @@ class MobileMenu extends React.Component {
 	}
 
 	clickHandler(e) {
-		let id = e.target.id;
+		const target = e.target;
+		let id = target.id;
 		if(this.props.active === id){
 			this.props.changeActive('');	
 		} else {
 			this.props.changeActive(id);
 		}
-
+		let tags = [];
+		for (var value of target.childNodes.values()) {
+			console.log(value);
+			tags.push(value);
+		}
+		tags.filter(el=>el.tagName === "svg").length === 0 ? this.props.hideMenu(): null;
 	}
 
 	render() {
@@ -179,7 +185,7 @@ class MobileMenu extends React.Component {
 					</div>
 				</div>
 				<div className={"mobile-menu__section mobile-menu__section--gift"} >
-					<div className={"mobile-menu__label"}>
+					<div className={"mobile-menu__label last"}>
 						<p>{this.props.language === "en" ?
 							"Gift cards" : "Karty Podarunkowe"
 						}</p>
