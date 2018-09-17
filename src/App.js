@@ -40,13 +40,12 @@ class App extends React.Component {
 	}
 
 	updateDimensions() {
-		let w = window,
-			d = document,
-			documentElement = d.documentElement,
-			body = d.getElementsByTagName('body')[0],
-			width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
-			height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
-
+		let 
+			body = document.getElementsByTagName('body')[0],
+			width =  document.documentElement.clientWidth || body.clientWidth,
+			height = document.documentElement.clientHeight || body.clientHeight;
+			console.log(width, height, window.innerWidth, window.innerHeight);
+			
 		this.setState({ width: width, height: height });
 		this.props.resize([width, height]);
 	}

@@ -88,7 +88,7 @@ class BestsellingProducts extends React.Component {
 				<div className={"bestselling-products__row bestselling-products__row--top"}>
 					{this.props.lang === 'en'
 						? <div>
-							<p><b>Best Sellers</b> Products</p>
+							<p><b>Best Sellers</b> {this.props.width > 460 && "Products"}</p>
 						</div>
 
 						: <div>

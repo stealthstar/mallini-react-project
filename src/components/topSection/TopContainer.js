@@ -53,40 +53,35 @@ class TopContainer extends React.Component {
 		return (
 			<section className={"top-container"}>
 				<div className={"top-container__column top-container__column--left"} >
-					
-						{
-							(this.props.width > 1000) ?
-								<NavLink to={"/"} style={{textDecoration: "none", color: "black"}}>
-						 			<p className={"top-container__logo"}>
-									 	<span><b>Media</b>market</span> 
-									</p>
-								 </NavLink>
-						 		:
-									this.props.mobileMenu ?
-									<div className={"menu-toggle menu-toggle--yellow flex-center"} onClick={this.handleClick}>
-										<Close />
-									</div>
-									:	
-									<div className={"menu-toggle flex-center"} onClick={this.handleClick}>
-										<Menu />
-									</div>
-								
-									
-									
-								
-						}
+					{
+						(this.props.width > 720) ?
+							<NavLink to={"/"} style={{textDecoration: "none", color: "black"}}>
+								<p className={"top-container__logo"}>
+									<span><b>Media</b>market</span> 
+								</p>
+								</NavLink>
+							:
+								this.props.mobileMenu ?
+								<div className={"menu-toggle menu-toggle--yellow flex-center"} onClick={this.handleClick}>
+									<Close />
+								</div>
+								:	
+								<div className={"menu-toggle flex-center"} onClick={this.handleClick}>
+									<Menu />
+								</div>	
+					}
 					
 				</div>
 				<div 
 					className=
 					{"top-container__search-column"} >
-					{(this.props.width > 1000) && <Searchbar />}
+					{(this.props.width > 720) && <Searchbar />}
 				</div>
 				<div className={"top-container__column top-container__column--right"} >
 					<CompareIcon />
 					<WishlistIcon />
 					<CartIcon />
-					{(this.props.width > 1000) && <CartWorth />}
+					{(this.props.width > 720) && <CartWorth />}
 				</div>
 			</section>
 		)

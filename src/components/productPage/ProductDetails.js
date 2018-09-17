@@ -31,17 +31,22 @@ class ProductDetails extends React.Component {
 
 	render() {
 		const product = this.getProduct();
+		// star-rating logic
+		const 	stars_img = require('../../assets/img/icons/stars-empty.png'),
+				stars_img_filled = require('../../assets/img/icons/stars-filled.png'),
+				starFillSize = product.rating / 5 * 100;
 		product.newPrice = product.price - (product.price * product.tags.discount / 100);
 		return (
 			<div className={"product-main__details"}>
 				<div className={"product-main__details--top"}>
 					<p>{product[this.props.lang].category}</p>
 					<div className={"product-main__tag-wrapper"}>
-						{product.tags.sale && <div className={"product-main__tag--sale product-main__tag"}>sale</div>}
+					{/* check for tags and add them when needed */}
+						{ product.tags.sale && <div className={"product-main__tag--sale product-main__tag"}>sale</div>}
 						{ product.tags.discount > 0 && <div className={"product-main__tag--discount product-main__tag"}>{`-${Math.round(product.tags.discount)}%`}</div> }
 						{ product.tags.new && <div className={"product-main__tag--new product-main__tag"}>new</div>}
 						{ product.tags.hot && <div className={"product-main__tag--hot product-main__tag"}>hot!</div> }
-						
+					{/* - - */}
 					</div>
 				</div>
 				<div className={"product-main__details--bottom"}>
@@ -73,6 +78,32 @@ class ProductDetails extends React.Component {
 									</p>
 							}
 						</div>
+						<div className={"product-main__details__availability"} >
+							Availability:&nbsp;
+							<span style={{ color: product.quantity > 0 ? "#4cd964" :"#ff3b30"}}>
+							{
+								product.quantity > 0 ? 
+									this.props.lang ==="en" ? 
+									"In Stock" : "Dostępny"
+									: 
+										this.props.lang === "en" ? 
+										"Out of Stock" : "Brak w magazynie"
+							}
+							</span>
+							
+						</div>
+					</div>
+					<div className={"rating-bg"} style={{backgroundImage: `url(${stars_img})`}}>
+						<div className={"rating-fill"} style={{ 
+							backgroundImage: `url(${stars_img_filled})`, 
+							width:starFillSize+"%" 
+							}}>
+						</div>
+						
+					</div>
+					<div className={"product-main__details__descritpion"}>
+						{product[this.props.lang].desc ? product[this.props.lang].desc :
+							this.props.lang ==="en" ? "Sorry! No more information available" : "Przepraszamy! Brak informacji"}
 					</div>
 				</div>
 

@@ -4,6 +4,9 @@
 	flex-direction: column
 	height: calc(100vh - 140px)
 	width: 100%
+	a
+		text-decoration: none
+		color: inherit
 	&__image--wrapper
 		padding-top: 10px
 		display: flex
@@ -92,6 +95,9 @@
 		flex-direction: column
 		height: auto
 		width: 100%
+		a
+			text-decoration: none
+			color: inherit
 		&__image--wrapper
 			padding: 10px 0
 			display: flex
@@ -128,3 +134,50 @@
 			height: auto
 			flex-direction: column
 			padding: 10px 0
+			
+@media screen and (max-width: 640px)
+	.slide
+		display: flex
+		flex-direction: column
+		max-height: calc(100vh - 140px)
+		width: 100%
+		
+		&__image--wrapper
+			.savings
+				height: 70px
+				width: 70px
+				border-radius: 50%
+				background-color: $green
+				color: #fff
+				margin: 5px 5px 0 0 
+				z-index: 10
+				position: absolute
+				top: 0
+				right: 0
+				p
+					font-size: 16px
+					&:nth-child(2)
+						font-size: 16px
+		.row--bottom
+			height: 30px
+		&__price--wrapper
+			padding: 0
+			&__row--top
+				p
+					margin-right: 20px
+					font-size: 20px
+					color: $blue
+					font-weight: 600
+				p:nth-child(2)
+					margin-right: 0
+					color: #cccccc
+					text-decoration: line-through
+					font-weight: 600
+		&__availability
+			padding: 0
+			.row--top
+				margin-bottom: 0
+				p
+					font-size: 14px
+@media screen and (max-width: 360px)
+	.slide

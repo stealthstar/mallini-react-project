@@ -12,15 +12,18 @@
 			height: 100%
 			align-items: center
 			padding: 0 0 0 50px
+			flex: 0 1
 			&--left
-				min-width: 300px
+				min-width: 240px
 			&--right
 				justify-content: space-between
 				padding: 0 50px 0 20px
-				min-width: 370px
+				flex: 1 1
+				max-width: 380px
 		&__search-column
 			display: flex
 			width: auto
+			flex: 1 1
 		p 
 			font-size: 26px
 		&__logo
@@ -60,7 +63,7 @@
 		background-color: #007aff
 		display: flex
 		width: 100%
-		min-width: 400px
+		min-width: 320px
 		height: 90px
 		align-items: center
 		justify-content: space-between
@@ -80,17 +83,19 @@
 		&__search-column
 			display: none
 		.icon
-			height: 90px
-			width: 90px
+			height: 66px
+			width: 66px
 			margin-right: 0px
 			padding-left: 20px
 			text-align: center
 			// line-height: 80px
-			font-size: 44px
+			font-size: 42px
 			color: #fff
 			display: flex
 			align-items: center
 			justify-content: center
+			font-size: 28px
+			flex-shrink: 0
 			&:hover
 				color: #cdcdcd
 				cursor: pointer
@@ -99,10 +104,10 @@
 
 
 		.menu-toggle
-			width: 80px
-			height: 80px
+			width: 60px
+			height: 60px
 			border-radius: 50%
-			font-size: 64px
+			font-size: 38px
 			color: #fff
 			&:hover
 				color: #cdcdcd
@@ -120,10 +125,10 @@
 	.icon__number.icon-cart__number
 		user-select: none
 		font-weight: 600
-		font-size: 18px
-		height: 30px
-		width: 30px
+		font-size: 16px
+		height: 20px
+		width: 20px
 		position: relative
 		top: 20%
 		left: -18%
-		
+		flex-shrink: 0

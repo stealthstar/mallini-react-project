@@ -37,29 +37,32 @@ class HomePage extends React.Component {
 			"left": 0,
 			"top": 0
 		});
+		// if browser doesn't support smooth scroll, make sure it scrolls
+		// the page to the top
+		window.scroll(0,0);
 	}
 	render() {
 		return (
 			<div className={
 				(this.props.width > 1200) ?
 				"wrapper"
-					: (this.props.width > 1000) ?
+					: (this.props.width > 720) ?
 						"wrapper wrapper--medium"
 						:
 						"wrapper wrapper--mobile"
 				}>
-			{(this.props.width > 1000) && <TopBar />}
+			{(this.props.width > 720) && <TopBar />}
 			<TopContainer />
-			{(this.props.width > 1000) && <MainMenu />}
+			{(this.props.width > 720) && <MainMenu />}
 			{
-					((this.props.mobileMenu) && (this.props.width <= 1000))? 
+					((this.props.mobileMenu) && (this.props.width <= 720))? 
 					<MobileMenu />
 					
 					//rest of the homepage is wrapped in condition
 					//which prevents it from displaying when mobile menu is visible
 				: 	<div>
 						<Slider />
-						{(this.props.width < 1000) && <MobileShopByCat />}
+						{(this.props.width < 720) && <MobileShopByCat />}
 						<Cards />
 						<BestSelling />
 						<Showcase />

@@ -37,16 +37,16 @@ class ComparePage extends React.Component {
 			<div className={
 				(this.props.width > 1200) ?
 				"wrapper"
-					: (this.props.width > 1000) ?
+					: (this.props.width > 720) ?
 						"wrapper wrapper--medium"
 						:
 						"wrapper wrapper--mobile"
 				}>
-			{(this.props.width > 1000) && <TopBar />}
+			{(this.props.width > 720) && <TopBar />}
 			<TopContainer />
-			{(this.props.width > 1000) && <MainMenu />}
+			{(this.props.width > 720) && <MainMenu />}
 			{
-					((this.props.mobileMenu) && (this.props.width <= 1000))? 
+					((this.props.mobileMenu) && (this.props.width <= 720))? 
 					<MobileMenu />
 					
 					//rest of the page is wrapped in condition
@@ -64,7 +64,7 @@ class ComparePage extends React.Component {
 								:
 									this.props.lang === 'en' ? 
 											<div className={"no-compare"}>
-												<span>"This is a page which will display the products you chose for comparison."</span>
+												<span>"This is a page which will display the products you choose to compare."</span>
 												<FaBarChart />
 											</div> 
 											: <div className={"no-compare"}>

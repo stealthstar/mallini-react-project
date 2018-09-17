@@ -3,7 +3,7 @@ import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Slider from 'react-slick/lib/slider';
-import { BrowserRouter as Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import {addToCart} from "../../actions/addToCart";
 import {addCompare} from "../../actions/addCompare";
 import {addWish} from "../../actions/addWish";

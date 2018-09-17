@@ -94,7 +94,8 @@
 	padding: 10px 20px
 	height: 100%
 	min-height: 860px
-	min-width: 400px
+	min-width: 320px
+	max-width: calc(100vw - 20px)
 	.slick-slide
   		min-height: 730px
 	&__header
@@ -120,3 +121,28 @@
 	flex-shrink: 2
 	img
 		height: auto
+
+@media screen and (max-width: 640px)
+	.deals
+		padding: 10px
+		max-height: 100vh
+		max-width: calc(100vw - 30px)
+		min-height: auto
+		&__header
+			height: 40px
+			p
+				font-size: 18px
+	.slide__image--wrapper 
+		img
+			max-height: calc(100vw - 60px)
+
+@media screen and (max-width: 360px)
+	.deals
+		padding: 5px 10px
+		max-height: 100vh
+		max-width: 300px
+		.slick-slide
+			min-height: auto
+	.slide__image--wrapper 
+		img
+			max-height: 280px

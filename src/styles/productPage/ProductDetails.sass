@@ -42,14 +42,30 @@
 				&:after
 					content: ""
 					display: block
-					width: 100%
+					width: 110%
 					background-color: #bbb
 					height: 2px
 					position: relative
-					top: -17px
-			
+					top: -50%
+					left: - 5%
+
+	.rating-bg,
+	.rating-fill
+		height: 40px
+		width: 150px
+		position: relative
+		background: 
+			size: 150px
+			repeat: no-repeat
+			position: 0 center
+	
+	.rating-fill
+		position: relative
+		width: 10%
 	&__price
 		display: flex
+	&__description
+		
 .product-main__tag-wrapper
 	height: 100%
 	display: flex
@@ -81,3 +97,11 @@
 			flex-direction: column
 		&__details
 			width: 100%
+			&__essentials
+				flex-direction: column
+			&__price,
+			&__availability
+				justify-content: flex-start
+				width: 100%
+			&__availability
+				margin: 10px 0
