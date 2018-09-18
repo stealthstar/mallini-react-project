@@ -51,10 +51,13 @@ class CompareItem extends React.Component {
 
 
 	// dispatch methods
-	dispatchAddToCart() {
-		let price = this.state.product.newPrice || this.state.product.price;
-		let id = this.state.product.id;
-		let arr = [id, price];
+	dispatchAddToCart(e) {
+		const event = e;
+		event.preventDefault();
+		event.stopPropagation();
+		
+		const price = this.state.product.newPrice || this.state.product.price;
+		const arr = [this.state.product.id, price];
 		this.props.addToCart(arr);
 	}
 
@@ -72,7 +75,8 @@ class CompareItem extends React.Component {
 		const price = product["new-price"] || product.price;
 		let color = product["new-price"] ? "#007aff" : "#000000";
 		let availabilityColor = product.quantity ? "#4cd964" : "#ff3b30";
-		console.log(product);	
+		// get product image:
+		const path = product.images ? require(`../../assets/img/products/${product.images[0]}`) : require(`../../assets/img/products/no-image.png`);
 		return (
 			<div className={"compare__item"}>
 				<header>
@@ -81,11 +85,16 @@ class CompareItem extends React.Component {
 						<FaClose />
 					</div>
 				</header>
-				<div className={"compare__item-picture"}>
+				<div 
+					className={"compare__item-picture"}
+					style={{
+						backgroundImage: `url(${path})`
+					}}
+					>
 					<div onClick={this.dispatchAddWish}>
 						<FaHeartO />
 					</div>
-					<div className={"compare__item-picture__add-to-cart"} onClick={this.dispatchAddToCart}>
+					<div className={"compare__item-picture__add-to-cart"} onClick={(e) => this.dispatchAddToCart(e)}>
 						{
 							this.props.lang === 'en' ?
 								"Add to cart "

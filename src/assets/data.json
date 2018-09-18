@@ -1,586 +1,981 @@
 {
   "categories": {
-	"en": ["All Categories", "TVs", "Smartphones", "Audio", 
-		"Photography", "Camcorders", "PC", 
-		"Consoles", "Smartwatches", "Home", "Drones"],
-	"pl": ["Wszystkie", "Telewizory", "Smartfony", "Audio", 
-		"Fotografia", "Kamery", "PC", "Konsole", 
-		"Smartwatche", "Dom", "Drony"]
+    "en": ["All Categories", "TVs", "Smartphones", "Audio",
+      "Photography", "Camcorders", "PC",
+      "Consoles", "Smartwatches", "Home", "Drones"
+    ],
+    "pl": ["Wszystkie", "Telewizory", "Smartfony", "Audio",
+      "Fotografia", "Kamery", "PC", "Konsole",
+      "Smartwatche", "Dom", "Drony"
+    ]
   },
 
   "footer": {
-	  "en": {
-		"about": [
-			"About Us",
-			"Company Info",
-			"News",
-			"Investors",
-			"Careers",
-			"Government relations",
-			"Policies"
-		],
-		"category": [
-			"Shop by Category",
-			"Today's Deals",
-			"Best Sellers",
-			"New Arrivals",
-			"Top Rated",
-			"Popular",
-			"Featured"
-		],
-		"support": [
-			"Support and Service",
-			"Customer Service",
-			"Protection Plans",
-			"Schedule a Service",
-			"Trade-in Program",
-			"Product Recalls",
-			"FAQ"
-		],
-		"partnerships": [
-			"Partnerships",
-			"Affiliate Program",
-			"Developers",
-			"Mediamarket Ignite",
-			"Mediamarket for Education",
-			"Mediamarket Direct",
-			"Advertise with Us"
-		],
-		"customer": [	
-			"Customer Care",
-			"My Account",
-			"Track Order",
-			"Shop",
-			"Wishlist",
-			"Compare",
-			"Returns/Exchange"
-		]
-	  },
-	  "pl": {
-		"about": [
-			"O nas",
-			"Informacje o firmie",
-			"Wiadomości",
-			"Inwestorzy",
-			"Kariera",
-			"Relacje rządowe",
-			"Polityki"
-		],
-		"category": [
-			"Według Kategorii",
-			"Oferty dnia",
-			"Bestsellery",
-			"Nowości",
-			"Najlepiej oceniane",
-			"Popularne",
-			"Promowane"
-		],
-		"support": [
-			"Wsparcie i obsługa",
-			"Obsługa klienta",
-			"Plany ochronne",
-			"Zamów usługę",
-			"Program trade-in",
-			"Wycofanie produktów",
-			"FAQ"
-		],
-		"partnerships": [
-			"Partnerstwa",
-			"Program przyłączania",
-			"Deweloperzy",
-			"Mediamarket Ignite",
-			"Mediamarket dla Edukacji",
-			"Mediamarket Direct",
-			"Reklamuj się z nami"
-		],
-		"customer": [
-			"Obsługa klienta",
-			"Moje konto",
-			"Śledź zamówienie",
-			"Sklep",
-			"Lista życzeń",
-			"Porównania",
-			"Zwroty i wymiana"
-		]
-	  }
+    "en": {
+      "about": [
+        "About Us",
+        "Company Info",
+        "News",
+        "Investors",
+        "Careers",
+        "Government relations",
+        "Policies"
+      ],
+      "category": [
+        "Shop by Category",
+        "Today's Deals",
+        "Best Sellers",
+        "New Arrivals",
+        "Top Rated",
+        "Popular",
+        "Featured"
+      ],
+      "support": [
+        "Support and Service",
+        "Customer Service",
+        "Protection Plans",
+        "Schedule a Service",
+        "Trade-in Program",
+        "Product Recalls",
+        "FAQ"
+      ],
+      "partnerships": [
+        "Partnerships",
+        "Affiliate Program",
+        "Developers",
+        "Mediamarket Ignite",
+        "Mediamarket for Education",
+        "Mediamarket Direct",
+        "Advertise with Us"
+      ],
+      "customer": [
+        "Customer Care",
+        "My Account",
+        "Track Order",
+        "Shop",
+        "Wishlist",
+        "Compare",
+        "Returns/Exchange"
+      ]
+    },
+    "pl": {
+      "about": [
+        "O nas",
+        "Informacje o firmie",
+        "Wiadomości",
+        "Inwestorzy",
+        "Kariera",
+        "Relacje rządowe",
+        "Polityki"
+      ],
+      "category": [
+        "Według Kategorii",
+        "Oferty dnia",
+        "Bestsellery",
+        "Nowości",
+        "Najlepiej oceniane",
+        "Popularne",
+        "Promowane"
+      ],
+      "support": [
+        "Wsparcie i obsługa",
+        "Obsługa klienta",
+        "Plany ochronne",
+        "Zamów usługę",
+        "Program trade-in",
+        "Wycofanie produktów",
+        "FAQ"
+      ],
+      "partnerships": [
+        "Partnerstwa",
+        "Program przyłączania",
+        "Deweloperzy",
+        "Mediamarket Ignite",
+        "Mediamarket dla Edukacji",
+        "Mediamarket Direct",
+        "Reklamuj się z nami"
+      ],
+      "customer": [
+        "Obsługa klienta",
+        "Moje konto",
+        "Śledź zamówienie",
+        "Sklep",
+        "Lista życzeń",
+        "Porównania",
+        "Zwroty i wymiana"
+      ]
+    }
   },
 
   "all-categories": {
-	"en": "All Categories",
-	"pl": "Wszystkie"
+    "en": "All Categories",
+    "pl": "Wszystkie"
   },
   "currency": {
-	"usd": {
-		"multiplier": 1,
-		"symbol": "\u0024"
-	},
-	"gbp": {
-		"multiplier": 0.76,
-		"symbol": "\u00A3"
-	},
-	"eur": {
-		"multiplier": 0.85,
-		"symbol": "\u20AC"
-	},
-	"pln": {
-		"multiplier": 3.68,
-		"symbol": "PLN "
-	}
+    "usd": {
+      "multiplier": 1,
+      "symbol": "\u0024"
+    },
+    "gbp": {
+      "multiplier": 0.76,
+      "symbol": "\u00A3"
+    },
+    "eur": {
+      "multiplier": 0.85,
+      "symbol": "\u20AC"
+    },
+    "pln": {
+      "multiplier": 3.68,
+      "symbol": "PLN "
+    }
   },
   "images": {
-	"carousel": ["1.png", "2.png", "3.png"]
+    "carousel": ["1.png", "2.png", "3.png"]
   },
   "cards": {
-	"1": {
-	  "en": {
-		"name": "DJI",
-		"name_2": "Drone",
-		"slogan": "Reality Capture",
-		"button": "Discover Now",
-		"button-mobile": "See more"
-	  },
-	  "pl": {
-		"name": "DJI",
-		"name_2": "Dron",
-		"slogan": "Uchwyć rzeczywistość",
-		"button": "Odkryj teraz",
-		"button-mobile": "Więcej"
+    "1": {
+      "en": {
+        "name": "DJI",
+        "name_2": "Drone",
+        "slogan": "Reality Capture",
+        "button": "Discover Now",
+        "button-mobile": "See more"
+      },
+      "pl": {
+        "name": "DJI",
+        "name_2": "Dron",
+        "slogan": "Uchwyć rzeczywistość",
+        "button": "Odkryj teraz",
+        "button-mobile": "Więcej"
 
-	  }
-	},
-	"2": {
-	  "en": {
-		"name": "Osmo",
-		"name_2": "Mobile",
-		"slogan": "Beyond Smart",
-		"button": "Discover Now",
-		"button-mobile": "See more"
-	  },
-	  "pl": {
-		"name": "Osmo",
-		"name_2": "Mobile",
-		"slogan": "Więcej niż inteligentny",
-		"button": "Odkryj teraz",
-		"button-mobile": "Więcej"
+      }
+    },
+    "2": {
+      "en": {
+        "name": "Osmo",
+        "name_2": "Mobile",
+        "slogan": "Beyond Smart",
+        "button": "Discover Now",
+        "button-mobile": "See more"
+      },
+      "pl": {
+        "name": "Osmo",
+        "name_2": "Mobile",
+        "slogan": "Więcej niż inteligentny",
+        "button": "Odkryj teraz",
+        "button-mobile": "Więcej"
 
-	  }
-	},
-	"3": {
-	  "en": {
-		"name": "S3",
-		"name_2": "Flexible",
-		"slogan": "Home Speaker",
-		"button": "Discover Now",
-		"button-mobile": "See more"
+      }
+    },
+    "3": {
+      "en": {
+        "name": "S3",
+        "name_2": "Flexible",
+        "slogan": "Home Speaker",
+        "button": "Discover Now",
+        "button-mobile": "See more"
 
-	  },
-	  "pl": {
-		"name": "S3",
-		"name_2": "Flexible",
-		"slogan": "Głośnik domowy",
-		"button": "Odkryj teraz",
-		"button-mobile": "Więcej"
-	  }
-	}
+      },
+      "pl": {
+        "name": "S3",
+        "name_2": "Flexible",
+        "slogan": "Głośnik domowy",
+        "button": "Odkryj teraz",
+        "button-mobile": "Więcej"
+      }
+    }
   },
-  "bestselling": [
-	  {
-		  "id": 1,	
-		  "category": {
-			  "en": "Audio",
-			  "pl": "Audio"
-			},
-		  "image": "bestselling-1.png"
-	  },
-	  {
-		  "id": 2,
-		  "category": {
-			  "en": "Premium TV",
-			  "pl": "Telewizory"
-			},
-		  "image": "bestselling-2.png"
-	  },
-	  {
-		  "id": 3,
-		  "category": {
-			  "en": "Gadgets",
-			  "pl": "Gadżety"
-			},
-		  "image": "bestselling-3.png"
-	  },
-	  {
-		  "id": 4,
-		  "category": {
-			  "en": "Tablets",
-			  "pl": "Tablety"
-			},
-		  "image": "bestselling-4.png"
-	  },
-	  {
-		  "id": 5,
-		  "category": {
-			  "en": "Smartphones",
-			  "pl": "Smartfony"
-			},
-		  "image": "bestselling-5.png"
-	  },
-	  {
-		  "id": 6,
-		  "category": {
-			  "en": "Camcorders",
-			  "pl": "Kamery"
-			},
-		  "image": "bestselling-6.png"
-	  },
-		{
-			"id": 7,
-			"category": {
-				"en": "PC",
-				"pl": "PC"
-			},
-			"image": "bestselling-7.png"
-		}
-	],
-	"deals-of-the-month": [
-		{
-			"id": 1,
-			"price": 269.00,
-			"new-price": 169.95,
-			"quantity": 7,
-			"sold": 2,
-			"ends": [2018, 9, 22, 20, 0],
-			"pl": {
-				"name": "Inteligentny termostat ecobee3 lite"
-			},
-			"en": {
-				"name": "ecobee3 lite Smart Thermostat"
-			}
-		},
-		{
-			"id": 2,
-			"price": 559.00,
-			"new-price": 429.00,
-			"quantity": 12,
-			"sold": 3,
-			"ends": [2018, 8, 20, 20, 0],
-			"pl": {
-				"name": "Telewizor LG 49UJ620V"
-			},
-			"en": {
-				"name": "TV LG 49UJ620V"
+  "bestselling": [{
+      "id": 1,
+      "category": {
+        "en": "Audio",
+        "pl": "Audio"
+      },
+      "image": "bestselling-1.png"
+    },
+    {
+      "id": 2,
+      "category": {
+        "en": "Premium TV",
+        "pl": "Telewizory"
+      },
+      "image": "bestselling-2.png"
+    },
+    {
+      "id": 3,
+      "category": {
+        "en": "Gadgets",
+        "pl": "Gadżety"
+      },
+      "image": "bestselling-3.png"
+    },
+    {
+      "id": 4,
+      "category": {
+        "en": "Tablets",
+        "pl": "Tablety"
+      },
+      "image": "bestselling-4.png"
+    },
+    {
+      "id": 5,
+      "category": {
+        "en": "Smartphones",
+        "pl": "Smartfony"
+      },
+      "image": "bestselling-5.png"
+    },
+    {
+      "id": 6,
+      "category": {
+        "en": "Camcorders",
+        "pl": "Kamery"
+      },
+      "image": "bestselling-6.png"
+    },
+    {
+      "id": 7,
+      "category": {
+        "en": "PC",
+        "pl": "PC"
+      },
+      "image": "bestselling-7.png"
+    }
+  ],
+  "deals-of-the-month": [{
+      "id": 1,
+      "price": 269.00,
+      "new-price": 169.95,
+      "quantity": 7,
+      "sold": 2,
+      "ends": [2018, 9, 22, 20, 0],
+      "pl": {
+        "name": "Inteligentny termostat ecobee3 lite"
+      },
+      "en": {
+        "name": "ecobee3 lite Smart Thermostat"
+      }
+    },
+    {
+      "id": 2,
+      "price": 559.00,
+      "new-price": 429.00,
+      "quantity": 12,
+      "sold": 3,
+      "ends": [2018, 8, 20, 20, 0],
+      "pl": {
+        "name": "Telewizor LG 49UJ620V"
+      },
+      "en": {
+        "name": "TV LG 49UJ620V"
 
-			}
-			
-		}
-	],
-	"products": [
-		{
-			"id": 1,
-			"price": 269.00,
-			"quantity": 8,
-			"sold": 2,
-			"month-deal": true,
-			"ends": [
-				2018,
-				9,
-				15,
-				20,
-				0
-			],
-			"pl": {
-				"name": "Inteligentny termostat ecobee3 lite",
-				"category": "Dom"
-			},
-			"en": {
-				"name": "ecobee3 lite Smart Thermostat",
-				"category": "Home"
-			},
-			"tags": {
-				"hot": false,
-				"discount": 10.038,
-				"new": false,
-				"sale": true
-			},
-			"rating": 4.4
+      }
 
-		},
-		{
-			"id": 2,
-			"price": 559.00,
-			"quantity": 12,
-			"sold": 3,
-			"month-deal": true,
-			"ends": [
-				2018,
-				10,
-				20,
-				20,
-				0
-			],
-			"pl": {
-				"name": "Telewizor LG 49UJ620V",
-				"category": "Telewizory"
-			},
-			"en": {
-				"name": "TV LG 49UJ620V",
-				"category": "TVs"
-			},
-			"tags": {
-				"hot": false,
-				"discount": 21.11,
-				"new": false,
-				"sale": true
-			},
-			"rating": 4.35
-		},
-		{
-			"id": 3,
-			"price": 299.95,
-			"quantity": 2,
-			"sold": 4,
-			"month-deal": false,
-			"ends": [
-				2018,
-				9,
-				28,
-				20,
-				0
-			],
-			"pl": {
-				"name": "Beats Solo3 bezprzewodowe słuchawki nauszne",
-				"category": "Audio"
-			},
-			"en": {
-				"name": "Beats Solo3 Wireless On-Ear Headphones",
-				"category": "Audio"
-			},
-			"tags": {
-				"hot": true,
-				"discount": 0,
-				"new": false,
-				"sale": false
-			},
-			"rating": 3.4
-		},
-		{
-			"id": 4,
-			"price": 2989.95,
-			"quantity": 4,
-			"sold": 1,
-			"month-deal": true,
-			"ends": [
-				2018,
-				9,
-				28,
-				20,
-				0
-			],
-			"pl": {
-				"name": "Devialet Gold Phantom głośnik bezprzewodowy",
-				"category": "Audio",
-				"desc": "Fantastyczny bezprzewodowy głośnik z najwyższej półki."
-			},
-			"en": {
-				"name": "Devialet Gold Phantom Wireless Speaker",
-				"category": "Audio",
-				"desc": "A superb wireless speaker from the top of our range."
-			},
-			"images": [
-				"dummy_image-1.png",
-				"dummy_image-2.png",
-				"dummy_image-3.png"
-			],
-			"tags": {
-				"hot": true,
-				"discount": 10.0337,
-				"new": true,
-				"sale": false
-			},
-			"rating": 4.8
-		},
-		{
-			"id": 5,
-			"price": 369.00,
-			"quantity": 4,
-			"sold": 1,
-			"month-deal": false,
-			"ends": null,
-			"pl": {
-				"name": "Apple Watch Nike+ z opaską",
-				"category": "Smartwatche"
-			},
-			"en": {
-				"name": "Apple Watch Nike+ With Sport Band",
-				"category": "Smartwatches"
-			},
-			"tags": {
-				"hot": false,
-				"discount": 0,
-				"new": false,
-				"sale": false
-			},
-			"rating": 4.1
-		},
-		{
-			"id": 6,
-			"price": 109.95,
-			"quantity": 17,
-			"sold": 12,
-			"month-deal": false,
-			"ends": null,
-			"pl": {
-				"name": "Parrot Mambo mini dron",
-				"category": "Drony"
-			},
-			"en": {
-				"name": "Parrot Mambo MiniDrone",
-				"category": "Drones"
-			},
-			"tags": {
-				"hot": false,
-				"discount": 22,
-				"new": false,
-				"sale": true
-			},
-			"rating": 4.97
-		},
-		{
-			"id": 7,
-			"price": 129.95,
-			"quantity": 11,
-			"sold": 9,
-			"month-deal": false,
-			"ends": null,
-			"pl": {
-				"name": "Bose SoundLink Color głośnik bluetooth",
-				"category": "Audio"
-			},
-			"en": {
-				"name": "Bose SoundLink Color Bluetooth Speaker II",
-				"category": "Audio"
-			},
-			"tags": {
-				"hot": true,
-				"discount": 20,
-				"new": false,
-				"sale": true
-			},
-			"rating": 3.2
-		},
-		{
-			"id": 8,
-			"price": 179.95,
-			"quantity": 17,
-			"sold": 4,
-			"month-deal": false,
-			"ends": null,
-			"pl": {
-				"name": "Bose SoundLink głośnik Wi-Fi",
-				"category": "Audio"
-			},
-			"en": {
-				"name": "Bose SoundLink Wi-Fi Speaker",
-				"category": "Audio"
-			},
-			"tags": {
-				"hot": true,
-				"discount": 0,
-				"new": false,
-				"sale": false
-			},
-			"rating": 3.7
-		},
-		{
-			"id": 9,
-			"price": 19.99,
-			"quantity": 25,
-			"sold": 11,
-			"month-deal": false,
-			"ends": null,
-			"pl": {
-				"name": "Behringer HPS3000 słuchawki studyjne",
-				"category": "Audio"
-			},
-			"en": {
-				"name": "Behringer HPS3000 Studio Headphones",
-				"category": "Audio"
-			},
-			"tags": {
-				"hot": false,
-				"discount": 0,
-				"new": false,
-				"sale": false
-			},
-			"rating": 4.25
-		},
-		{
-			"id": 10,
-			"price": 184.95,
-			"quantity": 16,
-			"sold": 4,
-			"month-deal": false,
-			"ends": null,
-			"pl": {
-				"name": "HP 8300 Elite mały komputer PC",
-				"category": "PC"
-			},
-			"en": {
-				"name": "HP 8300 Elite Small Form Factor Desktop",
-				"category": "PC"
-			},
-			"tags": {
-				"hot": false,
-				"discount": 10,
-				"new": false,
-				"sale": true
-			},
-			"rating": 4.29
-		},
-		{
-			"id": 11,
-			"price": 1628.99,
-			"quantity": 16,
-			"sold": 4,
-			"month-deal": false,
-			"ends": null,
-			"pl": {
-				"name": "Komputer gamingowy Aurora R7",
-				"category": "PC"
-			},
-			"en": {
-				"name": "Alienware Gaming PC Desktop Aurora R7",
-				"category": "PC"
-			},
-			"tags": {
-				"hot": false,
-				"discount": 15,
-				"new": false,
-				"sale": false
-			},
-			"rating": 4.29
-		},
-		{
-			"id": 12,
-			"price": 699.99,
-			"quantity": 32,
-			"sold": 22,
-			"month-deal": true,
-			"ends": [2018,9,30,20,0],
-			"pl": {
-				"name": "Parrot Anafi",
-				"category": "Drony"
-			},
-			"en": {
-				"name": "Parrot Anafi",
-				"category": "Drones"
-			},
-			"tags": {
-				"hot": true,
-				"discount": 5,
-				"new": false,
-				"sale": true
-			},
-			"rating": 4.76
-		}
+    }
+  ],
+  "products": [{
+      "id": 1,
+      "price": 269.00,
+      "quantity": 8,
+      "sold": 2,
+      "month-deal": true,
+      "ends": [
+        2018,
+        9,
+        25,
+        20,
+        0
+      ],
+      "pl": {
+        "name": "Inteligentny termostat ecobee3 lite",
+        "category": "Dom"
+      },
+      "en": {
+        "name": "ecobee3 lite Smart Thermostat",
+        "category": "Home"
+      },
+	"images": [
+		"dummy_image-1.png",
+		"dummy_image-2.png",
+		"dummy_image-3.png"
+	],
+      "tags": {
+        "hot": false,
+        "discount": 10.038,
+        "new": false,
+        "sale": true
+      },
+      "reviews": [{
+          "id": 0,
+          "rating": 4,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 1,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 2,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 3,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 4,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        }
+      ],
+	"bundles": []
+    },
+    {
+      "id": 2,
+      "price": 559.00,
+      "quantity": 12,
+      "sold": 3,
+      "month-deal": true,
+      "ends": [
+        2018,
+        10,
+        20,
+        20,
+        0
+      ],
+      "pl": {
+        "name": "Telewizor LG 49UJ620V",
+        "category": "Telewizory"
+      },
+      "en": {
+        "name": "TV LG 49UJ620V",
+        "category": "TVs"
+      },
+	"images": [
+		"dummy_image-1.png",
+		"dummy_image-2.png",
+		"dummy_image-3.png"
+	],
+      "tags": {
+        "hot": false,
+        "discount": 21.11,
+        "new": false,
+        "sale": true
+      },
+      "reviews": [{
+          "id": 0,
+          "rating": 4,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 1,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 2,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 3,
+          "rating": 3.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 4,
+          "rating": 3.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 5,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 6,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        }
+      ],
+	"bundles": [
+		1,
+		3
 	]
+    },
+    {
+      "id": 3,
+      "price": 299.95,
+      "quantity": 2,
+      "sold": 4,
+      "month-deal": false,
+      "ends": [
+        2018,
+        9,
+        28,
+        20,
+        0
+      ],
+      "pl": {
+        "name": "Beats Solo3 bezprzewodowe słuchawki nauszne",
+        "category": "Audio",
+        "desc": "Słuchawki bezprzewodowe Beats Solo3 Wireless są zawsze gotowe do działania. Wystarczy, że włączysz je i zbliżysz do iPhone'a, aby samoczynnie połączyły się z nim oraz innymi Twoimi urządzeniami"
+      },
+      "en": {
+        "name": "Beats Solo3 Wireless On-Ear Headphones",
+        "category": "Audio",
+        "desc": "Connect via class 1 Bluetooth with your device for wireless workout freedom. Sleek, streamlined design that's durable and foldable to go everywhere you do."
+      },
+	"images": [
+		"dummy_image-1.png",
+		"dummy_image-2.png",
+		"dummy_image-3.png"
+	],
+      "tags": {
+        "hot": true,
+        "discount": 0,
+        "new": false,
+        "sale": false
+      },
+      "reviews": [{
+          "id": 0,
+          "rating": 4,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 1,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 2,
+          "rating": 3.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 3,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 4,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        }
+      ],
+	"bundles": [
+		9,
+		1
+	]
+    },
+    {
+      "id": 4,
+      "price": 2989.95,
+      "quantity": 4,
+      "sold": 1,
+      "month-deal": true,
+      "ends": [
+        2018,
+        9,
+        28,
+        20,
+        0
+      ],
+      "pl": {
+        "name": "Devialet Gold Phantom głośnik bezprzewodowy",
+        "category": "Audio",
+        "desc": "Fantastyczny bezprzewodowy głośnik z najwyższej półki."
+      },
+      "en": {
+        "name": "Devialet Gold Phantom Wireless Speaker",
+        "category": "Audio",
+        "desc": "A superb wireless speaker from the top of our range."
+      },
+      "images": [
+        "dummy_image-1.png",
+        "dummy_image-2.png",
+        "dummy_image-3.png"
+      ],
+      "tags": {
+        "hot": true,
+        "discount": 10.0337,
+        "new": true,
+        "sale": false
+      },
+      "reviews": [{
+          "id": 0,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 1,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 2,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 3,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 4,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        }
+      ],
+	"bundles": [
+		8,
+		11
+	]
+    },
+    {
+      "id": 5,
+      "price": 369.00,
+      "quantity": 4,
+      "sold": 1,
+      "month-deal": false,
+      "ends": null,
+      "pl": {
+        "name": "Apple Watch Nike+ z opaską",
+        "category": "Smartwatche"
+      },
+      "en": {
+        "name": "Apple Watch Nike+ With Sport Band",
+        "category": "Smartwatches"
+      },
+	"images": [
+		"dummy_image-1.png",
+		"dummy_image-2.png",
+		"dummy_image-3.png"
+	],
+      "tags": {
+        "hot": false,
+        "discount": 0,
+        "new": false,
+        "sale": false
+      },
+      "reviews": [
+
+      ],
+	"bundles": [
+		6,
+		9
+	]
+    },
+    {
+      "id": 6,
+      "price": 109.95,
+      "quantity": 17,
+      "sold": 12,
+      "month-deal": false,
+      "ends": null,
+      "pl": {
+        "name": "Parrot Mambo mini dron",
+        "category": "Drony"
+      },
+      "en": {
+        "name": "Parrot Mambo MiniDrone",
+        "category": "Drones"
+      },
+	"images": [
+		"dummy_image-1.png",
+		"dummy_image-2.png",
+		"dummy_image-3.png"
+	],
+      "tags": {
+        "hot": false,
+        "discount": 22,
+        "new": false,
+        "sale": true
+      },
+      "rating": 4.97,
+      "reviews": [{
+          "id": 0,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 1,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        }
+      ],
+	"bundles": [
+		1, 5
+	]
+    },
+    {
+      "id": 7,
+      "price": 129.95,
+      "quantity": 11,
+      "sold": 9,
+      "month-deal": false,
+      "ends": null,
+      "pl": {
+        "name": "Bose SoundLink Color głośnik bluetooth",
+        "category": "Audio"
+      },
+      "en": {
+        "name": "Bose SoundLink Color Bluetooth Speaker II",
+        "category": "Audio"
+      },
+      "tags": {
+        "hot": true,
+        "discount": 20,
+        "new": false,
+        "sale": true
+      },
+      "rating": 3.2,
+      "reviews": [{
+          "id": 0,
+          "rating": 4,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 1,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 2,
+          "rating": 3,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 3,
+          "rating": 1,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        }
+
+      ],
+	"bundles": [
+		1,
+		9
+	]
+    },
+    {
+      "id": 8,
+      "price": 179.95,
+      "quantity": 17,
+      "sold": 4,
+      "month-deal": false,
+      "ends": null,
+      "pl": {
+        "name": "Bose SoundLink głośnik Wi-Fi",
+        "category": "Audio"
+      },
+      "en": {
+        "name": "Bose SoundLink Wi-Fi Speaker",
+        "category": "Audio"
+      },
+      "tags": {
+        "hot": true,
+        "discount": 0,
+        "new": false,
+        "sale": false
+      },
+      "reviews": [{
+          "id": 0,
+          "rating": 4,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 1,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 2,
+          "rating": 2.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        }
+      ],
+	"bundles": [
+		9,
+		1
+	]
+    },
+    {
+      "id": 9,
+      "price": 19.99,
+      "quantity": 25,
+      "sold": 11,
+      "month-deal": false,
+      "ends": null,
+      "pl": {
+        "name": "Behringer HPS3000 słuchawki studyjne",
+        "category": "Audio"
+      },
+      "en": {
+        "name": "Behringer HPS3000 Studio Headphones",
+        "category": "Audio"
+      },
+      "tags": {
+        "hot": false,
+        "discount": 0,
+        "new": false,
+        "sale": false
+      },
+      "reviews": [{
+          "id": 0,
+          "rating": 4,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 1,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 2,
+          "rating": 3.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 3,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 4,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 5,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        }
+      ],
+	"bundles": [
+		1, 12
+	]
+    },
+    {
+      "id": 10,
+      "price": 184.95,
+      "quantity": 16,
+      "sold": 4,
+      "month-deal": false,
+      "ends": null,
+      "pl": {
+        "name": "HP 8300 Elite mały komputer PC",
+        "category": "PC"
+      },
+      "en": {
+        "name": "HP 8300 Elite Small Form Factor Desktop",
+        "category": "PC"
+      },
+      "tags": {
+        "hot": false,
+        "discount": 10,
+        "new": false,
+        "sale": true
+      },
+      "reviews": [{
+          "id": 0,
+          "rating": 4,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 1,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 2,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 3,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 4,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        }
+      ],
+	"bundles": [
+		9,
+		1
+	]
+    },
+    {
+      "id": 11,
+      "price": 1628.99,
+      "quantity": 16,
+      "sold": 4,
+      "month-deal": false,
+      "ends": null,
+      "pl": {
+        "name": "Komputer gamingowy Aurora R7",
+        "category": "PC"
+      },
+      "en": {
+        "name": "Alienware Gaming PC Desktop Aurora R7",
+        "category": "PC"
+      },
+      "tags": {
+        "hot": false,
+        "discount": 15,
+        "new": false,
+        "sale": false
+      },
+      "reviews": [{
+          "id": 0,
+          "rating": 4,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 1,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 2,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 3,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 4,
+          "rating": 2.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 5,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 6,
+          "rating": 4,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        }
+      ],
+	"bundles": [9, 1]
+    },
+    {
+      "id": 12,
+      "price": 699.99,
+      "quantity": 32,
+      "sold": 22,
+      "month-deal": true,
+      "ends": [2018, 9, 30, 20, 0],
+      "pl": {
+        "name": "Parrot Anafi",
+        "category": "Drony"
+      },
+      "en": {
+        "name": "Parrot Anafi",
+        "category": "Drones"
+      },
+      "tags": {
+        "hot": true,
+        "discount": 5,
+        "new": false,
+        "sale": true
+      },
+      "images": [
+        "12-1.png",
+        "12-2.png"
+      ],
+      "reviews": [{
+          "id": 0,
+          "rating": 4,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 1,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 2,
+          "rating": 5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 3,
+          "rating": 4.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        },
+        {
+          "id": 4,
+          "rating": 3.5,
+          "user": "anonymous",
+          "content": "Lorem ipsum"
+        }
+	  ],
+	  "bundles": [5]
+    }
+  ]
 }

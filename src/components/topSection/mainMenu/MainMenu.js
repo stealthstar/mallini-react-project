@@ -180,13 +180,8 @@ class MainMenu extends React.Component {
 						{
 							this.state.activeMenu === "pages" ?
 								<div className={"submenu__content"}>
-									<p className={"submenu__item"}>
-										{this.props.lang === "en" ?
-											"Contact"
-											:
-											"Kontakt"
-										}
-									</p>
+
+								
 									<p className={"submenu__item"}>
 										{this.props.lang === "en" ?
 											"FAQ"
@@ -213,7 +208,7 @@ class MainMenu extends React.Component {
 								null
 						}
 					</div>
-
+					{this.props.width > 970 &&
 					<div className={"submenu__wrapper submenu--small"}>
 						<button
 							id={"deals"} className={"submenu__toggle submenu__toggle--small"} onClick={(e) => this.menuClickHandler(e)}>
@@ -225,6 +220,8 @@ class MainMenu extends React.Component {
 
 						</button>
 					</div>
+					}
+					{this.props.width > 1100 &&
 					<div className={"submenu__wrapper submenu--small"}>
 						<button
 							id={"new"} className={"submenu__toggle submenu__toggle--small"} onClick={(e) => this.menuClickHandler(e)}>
@@ -236,6 +233,7 @@ class MainMenu extends React.Component {
 
 						</button>
 					</div>
+					}
 					<div className={"submenu__wrapper submenu--small"}>
 						<button id={"rest"} className={"submenu__toggle submenu__toggle--small"} onClick={(e) => this.menuClickHandler(e)}>
 							...
@@ -243,6 +241,24 @@ class MainMenu extends React.Component {
 						{
 							this.state.activeMenu === "rest" ?
 								<div className={"submenu__content"}>
+									{this.props.width <= 970 && 
+										<p className={"submenu__item"}>
+											{this.props.lang === "en" ?
+												"Today's deals"
+												:
+												"Promocje"
+											}
+										</p>
+									}
+									{this.props.width <= 1100 && 
+										<p className={"submenu__item"}>
+											{this.props.lang === "en" ?
+												"New Arrivals"
+												:
+												"Kontakt"
+											}
+										</p>
+									}
 									<p className={"submenu__item"}>
 										{this.props.lang === "en" ?
 											"Brands"

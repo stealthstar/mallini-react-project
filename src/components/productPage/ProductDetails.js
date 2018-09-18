@@ -17,6 +17,8 @@ class ProductDetails extends React.Component {
 	constructor(props){
 		super(props);
 	}
+
+	
 	getProduct() {
 		// returns an object containing data relevant
 		// to the product with macthing id
@@ -29,19 +31,31 @@ class ProductDetails extends React.Component {
 		return res;
 	}
 
+	getProductRating(reviews) {
+		if(reviews.length > 0) {
+			let subSum = reviews.reduce((previousValue, currentValue, index, array) => {
+				return previousValue + array[index].rating;
+			}, 0);
+			return subSum / reviews.length;
+		}
+			return 0;
+	}
+
 	render() {
 		const product = this.getProduct();
 		// star-rating logic
+		product.rating = this.getProductRating(product.reviews);
 		const 	stars_img = require('../../assets/img/icons/stars-empty.png'),
 				stars_img_filled = require('../../assets/img/icons/stars-filled.png'),
 				starFillSize = product.rating / 5 * 100;
 		product.newPrice = product.price - (product.price * product.tags.discount / 100);
+
 		return (
 			<div className={"product-main__details"}>
 				<div className={"product-main__details--top"}>
 					<p>{product[this.props.lang].category}</p>
 					<div className={"product-main__tag-wrapper"}>
-					{/* check for tags and add them when needed */}
+					{/* - - - check for tags and add them when needed - - - */}
 						{ product.tags.sale && <div className={"product-main__tag--sale product-main__tag"}>sale</div>}
 						{ product.tags.discount > 0 && <div className={"product-main__tag--discount product-main__tag"}>{`-${Math.round(product.tags.discount)}%`}</div> }
 						{ product.tags.new && <div className={"product-main__tag--new product-main__tag"}>new</div>}
@@ -55,6 +69,7 @@ class ProductDetails extends React.Component {
 					</div>
 					<div className={"product-main__details__essentials"}>
 						<div className={"product-main__details__price"}>
+							{/* if there's discount, display both prices */}
 							{product.tags.discount ? 
 								<React.Fragment>
 									<p>{ 
@@ -93,13 +108,22 @@ class ProductDetails extends React.Component {
 							
 						</div>
 					</div>
-					<div className={"rating-bg"} style={{backgroundImage: `url(${stars_img})`}}>
-						<div className={"rating-fill"} style={{ 
-							backgroundImage: `url(${stars_img_filled})`, 
-							width:starFillSize+"%" 
-							}}>
+					<div className={"rating"}>
+						<div className={"rating-bg"} style={{backgroundImage: `url(${stars_img})`}}>
+							<div className={"rating-fill"} style={{ 
+								backgroundImage: `url(${stars_img_filled})`, 
+								width:starFillSize+"%" 
+								}}>
+							</div>
 						</div>
-						
+						<p>
+						{product.reviews.length > 0 ?
+								this.props.lang === "en" ? `(Based on ${product.reviews.length} reviews)`
+									: `(${product.reviews.length} ocen)`
+							:
+								this.props.lang === "en" ? "(No reviews yet)" : "(Brak ocen)"
+						 }
+						 </p>
 					</div>
 					<div className={"product-main__details__descritpion"}>
 						{product[this.props.lang].desc ? product[this.props.lang].desc :

@@ -23,19 +23,8 @@ class ProductGallery extends React.Component {
 		this.mouseEnterHandler = this.mouseEnterHandler.bind(this);
 	}
 
-	componentDidMount() {
-		let arr = [];
-		if(this.props.images !== null) {
-			for (let i = 0; i < this.props.images.length; i++) {
-				arr.push(require(`../../assets/img/products/${this.props.images[i]}`)); 
-			}
-		} else {
-			arr = [require("../../assets/img/products/no-image.png")];
-		}
-		this.setState({
-			images: arr
-		});
-	}
+
+	
 	
 	changeSlide(e) {
 		const event = e;
@@ -70,7 +59,7 @@ class ProductGallery extends React.Component {
 	}
 
 	render() {
-		const images = this.state.images;
+		const images = this.props.images;
 		const handlers = this.props.images ? {
 			onMouseMove: (e) => this.mouseMoveHandler(e),
 			onMouseOut: this.mouseOutHandler, 

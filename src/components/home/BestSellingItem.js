@@ -96,8 +96,8 @@ class BestSellingItem extends React.Component {
 	render() {
 		const product = this.getProduct();
 		product.newPrice = product.price - (product.price*product.tags.discount/100);
+		const path = product.images ? require(`../../assets/img/products/${product.images[0]}`) : require(`../../assets/img/products/no-image.png`);
 		return (
-			// const path = require("../../assets/img/bestselling-products-" + [el.id] + ".png");
 			
 			<NavLink
 				to={"/product"}
@@ -105,7 +105,12 @@ class BestSellingItem extends React.Component {
 				onClick={(e) => this.clickHandler(product.id, e)}>
 				<div key={product.id} className={"bestselling-products__item"}>
 					{/* <img src={path} /> */}
-					<div className={"bestselling-products__image"}>
+					<div 
+						className={"bestselling-products__image"}
+						style={{
+							backgroundImage: `url(${path})`
+						}}
+						>
 						<div onClick={(e) => this.dispatchAddCompare(e)}>
 							<FaExchange />
 						</div>

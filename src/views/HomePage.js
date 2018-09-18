@@ -37,9 +37,7 @@ class HomePage extends React.Component {
 			"left": 0,
 			"top": 0
 		});
-		// if browser doesn't support smooth scroll, make sure it scrolls
-		// the page to the top
-		window.scroll(0,0);
+
 	}
 	render() {
 		return (

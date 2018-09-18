@@ -31,7 +31,13 @@ class ComparePage extends React.Component {
 	constructor(props) {
 		super(props);
 	}
-
+	componentDidMount() {
+		document.documentElement.scrollTo({
+			"left": 0,
+			"top": 0,
+			"behavior": "smooth"
+		});
+	}
 	render() {
 		return (
 			<div className={

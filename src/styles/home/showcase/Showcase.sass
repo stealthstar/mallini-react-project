@@ -118,7 +118,7 @@ section.showcase
 			margin-left: 2%
 			max-width: 68%
 			min-width: calc(100% - 400px)
-			padding: 20px
+			padding: 20px 20px 20px 0
 			.slick-slider
 				.slick-slide
 					min-height: 800px
@@ -137,7 +137,7 @@ section.showcase
 		height: 80px
 		width: 100%
 		background-color: #fff
-		padding: 20px
+		padding: 20px 10px
 		display: flex
 		align-items: center
 		justify-content: flex-start
@@ -158,14 +158,14 @@ section.showcase
 			display: flex
 			flex-wrap: wrap
 			.slider-button
-				flex-grow: 1	
+				flex: 1 0
 				background-color: transparent
 				color: #7f7f7f
 				font-weight: 600
 				height: 1.2rem
 				width: auto
 				padding: 0
-				font-size: 1.2rem
+				font-size: 1rem
 				&:hover,
 				&.active
 					color: $red
@@ -185,7 +185,7 @@ section.showcase
 		&__column
 			height: auto
 			width: 100%
-			flex: 1 0
+			flex: 1 1
 			&--left
 				width: 100%
 				padding: 0
@@ -193,6 +193,15 @@ section.showcase
 				width: 100%
 				max-width: 100%
 				padding: 0px
+		.showcase__menu
+			.buttons
+				justify-content: flex-start
+				height: 100%
+				align-items: center
+				.slider-button
+					width: auto
+					font-size: 1.2rem
+
 @media screen and (max-width: 600px)
 	.showcase
 		&__column

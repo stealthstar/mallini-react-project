@@ -42,6 +42,10 @@
 		flex-direction: column
 		justify-content: space-between
 		padding: 10px
+		background: 
+			size: cover
+			position: center
+			
 		&:hover
 			cursor: pointer
 			opacity: 0.8
@@ -77,8 +81,8 @@
 				background-color: $blue
 				border: 2px solid $blue
 			&:active
-				background-color: $red
-				border: 2px solid $red
+				background-color: $green
+				border: 2px solid $green
 				color: $white
 
 .compare-table
@@ -112,6 +116,16 @@
 @media screen and(max-width: 800px)
 	.compare__item
 		width: 50%
+@media screen and(max-width: 720px)
+	.compare__item-picture
+		&__add-to-cart
+			display: flex
+			background-color: $blue
+			color: #fff
+			&:hover
+				background-color: $red
+		div
+			display: flex
 @media screen and(max-width: 540px)
 	.compare__item
 		width: 100%

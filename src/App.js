@@ -40,12 +40,9 @@ class App extends React.Component {
 	}
 
 	updateDimensions() {
-		let 
-			body = document.getElementsByTagName('body')[0],
+		let body = document.getElementsByTagName('body')[0],
 			width =  document.documentElement.clientWidth || body.clientWidth,
-			height = document.documentElement.clientHeight || body.clientHeight;
-			console.log(width, height, window.innerWidth, window.innerHeight);
-			
+			height = document.documentElement.clientHeight || body.clientHeight;			
 		this.setState({ width: width, height: height });
 		this.props.resize([width, height]);
 	}
@@ -66,11 +63,11 @@ class App extends React.Component {
 			<Router basename={"/storefront"} > 
 			{/* change the string in basename to "/" for development */}
 				<Switch>
-					<Route path={"/product"} component={ProductPage} />
-					<Route path={"/compare"} component={ComparePage} />
-					<Route path={"/wishlist"} component={WishlistPage} />
-					<Route path={"/cart"} component={CartPage} />
-					<Route path={"/"} exact component={HomePage} />
+					<Route key={"product"} path={"/product"} component={ProductPage} />
+					<Route key={"compare"} path={"/compare"} component={ComparePage} />
+					<Route key={"wish"} path={"/wishlist"} component={WishlistPage} />
+					<Route key={"cart"} path={"/cart"} component={CartPage} />
+					<Route key={"home"} path={"/"} exact component={HomePage} />
 					<Redirect from={"*"} to={"/"} />
 				</Switch>
 			</Router>

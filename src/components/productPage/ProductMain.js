@@ -14,7 +14,7 @@ class ProductMain extends React.Component {
   render() {
 	return (
 	  <div className={"product-main__wrapper"}>
-		<ProductGallery images={this.props.images}/>
+			<ProductGallery images={this.props.images.map(el => require(`../../assets/img/products/${el}`))}/>
 		<div className={"spacer"} ></div>
 		<ProductDetails />
 	  </div>

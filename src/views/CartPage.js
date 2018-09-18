@@ -34,7 +34,13 @@ class CartPage extends React.Component {
 	constructor(props) {
 		super(props);
 	}
-
+	componentWillMount() {
+		window.scrollTo({
+			"behavior": "smooth",
+			"left": 0,
+			"top": 0
+		});
+	}
 	render() {
 		return (
 			<div className={

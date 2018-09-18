@@ -1,6 +1,7 @@
 export const searchReducer = (state = {
 	searchCategory: "All Categories",
-	searchTerm: ''
+	searchTerm: '',
+	searchedProducts: []
 }, action) => {
 	switch (action.type) {
 		case 'CHANGE_SEARCH_TERM':
@@ -12,6 +13,11 @@ export const searchReducer = (state = {
 			return {
 				...state,
 				searchCategory: action.payload
+			}
+		case 'CHANGE_SEARCHED_PRODUCTS':
+			return {
+				...state,
+				searchedProducts: action.payload
 			}
 		case 'RESET_CATEGORY':
 			return {

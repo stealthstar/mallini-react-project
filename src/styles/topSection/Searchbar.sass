@@ -1,7 +1,12 @@
+@import '../../styles/_variables.sass'
 .search-form
 	display: flex
 	width: 100%
-	
+	&__container
+		width: 100%
+		display: flex
+		flex-direction: column
+		position: relative
 	&__input-wrapper
 		width: calc(100% - 70px)
 		height: 70px
@@ -45,7 +50,24 @@
 		&:active
 			font-size: 34px
 			box-shadow: inset 0 0 12px 2px rgba(0,0,0,0.2)
-
+	&__results
+		position: absolute
+		padding: 10px 5px
+		width: 100%
+		top: 100%
+		z-index: 100
+		right: 0
+		background-color: rgba(250,250,250,0.9)
+		flex: 1 0
+.search-form__container
+	.search-form__results
+		p.search-link
+			font-size: 1rem
+			padding: 0 20px
+			&:hover
+				cursor: pointer
+				background-color: $blue
+				color: #fff
 .mobile-menu
 	.search-form
 		&__input-wrapper
