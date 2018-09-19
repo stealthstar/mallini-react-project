@@ -1,7 +1,8 @@
 export const cartReducer = (state = {
 	items: [],
 	itemsAmount: 0,
-	cartWorth: 0.00
+	cartWorth: 0.00,
+	quantity: 1
 }, action) => {
 	switch (action.type) {
 		case 'ADD_TO_CART':
@@ -24,6 +25,11 @@ export const cartReducer = (state = {
 				},
 				itemsAmount: state.itemsAmount - 1,
 				cartWorth: state.cartWorth - action.payload[1] === -0 ? 0.00 : state.cartWorth - action.payload[1]
+			}
+		case "CHANGE_QUANTITY":
+			return {
+				...state,
+				quantity: action.payload
 			}
 		case "RECALCULATE_CART":
 			return {

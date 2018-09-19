@@ -178,7 +178,7 @@ class MainMenu extends React.Component {
 							}
 						</button>
 						{
-							this.state.activeMenu === "pages" ?
+							this.state.activeMenu === "pages" && (
 								<div className={"submenu__content"}>
 
 								
@@ -204,8 +204,7 @@ class MainMenu extends React.Component {
 										}
 									</p>
 								</div>
-								:
-								null
+							)
 						}
 					</div>
 					{this.props.width > 970 &&

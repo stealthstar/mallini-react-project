@@ -3,9 +3,11 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom';
+import { Transition, config } from 'react-spring';
 //action imports
 import { changeSearchTerm } from '../../actions/changeSearchTerm';
+import { hideMenu } from '../../actions/menuActions';
 import { changeProduct } from '../../actions/changeProduct';
 //Font Awesome imports
 import FaSearch from 'react-icons/lib/fa/search';
@@ -29,6 +31,7 @@ const mapStateToProps = state => ({
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		changeSearchTerm: changeSearchTerm,
+		hideMenu: hideMenu,
 		changeProduct: changeProduct
 	}, dispatch);
 }
@@ -39,7 +42,8 @@ class Searchbar extends React.Component {
 		super(props);
 		this.state = {
 			input: '',
-			result: []
+			result: [],
+			menuDisplay: 'flex'
 		}
 		this.changeHandler = this.changeHandler.bind(this);
 		this.sumbitHandler = this.sumbitHandler.bind(this);
@@ -57,15 +61,17 @@ class Searchbar extends React.Component {
 		
 		if(val.length >= 3) {
 			data.products.forEach(el => products.push([el[this.props.lang].name.toUpperCase(), el.id, el[this.props.lang].category]));
-			products = products.filter(value => value[0].includes(val));
+			products = products.filter(value => value[0].includes(val) && (value[2] === this.props.searchCategory || (this.props.searchCategory === "All Categories" || this.props.searchCategory ==="Wszystkie")));
 			this.setState({
 				input: val,
-				result: products
+				result: products,
+				menuDisplay: 'block'
 			});
 		} else {
 			this.setState({
 			input: val,
-			result: []
+			result: [],
+			menuDisplay: 'none'
 		});
 		}
 
@@ -73,8 +79,12 @@ class Searchbar extends React.Component {
 	clickHandler(id, e) {
 		// e.preventDefault();
 		this.props.changeProduct(id)
+		this.setState({
+			menuDisplay: 'none'
+		});
 	}
 	render() {
+		const result = this.state.result;
 		return (
 			<div className={"search-form__container"}>
 				<form className={"search-form"}>
@@ -97,17 +107,19 @@ class Searchbar extends React.Component {
 						</div>
 					</div>
 				</form>
-				{this.state.input && 
-					<div className={"search-form__results"}>
+				
+					<div className={"search-form__results"} style={{display: this.state.menuDisplay}}>
 						{this.state.result.map(element => (
-						element[2] === this.props.searchCategory || this.props.searchCategory === "All Categories" || "Wszystkie" ?
+						// element[2] === this.props.searchCategory || this.props.searchCategory === "All Categories" || "Wszystkie" ?
 							<NavLink to="/product" onClick={(e) => this.clickHandler(element[1], e)}>
 								<p className={"search-link"} key={element[1]}>{element[0]}</p> 
-							</NavLink> : null
+							</NavLink> 
+							// : null
 						)
 						)}
+
 					</div>
-				}
+				
 			</div>
 		)
 	}

@@ -1,0 +1,80 @@
+@import '../../styles/_variables.sass'
+$input-height: 50px
+
+
+.quantity-action,
+.input-action
+	display: flex
+	align-items: center
+	p
+		text-transform: uppercase
+		margin-right: 20px
+		font-size: 20px
+		color: #bbb
+	&__input-wrapper
+		height: $input-height
+		width: 200px
+		display: flex
+		border: 1px solid #eee
+
+		.value, .number
+			width: 150px
+			font-size: 20px
+		.controls
+			width: 50px
+			display: flex
+			flex-direction: column
+			height: $input-height
+			border-left: 1px solid #eee
+			
+			button
+				display: flex
+				height: $input-height / 2
+				margin: 0 
+				background-color: transparent
+				border: none
+				font-size: 12px
+				color: #303030
+				justify-content: center
+				&:nth-child(1)
+					align-items: flex-end
+				&:nth-child(2)
+					align-items: flex-start
+				&:hover
+					background-color: #efefef
+					cursor: pointer
+				&:active
+					svg
+						transform: scale(.98)
+						transform-origin: center center
+.input-action
+	&__input-wrapper
+		.controls
+			button
+				height: 100%
+				cursor: pointer
+.input-action-wrapper
+	position: relative
+	&:hover
+		cursor: pointer
+	.input
+		border: 1px solid #eee
+		position: absolute
+		top: 100%
+		height: auto
+		width: 200px
+		z-index: 100
+		background-color: rgba(255,255,255, 0.8)
+		p 
+			padding: 10px 5px
+			width: 100%
+			&:hover
+				background-color: $light-blue
+				cursor: pointer
+.input-action-wrapper.deactivated
+	.input
+		border: none
+@media all and (max-width: 680px)
+	.product-main
+		&__wrapper
+			flex-direction: column

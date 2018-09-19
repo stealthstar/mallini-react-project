@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 //action imports
 import { changeCategory } from '../../actions/changeCategory';
+import { changeSearchTerm } from '../../actions/changeSearchTerm';
 //Font Awesome import
 import FaSearch from 'react-icons/lib/fa/search';
 //json import
@@ -20,7 +21,8 @@ const mapStateToProps = state => ({
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		changeCategory: changeCategory
+		changeCategory: changeCategory,
+		changeSearchTerm: changeSearchTerm
 	}, dispatch);
 }
 
@@ -44,6 +46,7 @@ class SearchCategories extends React.Component {
 			menuVisible: false
 		});
 		this.props.changeCategory(val);
+		this.props.changeSearchTerm("");
 	}
 
 	menuToggle(e) {

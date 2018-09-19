@@ -1,6 +1,7 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import ProductActions from './ProductActions';
 
 import "../../styles/productPage/ProductDetails.sass";
 //data import
@@ -129,6 +130,8 @@ class ProductDetails extends React.Component {
 						{product[this.props.lang].desc ? product[this.props.lang].desc :
 							this.props.lang ==="en" ? "Sorry! No more information available" : "Przepraszamy! Brak informacji"}
 					</div>
+					<ProductActions />
+
 				</div>
 
 			</div>

@@ -3,6 +3,7 @@ import * as React from "react";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import { bindActionCreators } from 'redux';
+import { Transition, config, animated } from 'react-spring'
 import * as actions from './actions/actions';
 import  {windowResize} from './actions/windowResize';
 import {
@@ -62,14 +63,15 @@ class App extends React.Component {
 		return (
 			<Router basename={"/storefront"} > 
 			{/* change the string in basename to "/" for development */}
-				<Switch>
-					<Route key={"product"} path={"/product"} component={ProductPage} />
-					<Route key={"compare"} path={"/compare"} component={ComparePage} />
-					<Route key={"wish"} path={"/wishlist"} component={WishlistPage} />
-					<Route key={"cart"} path={"/cart"} component={CartPage} />
-					<Route key={"home"} path={"/"} exact component={HomePage} />
-					<Redirect from={"*"} to={"/"} />
-				</Switch>
+					<Switch>
+						<Route key={"product"} path={"/product"} component={ProductPage} />
+						<Route key={"compare"} path={"/compare"} component={ComparePage}/>	
+						<Route key={"wish"} path={"/wishlist"} component={WishlistPage}/>
+						<Route key={"cart"} path={"/cart"} component={CartPage} />
+						<Route key={"home"} path={"/"} exact component={HomePage}/>
+						<Redirect from={"*"} to={"/"} />
+					</Switch>
+
 			</Router>
 			)
 	}

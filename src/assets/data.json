@@ -288,11 +288,13 @@
       ],
       "pl": {
         "name": "Inteligentny termostat ecobee3 lite",
-        "category": "Dom"
+		"category": "Dom",
+		"colors": ["czerwony", "niebieski", "czarny", "biały"]
       },
       "en": {
         "name": "ecobee3 lite Smart Thermostat",
-        "category": "Home"
+		"category": "Home",
+		"colors": ["red", "blue", "black", "white"]
       },
 	"images": [
 		"dummy_image-1.png",
@@ -353,11 +355,15 @@
       ],
       "pl": {
         "name": "Telewizor LG 49UJ620V",
-        "category": "Telewizory"
+        "category": "Telewizory",
+		"colors": [], 
+		"styles": []
       },
       "en": {
         "name": "TV LG 49UJ620V",
-        "category": "TVs"
+        "category": "TVs",
+		"colors": [], 
+		"styles": []
       },
 	"images": [
 		"dummy_image-1.png",
@@ -434,12 +440,16 @@
       "pl": {
         "name": "Beats Solo3 bezprzewodowe słuchawki nauszne",
         "category": "Audio",
-        "desc": "Słuchawki bezprzewodowe Beats Solo3 Wireless są zawsze gotowe do działania. Wystarczy, że włączysz je i zbliżysz do iPhone'a, aby samoczynnie połączyły się z nim oraz innymi Twoimi urządzeniami"
+        "desc": "Słuchawki bezprzewodowe Beats Solo3 Wireless są zawsze gotowe do działania. Wystarczy, że włączysz je i zbliżysz do iPhone'a, aby samoczynnie połączyły się z nim oraz innymi Twoimi urządzeniami",
+		"colors": [], 
+		"styles": []
       },
       "en": {
         "name": "Beats Solo3 Wireless On-Ear Headphones",
         "category": "Audio",
-        "desc": "Connect via class 1 Bluetooth with your device for wireless workout freedom. Sleek, streamlined design that's durable and foldable to go everywhere you do."
+        "desc": "Connect via class 1 Bluetooth with your device for wireless workout freedom. Sleek, streamlined design that's durable and foldable to go everywhere you do.",
+		"colors": [], 
+		"styles": []
       },
 	"images": [
 		"dummy_image-1.png",
@@ -504,12 +514,16 @@
       "pl": {
         "name": "Devialet Gold Phantom głośnik bezprzewodowy",
         "category": "Audio",
-        "desc": "Fantastyczny bezprzewodowy głośnik z najwyższej półki."
+        "desc": "Fantastyczny bezprzewodowy głośnik z najwyższej półki.",
+		"colors": [], 
+		"styles": []
       },
       "en": {
         "name": "Devialet Gold Phantom Wireless Speaker",
         "category": "Audio",
-        "desc": "A superb wireless speaker from the top of our range."
+        "desc": "A superb wireless speaker from the top of our range.",
+		"colors": [], 
+		"styles": []
       },
       "images": [
         "dummy_image-1.png",
@@ -567,11 +581,15 @@
       "ends": null,
       "pl": {
         "name": "Apple Watch Nike+ z opaską",
-        "category": "Smartwatche"
+        "category": "Smartwatche",
+		"colors": [], 
+		"styles": []
       },
       "en": {
         "name": "Apple Watch Nike+ With Sport Band",
-        "category": "Smartwatches"
+        "category": "Smartwatches",
+		"colors": [], 
+		"styles": []
       },
 	"images": [
 		"dummy_image-1.png",
@@ -601,11 +619,15 @@
       "ends": null,
       "pl": {
         "name": "Parrot Mambo mini dron",
-        "category": "Drony"
+        "category": "Drony",
+		"colors": [], 
+		"styles": []
       },
       "en": {
         "name": "Parrot Mambo MiniDrone",
-        "category": "Drones"
+        "category": "Drones",
+		"colors": [], 
+		"styles": []
       },
 	"images": [
 		"dummy_image-1.png",
@@ -645,12 +667,21 @@
       "ends": null,
       "pl": {
         "name": "Bose SoundLink Color głośnik bluetooth",
-        "category": "Audio"
+        "category": "Audio",
+		"colors": [], 
+		"styles": []
       },
       "en": {
         "name": "Bose SoundLink Color Bluetooth Speaker II",
-        "category": "Audio"
+        "category": "Audio",
+		"colors": [], 
+		"styles": []
       },
+	"images": [
+		"dummy_image-1.png",
+		"dummy_image-2.png",
+		"dummy_image-3.png"
+	],
       "tags": {
         "hot": true,
         "discount": 20,
@@ -698,12 +729,21 @@
       "ends": null,
       "pl": {
         "name": "Bose SoundLink głośnik Wi-Fi",
-        "category": "Audio"
+        "category": "Audio",
+		"colors": [], 
+		"styles": []
       },
       "en": {
         "name": "Bose SoundLink Wi-Fi Speaker",
-        "category": "Audio"
+        "category": "Audio",
+		"colors": [], 
+		"styles": []
       },
+	"images": [
+		"dummy_image-1.png",
+		"dummy_image-2.png",
+		"dummy_image-3.png"
+	],
       "tags": {
         "hot": true,
         "discount": 0,
@@ -743,12 +783,21 @@
       "ends": null,
       "pl": {
         "name": "Behringer HPS3000 słuchawki studyjne",
-        "category": "Audio"
+        "category": "Audio",
+		"colors": [], 
+		"styles": []
       },
       "en": {
         "name": "Behringer HPS3000 Studio Headphones",
-        "category": "Audio"
+        "category": "Audio",
+		"colors": [], 
+		"styles": []
       },
+	"images": [
+		"dummy_image-1.png",
+		"dummy_image-2.png",
+		"dummy_image-3.png"
+	],
       "tags": {
         "hot": false,
         "discount": 0,
@@ -805,12 +854,21 @@
       "ends": null,
       "pl": {
         "name": "HP 8300 Elite mały komputer PC",
-        "category": "PC"
+        "category": "PC",
+		"colors": [], 
+		"styles": []
       },
       "en": {
         "name": "HP 8300 Elite Small Form Factor Desktop",
-        "category": "PC"
+        "category": "PC",
+		"colors": [], 
+		"styles": []
       },
+	"images": [
+		"dummy_image-1.png",
+		"dummy_image-2.png",
+		"dummy_image-3.png"
+	],
       "tags": {
         "hot": false,
         "discount": 10,
@@ -862,12 +920,21 @@
       "ends": null,
       "pl": {
         "name": "Komputer gamingowy Aurora R7",
-        "category": "PC"
+        "category": "PC",
+		"colors": [], 
+		"styles": []
       },
       "en": {
         "name": "Alienware Gaming PC Desktop Aurora R7",
-        "category": "PC"
+        "category": "PC",
+		"colors": [], 
+		"styles": []
       },
+	"images": [
+		"dummy_image-1.png",
+		"dummy_image-2.png",
+		"dummy_image-3.png"
+	],
       "tags": {
         "hot": false,
         "discount": 15,
@@ -928,12 +995,21 @@
       "ends": [2018, 9, 30, 20, 0],
       "pl": {
         "name": "Parrot Anafi",
-        "category": "Drony"
+        "category": "Drony",
+		"colors": [], 
+		"styles": []
       },
       "en": {
         "name": "Parrot Anafi",
-        "category": "Drones"
+        "category": "Drones",
+		"colors": [], 
+		"styles": []
       },
+	"images": [
+		"dummy_image-1.png",
+		"dummy_image-2.png",
+		"dummy_image-3.png"
+	], 
       "tags": {
         "hot": true,
         "discount": 5,

@@ -39,7 +39,6 @@ class ProductGallery extends React.Component {
 		const event = e;
 		let x = ((event.pageX - event.target.offsetLeft) / event.target.offsetWidth * 100);
 		let y = ((event.pageY - event.target.offsetTop) / event.target.offsetHeight * 100); 
-		console.log(x, y);
 		
 		this.setState({
 			position: x+"% "+y+"%"
