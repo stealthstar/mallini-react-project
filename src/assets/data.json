@@ -356,13 +356,15 @@
       "pl": {
         "name": "Telewizor LG 49UJ620V",
         "category": "Telewizory",
-		"colors": [], 
+		"colors": [],
+		"desc": "Funkcja Active HDR analizuje i optymalizuje treść w formatach HDR10 i HLG dla jeszcze lepszego i bardziej zapierającego dech w piersi efektu. Ekskluzywna technologia LG przetwarzania obrazu HDR10 i HLG zapewnia widzom więcej możliwości do wyboru.", 
 		"styles": []
       },
       "en": {
         "name": "TV LG 49UJ620V",
         "category": "TVs",
-		"colors": [], 
+		"colors": [],
+		"desc": "More consistent color and contrast from any seats. The IPS 4K panel in LG UHD TV delivers rich colors and strong contrast that remain consistent at wider viewing angles.",
 		"styles": []
       },
 	"images": [
@@ -514,14 +516,14 @@
       "pl": {
         "name": "Devialet Gold Phantom głośnik bezprzewodowy",
         "category": "Audio",
-        "desc": "Fantastyczny bezprzewodowy głośnik z najwyższej półki.",
+        "desc": "Gold Phantom to konstrukcja, która stworzyła nową kategorię produktów audio: Implosive Sound Center (implozyjne centrum dźwięku). To system, który całkowicie zmienił sposób słuchania muzyki, gwarantując domownikom moc oraz emocje.",
 		"colors": [], 
 		"styles": []
       },
       "en": {
         "name": "Devialet Gold Phantom Wireless Speaker",
         "category": "Audio",
-        "desc": "A superb wireless speaker from the top of our range.",
+        "desc": "The best sound in the world. Feel the physical impact of ultra-dense sound. Experience your music with the most extreme power, clarity and precision ever achieved. Breathtaking.",
 		"colors": [], 
 		"styles": []
       },
@@ -583,12 +585,15 @@
         "name": "Apple Watch Nike+ z opaską",
         "category": "Smartwatche",
 		"colors": [], 
+		"desc": "Apple Watch Nike+ z apką Nike Run Club to idealny partner do biegania. Jednak większość osób na bieganiu nie kończy. Dlatego firma Nike stworzyła Nike Training Club ", 
 		"styles": []
       },
       "en": {
         "name": "Apple Watch Nike+ With Sport Band",
         "category": "Smartwatches",
-		"colors": [], 
+		"colors": [],
+		"desc": "Apple Watch Nike+, the latest result of a long-standing partnership. Apple Watch Nike+ is the ultimate tool for anyone who runs, pairing exclusive Nike Sport Bands with Apple Watch Series 2.",
+		
 		"styles": []
       },
 	"images": [

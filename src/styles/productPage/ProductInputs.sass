@@ -1,5 +1,5 @@
 @import '../../styles/_variables.sass'
-$input-height: 50px
+$input-height: 48px
 
 
 .quantity-action,
@@ -72,8 +72,43 @@ $input-height: 50px
 				background-color: $light-blue
 				cursor: pointer
 .input-action-wrapper.deactivated
+	display: none
 	.input
 		border: none
+	.value, .number, button
+		color: #bbb
+		background-color: #eee
+@media all and (max-width: 1000px) and (min-width: 421px)
+	.quantity-action
+		flex-direction: column
+		align-items: center
+		p
+			text-transform: uppercase
+			margin-right: 20px
+			font-size: 20px
+			color: #bbb
+		&__input-wrapper
+	.quantity-action,
+	.input-action
+		p
+			text-transform: uppercase
+			margin-right: 0
+			font-size: 16px
+			color: #bbb
+		&__input-wrapper
+			height: $input-height * 0.9
+			width: 160px
+			display: flex
+			border: 1px solid #eee
+
+			.value, .number
+				width: 140px
+				font-size: 16px
+			.controls
+				height: $input-height * 0.9 - 1px
+@media all and (max-width: 420px)
+	.quantity-action
+		flex-direction: column
 @media all and (max-width: 680px)
 	.product-main
 		&__wrapper

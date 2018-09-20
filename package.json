@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "body-scroll-lock": "^2.5.7",
     "date-fns": "^1.29.0",
     "history": "^4.7.2",
     "npm": "^6.1.0",

@@ -43,7 +43,7 @@ class Searchbar extends React.Component {
 		this.state = {
 			input: '',
 			result: [],
-			menuDisplay: 'flex'
+			resultsDisplay: 'flex'
 		}
 		this.changeHandler = this.changeHandler.bind(this);
 		this.sumbitHandler = this.sumbitHandler.bind(this);
@@ -56,32 +56,37 @@ class Searchbar extends React.Component {
 	}
 
 	changeHandler(e) {
+		// function that updates the results array with matched searches
+		// and notifies state whether the results window shoul be displayed
 		let val = e.target.value.toUpperCase(),
 			products = [];		
 		
 		if(val.length >= 3) {
 			data.products.forEach(el => products.push([el[this.props.lang].name.toUpperCase(), el.id, el[this.props.lang].category]));
-			products = products.filter(value => value[0].includes(val) && (value[2] === this.props.searchCategory || (this.props.searchCategory === "All Categories" || this.props.searchCategory ==="Wszystkie")));
+			products = products.filter(value => { 
+				//quite long conditions, these
+				return value[0].includes(val) && (value[2] === this.props.searchCategory || (this.props.searchCategory === "All Categories" || this.props.searchCategory ==="Wszystkie"))
+			});
 			this.setState({
 				input: val,
 				result: products,
-				menuDisplay: 'block'
+				resultsDisplay: 'block'
 			});
 		} else {
 			this.setState({
 			input: val,
 			result: [],
-			menuDisplay: 'none'
+			resultsDisplay: 'none'
 		});
 		}
 
 	}
-	clickHandler(id, e) {
-		// e.preventDefault();
+	clickHandler(id) {
 		this.props.changeProduct(id)
 		this.setState({
-			menuDisplay: 'none'
+			resultsDisplay: 'none'
 		});
+		this.props.hideMenu(); // hides the mobile menu if visible
 	}
 	render() {
 		const result = this.state.result;
@@ -107,19 +112,13 @@ class Searchbar extends React.Component {
 						</div>
 					</div>
 				</form>
-				
-					<div className={"search-form__results"} style={{display: this.state.menuDisplay}}>
+					<div className={"search-form__results"} style={{display: this.state.resultsDisplay}}>
 						{this.state.result.map(element => (
-						// element[2] === this.props.searchCategory || this.props.searchCategory === "All Categories" || "Wszystkie" ?
-							<NavLink to="/product" onClick={(e) => this.clickHandler(element[1], e)}>
+							<NavLink to={"/product/" + element[1]} onClick={(e) => this.clickHandler(element[1])}>
 								<p className={"search-link"} key={element[1]}>{element[0]}</p> 
 							</NavLink> 
-							// : null
-						)
-						)}
-
+						))}
 					</div>
-				
 			</div>
 		)
 	}

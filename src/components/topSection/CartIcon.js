@@ -31,7 +31,7 @@ class CartIcon extends React.Component {
 		const styleNone = { backgroundColor: "#f5f5f5", color: "#0f0f0f" };
 		const styled = { backgroundColor: "red", color: "white" };
 		return (
-			<NavLink to={"cart"} style={{textDecoration: "none"}}>
+			<NavLink to={"/cart"} style={{textDecoration: "none"}}>
 				<div className={"icon icon-cart"} onClick={this.clickHandler} >
 					<FaShoppingBag />
 					{

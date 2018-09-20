@@ -17,8 +17,90 @@ $input-height: 50px
 		justify-content: space-between
 		align-items: flex-start
 		padding: 5px 0
-		
+	&__buttons
+		justify-content: space-between
+		button
+			background-color: #fff
+			width: 220px
+			border-radius: 20px
+			font:
+				size: 18px
+				weight: 500
+			&:hover
+				background-color: #eee
+				transform: scale(1.01)
+				box-shadow: 0 0 10px -3px rgba(0,0,0,0.4)
+			&:active
+				transform: scale(0.99)
+				box-shadow: none
+			.icon
+				background-color: #eee
+				margin-right: 10px
+				height: 40px
+				width: 40px
+				border-radius: 50%
+				font-size: 20px
+				min-width: 40px
+		.add-to-cart
+			background-color: $red
+			height: 50px
+			width: 220px
+			color: #ffffff
+			border-radius: 30px
+			font:
+				size: 20px
+				weight: 400
+			transform-origin: center
+			&:hover
+				background-color: $red
 
+
+@media all and (max-width: 1420px)
+	.product-main__details
+		&__buttons
+			justify-content: space-between
+			button
+				background-color: #fff
+				width: auto
+				padding: 0 10px
+				border-radius: 20px
+				font:
+					size: 16px
+					weight: 500
+			.add-to-cart
+				height: 50px
+				width: 180px
+@media all and (max-width: 1000px)
+	.product-main__details
+		&__actions
+			flex-direction: row-reverse
+		&__buttons,
+		&__inputs
+			width: 50%
+			flex-direction: column
+			height: auto
+			align-items: flex-start
+			justify-content: flex-start
+			button, 
+			.input-action-wrapper,
+			.quantity-action__input-wrapper
+				margin-bottom: 15px
+		&__inputs
+			align-items: flex-end
+		// &__buttons
+		// 	width: 40%
+		// &__inputs
+		// 	width: 60%
+
+@media all and (max-width: 420px)
+	.product-main__details
+		&__actions
+			flex-direction: column
+			align-items: center
+		&__buttons,
+		&__inputs
+			width: 100%
+			align-items: center
 @media all and (max-width: 680px)
 	.product-main
 		&__wrapper

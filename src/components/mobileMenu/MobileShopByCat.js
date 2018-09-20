@@ -26,10 +26,10 @@ class MobileShopByCat extends React.Component {
 		super(props);
 
 		this.state = {
-			activeMenu: ''
+			activeMenu: false
 		}
 
-		this.menuClickHandler = this.menuClickHandler.bind(this);
+		this.menuToggle = this.menuToggle.bind(this);
 	}
 
 
@@ -37,29 +37,20 @@ class MobileShopByCat extends React.Component {
 	componentDidMount() {
 		let self = this;
 		document.addEventListener('click', (e) => {
-			self.menuClickHandler(e);
-		})
+			let event = e;
+			let condition = !event.target.classList.contains('mobile-cat__category-toggle');
+			if (this.state.activeMenu && condition) {
+				self.menuToggle();
+			}
+		});
 	}
 
 
 
-	menuClickHandler(e) {
-		let event = e;
-		let id = event.target.id;
-		if (event.target.classList.contains('mobile-cat__toggle')) {
-			this.setState({
-				activeMenu: id
-			});
-		} else if (event.target.classList.contains('mobile-cat__content')) {
-			this.setState({
-				activeMenu: this.state.activeMenu
-			});
-		} else {
-			this.setState({
-				activeMenu: ''
-			});
-		}
-
+	menuToggle() {
+		this.setState({
+			activeMenu: !this.state.activeMenu
+		});
 	}
 
 
@@ -71,7 +62,7 @@ class MobileShopByCat extends React.Component {
 			<div className={"mobile-cat__wrapper"}>
 
 				<div className={"mobile-cat__category"}>
-					<button id={"category-mobile"} className={"mobile-cat__toggle mobile-cat__category-toggle"} onClick={(e) => this.menuClickHandler(e)}>
+					<button id={"category-mobile"} className={"mobile-cat__toggle mobile-cat__category-toggle"} onClick={this.menuToggle}>
 						{this.props.lang === "en" ?
 							"Shop by category"
 							:
@@ -80,7 +71,7 @@ class MobileShopByCat extends React.Component {
 						<SortDesc />
 					</button>
 					{
-							this.state.activeMenu === "category-mobile" ?
+						this.state.activeMenu && (
 							<div className={"mobile-cat__content"}>
 								{
 									categories[this.props.lang].map((el) => (
@@ -88,8 +79,7 @@ class MobileShopByCat extends React.Component {
 									))
 								}
 							</div>
-							:
-							null
+						)
 					}
 				</div>
 				

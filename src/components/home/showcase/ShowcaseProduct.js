@@ -35,14 +35,22 @@ function mapDispatchToProps(dispatch) {
 class ShowcaseProduct extends React.Component {
 	constructor(props) {
 		super(props);
-
+		this.state= {
+			hover: false
+		}
 		// method bindings
 		this.clickHandler = this.clickHandler.bind(this);
+		this.toggleHover = this.toggleHover.bind(this);
 		this.dispatchAddToCart = this.dispatchAddToCart.bind(this);
 		this.dispatchAddCompare = this.dispatchAddCompare.bind(this);
 		this.dispatchAddWish = this.dispatchAddWish.bind(this);
 
 	}
+
+	toggleHover() {
+		this.setState({ hover: !this.state.hover })
+	}
+
 	//click Handler
 	clickHandler(productId, e) {
 		this.props.changeProduct(productId);
@@ -79,6 +87,8 @@ class ShowcaseProduct extends React.Component {
 	render() {
 		const product = this.getProduct();
 		product.newPrice = product.price - (product.price * product.tags.discount / 100);
+		const path = require(`../../../assets/img/products/${product.images[0]}`);
+		const pathHover = require(`../../../assets/img/products/${product.images[1]}`);
 		return (
 			<div className={"showcase-product__wrapper"}>
 			<NavLink
@@ -86,10 +96,17 @@ class ShowcaseProduct extends React.Component {
 					textDecoration: 'none',
 					color: 'black'
 				}}
-				to={"/product"}
+					to={"/product/" + product.id}
 				onClick={(e) => this.clickHandler(product.id, e)}>
-				<div className={"showcase-product__inner"} onClick={(e) => this.clickHandler(this.props.number, e)}>
-					<div className={"showcase-product__photo"}></div>
+				<div className={"showcase-product__inner"} 
+					onClick={(e) => this.clickHandler(this.props.number, e)}
+					onMouseEnter={this.toggleHover} 
+					onMouseLeave={this.toggleHover}
+					>
+					<div 
+						className={"showcase-product__photo"}
+						style={{backgroundImage: `url(${this.state.hover ? pathHover : path})`}}
+						></div>
 						
 					<p className={"showcase-product__name"} >{product[this.props.lang].name}</p>
 						 {product.tags.discount ? 

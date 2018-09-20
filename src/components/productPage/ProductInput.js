@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import {changeColor} from "../../actions/productPageActions/changeColor";
+import { changeStyle } from "../../actions/productPageActions/changeStyle";
 
 import ChevronUp from 'react-icons/lib/fa/chevron-up';
 import ChevronDown from 'react-icons/lib/fa/chevron-down';
@@ -16,7 +17,8 @@ const mapStateToProps = state => ({
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		changeColor: changeColor
+		changeColor: changeColor,
+		changeStyle: changeStyle
 	}, dispatch);
 }
 
@@ -38,7 +40,7 @@ class ProductInput extends React.Component {
 		this.setState({
 			input: e.target.innerHTML
 		});
-		this.props.changeColor(e.target.innerHTML);
+		this.props.valueType === "color" ? this.props.changeColor(e.target.innerHTML) : this.props.changeStyle(e.target.innerHTML);
 		this.toggle();
 
 	}
@@ -80,7 +82,7 @@ class ProductInput extends React.Component {
 					</div>
 					{this.state.visible && (
 						<div className={"input"}>
-							{values ? values.map(value => <p onClick={(e)=>this.optionClick(e)}>{value}</p>):null
+							{values ? values.map(value => <p key={value} onClick={(e)=>this.optionClick(e)}>{value}</p>):null
 							}
 						</div>
 					)}

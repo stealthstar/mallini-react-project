@@ -2,7 +2,9 @@ export const cartReducer = (state = {
 	items: [],
 	itemsAmount: 0,
 	cartWorth: 0.00,
-	quantity: 1
+	quantity: 1,
+	color: "",
+	style: ""
 }, action) => {
 	switch (action.type) {
 		case 'ADD_TO_CART':
@@ -25,6 +27,16 @@ export const cartReducer = (state = {
 				},
 				itemsAmount: state.itemsAmount - 1,
 				cartWorth: state.cartWorth - action.payload[1] === -0 ? 0.00 : state.cartWorth - action.payload[1]
+			}
+		case "CHANGE_COLOR":
+			return {
+				...state,
+				color: action.payload
+			}
+		case "CHANGE_STYLE":
+			return {
+				...state,
+				style: action.payload
 			}
 		case "CHANGE_QUANTITY":
 			return {

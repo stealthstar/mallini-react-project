@@ -24,7 +24,7 @@ class ProductQtyInput extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state= { 
-			input: 0
+			input: 1
 		}
 
 		this.increase = this.increase.bind(this);
@@ -38,7 +38,7 @@ class ProductQtyInput extends React.Component {
 		this.props.changeQuantity(this.state.input + 1)
 	}
 	decrease() {
-		if (this.state.input > 0){
+		if (this.state.input > 1){
 			this.setState({
 				input: this.state.input - 1
 			});

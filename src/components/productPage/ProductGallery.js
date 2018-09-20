@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import "../../styles/productPage/ProductGallery.sass";
 
 const mapStateToProps = state => ({
@@ -15,17 +15,25 @@ class ProductGallery extends React.Component {
 		super(props);
 		this.state= {
 			images: [],
-			activeImage: 0
+			activeImage: 0,
+			bgSize: 100
 		}
 
 		this.mouseMoveHandler = this.mouseMoveHandler.bind(this);
-		this.mouseOutHandler = this.mouseOutHandler.bind(this);
-		this.mouseEnterHandler = this.mouseEnterHandler.bind(this);
+		this.moveHandler = this.moveHandler.bind(this);
+		this.normaliseImage = this.normaliseImage.bind(this);
+		this.magnifyImage = this.magnifyImage.bind(this);
 	}
 
 
-	
-	
+	componentDidMount() {
+		this.targetElement = document.querySelector('.product-main__big-image');
+
+	}
+
+	componentWillUnmount() {
+		clearAllBodyScrollLocks();
+	}
 	changeSlide(e) {
 		const event = e;
 		const slideNumber = event.target.id.slice(-1);
@@ -36,7 +44,7 @@ class ProductGallery extends React.Component {
 
 	mouseMoveHandler(e) {
 		//logic that manipulates bg position on mouse move
-		const event = e;
+		const event = e;	
 		let x = ((event.pageX - event.target.offsetLeft) / event.target.offsetWidth * 100);
 		let y = ((event.pageY - event.target.offsetTop) / event.target.offsetHeight * 100); 
 		
@@ -44,14 +52,34 @@ class ProductGallery extends React.Component {
 			position: x+"% "+y+"%"
 		});
 	}
-	mouseOutHandler() {
+	moveHandler(e) {
+		//logic that manipulates bg position on touch move
+		const event = e;
+		let xParam = event.touches !== undefined ? event.touches[0].clientX : event.pageX, 
+			yParam = event.touches !== undefined ? event.touches[0].clientY : event.pageY;
+		if (event.target.classList.contains('product-main__big-image')) {
+			let x = ((xParam - event.target.offsetLeft) / event.target.offsetWidth * 100);
+			let y = ((yParam - event.target.offsetTop) / event.target.offsetHeight * 100); 
+			x < 0 ? x = 0 : x > 100 ? x = 100 : null;
+			y < 0 ? y = 0 : y > 100 ? y = 100 : null;
+			this.setState({
+				position: x+"% "+y+"%"
+			});
+		}
+	
+	}
+
+	normaliseImage() {
 		this.setState({ 
 			position: "center center",
 			bgSize: 100
 		});
+
+		enableBodyScroll(this.targetElement);
 	}
-	mouseEnterHandler() {
+	magnifyImage() {
 		// here set the scale of magnification in %
+		disableBodyScroll(this.targetElement);
 		this.setState({ 
 			bgSize: 300
 		});
@@ -60,15 +88,18 @@ class ProductGallery extends React.Component {
 	render() {
 		const images = this.props.images;
 		const handlers = this.props.images ? {
-			onMouseMove: (e) => this.mouseMoveHandler(e),
-			onMouseOut: this.mouseOutHandler, 
-			onMouseEnter: this.mouseEnterHandler
+			onMouseMove: (e) => this.moveHandler(e), 
+			onTouchMove: (e) => this.moveHandler(e),
+			onMouseOut: this.normaliseImage, 
+			onTouchEnd: this.normaliseImage ,
+			onTouchStart: this.magnifyImage, 
+			onMouseEnter: this.magnifyImage,
 		} : null;
 		return (
 			<div className={"product-main__gallery"}>
 				<div className={"product-main__thumbnails"}>
 					{images.map(image => (
-						<div className={"thumbnail-wrapper flex-center"} >
+						<div key={images.indexOf(image)} className={"thumbnail-wrapper flex-center"} >
 							<img id={`img-toggle${images.indexOf(image)}`} 
 								key={images.indexOf(image)} 
 								src={image} 
@@ -91,7 +122,7 @@ class ProductGallery extends React.Component {
 					{/* <img src={images[this.state.activeImage]} /> */}
 				</div>
 				{	 
-						this.props.images && this.props.width > 680? 
+						this.props.images && this.props.width > 680 ? 
 							<p>
 								{
 									this.props.lang === "en" ? 
@@ -99,7 +130,16 @@ class ProductGallery extends React.Component {
 										: "Najedź na obrazek, by powiększyć"
 								}
 							</p>
-							: null
+							: <p>
+								{this.state.bgSize === 100 ? 
+									this.props.lang === "en" ?
+										"Tap and hold the image for zoom"
+										: "Dotknij i przytrzymaj obrazek, by go powiększyć"
+									: this.props.lang === "en" ?
+										"Drag the image to move it"
+										: "Przeciągnij obrazek, by go przesunąć"
+								}
+							</p>
 				}
 				
 			</div>

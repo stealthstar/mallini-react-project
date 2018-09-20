@@ -100,7 +100,7 @@ class BestSellingItem extends React.Component {
 		return (
 			
 			<NavLink
-				to={"/product"}
+				to={"/product/"+product.id}
 				className={"bestselling-products__item-wrapper"} 
 				onClick={(e) => this.clickHandler(product.id, e)}>
 				<div key={product.id} className={"bestselling-products__item"}>
