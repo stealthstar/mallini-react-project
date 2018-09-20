@@ -79,7 +79,9 @@ class ProductGallery extends React.Component {
 	}
 	magnifyImage() {
 		// here set the scale of magnification in %
-		disableBodyScroll(this.targetElement);
+		disableBodyScroll(this.targetElement, {
+			reserveScrollBarGap: true
+		});
 		this.setState({ 
 			bgSize: 300
 		});

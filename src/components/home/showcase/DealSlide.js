@@ -70,7 +70,7 @@ class DealSlide extends React.Component {
 					to={"/product"}
 					onClick={(e) => this.clickHandler(data.id, e)}>
 					<div className={"slide__image--wrapper"}>
-						<img src={"http://via.placeholder.com/350x350"} />
+						<img src={require(`../../../assets/img/products/${data.images[0]}`)} />
 						<div className={"savings"}>
 							<p>{
 								this.props.lang === 'en' ? `Save` : `Taniej o`
